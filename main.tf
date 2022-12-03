@@ -1,10 +1,10 @@
 terraform {
 
   backend "remote" {
-    organization = "Cisco-Richfield-Lab"
+    organization = "bywhite"
 
     workspaces {
-      name = "imm-tfcb"
+      name = "cen-iac-imm-dev-pod1"
     }
   }
 
@@ -31,14 +31,14 @@ output "org_default_moid" {
 }
 
 module "intersight_policy_bundle" {
-  source = "github.com/pl247/tf-intersight-policy-bundle"
-
+  #source = "github.com/pl247/tf-intersight-policy-bundle"
+  source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods"
   # external sources
   organization    = data.intersight_organization_organization.default.id
 
   # every policy created will have this prefix in its name
-  policy_prefix = "bdc"
-  description   = "Built by Terraform"
+  policy_prefix = "bw-ofl-pod1"
+  description   = "Built by Terraform cen-iac-imm-dev-pod1 code"
 
   # Fabric Interconnect 6454 config specifics
   server_ports_6454 = [17, 18, 19, 20, 21, 22]
