@@ -1,7 +1,7 @@
 # Create a sequential IP pool for IMC access. Change the from and size to what you would like
 
 resource "intersight_ippool_pool" "ippool_podpool" {
-  name = "${local.pod_policy_prefix}-ip-podpool"
+  name = "${local.pod_policy_prefix}-pool-ip"
   description = "ofl Pod IP Pool for all KVM & Chassis"
   assignment_order = "sequential"
   ip_v4_blocks {
