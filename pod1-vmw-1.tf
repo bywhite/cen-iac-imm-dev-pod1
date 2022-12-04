@@ -1,4 +1,4 @@
-# This defines the desired configuration of the pod1-vmw-1 domain
+# This defines the desired configuration of the dev-ofl-pod1-vmw-1 IMM domain
 # Modules are used with supplied values to define the desired configuration of the domain infrastructure
 
 
@@ -6,10 +6,10 @@ module "intersight_policy_bundle" {
   #source = "github.com/pl247/tf-intersight-policy-bundle"
   source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods"
   # external sources
-  organization    = data.intersight_organization_organization.default.id
+  organization    = data.intersight_organization_organization.ofl.id
 
   # every policy created will have this prefix in its name
-  policy_prefix = "bw-ofl-pod1"
+  policy_prefix = "dev-ofl-pod1"
   description   = "Built by Terraform cen-iac-imm-dev-pod1 code"
 
   # Fabric Interconnect 6454 config specifics
@@ -30,7 +30,7 @@ module "intersight_policy_bundle" {
   dns_preferred = "172.22.16.254"
   dns_alternate = "172.22.16.253"
 
-  ntp_timezone = "America/Winnipeg"
+  ntp_timezone = "America/Chicago"
 
 # starting values for wwnn, wwpn-a/b and mac pools (size 255)
   wwnn-block   = "20:00:00:CA:FE:00:00:01"
@@ -40,7 +40,7 @@ module "intersight_policy_bundle" {
   mac-block    = "00:CA:FE:00:00:01"
 
     tags = [
-    { "key" : "Environment", "value" : "BDC-Prod" },
+    { "key" : "Environment", "value" : "dev-ofl" },
     { "key" : "Orchestrator", "value" : "Terraform" }
   ]
 }

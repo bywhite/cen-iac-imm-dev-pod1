@@ -22,10 +22,10 @@ provider "intersight" {
     endpoint = var.endpoint
 }
 
-data "intersight_organization_organization" "default" {
-    name = "default"
+data "intersight_organization_organization" "ofl" {
+    name = "ofl"
 }
 # print default org moid
-output "org_default_moid" {
-    value = data.intersight_organization_organization.default.moid
+output "org_ofl_moid" {
+    value = data.intersight_organization_organization.ofl.moid
 }
