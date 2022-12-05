@@ -38,8 +38,6 @@ module "imm_pool_mod" {
   ip_gateway  = "10.10.10.1"
   ip_netmask  = "255.255.255.0"
   ip_primary_dns = "8.8.8.8"
-  ip_alternate_dns = "8.8.4.4"
-
 
   tags = [
     { "key" : "Environment", "value" : "dev-ofl" },
