@@ -10,3 +10,8 @@ output "org_ofl_moid" {
     value = local.org_moid
     description = "moid of target Organization in Intersight"
 }
+
+output "pod_id" {
+    value = local.pod_id
+    description = "Pod ID is used in all identifiers: MAC, WWNN, WWPN, UUID"
+}

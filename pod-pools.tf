@@ -39,6 +39,8 @@ module "imm_pool_mod" {
   ip_netmask  = "255.255.255.0"
   ip_primary_dns = "8.8.8.8"
 
+  pod_id = local.pod_id
+
   tags = [
     { "key" : "Environment", "value" : "dev-ofl" },
     { "key" : "Orchestrator", "value" : "Terraform" }
