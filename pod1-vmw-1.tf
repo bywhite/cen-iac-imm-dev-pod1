@@ -34,15 +34,18 @@ module "intersight_policy_bundle" {
   ntp_timezone = "America/Chicago"
 
 # starting values for wwnn, wwpn-a/b and mac pools (size 255)
-  wwnn-block   = "20:00:00:CA:FE:00:00:01"
-  wwpn-a-block = "20:00:00:CA:FE:0A:00:01"
-  wwpn-b-block = "20:00:00:CA:FE:0B:00:01"
+  # wwnn-block   = "20:00:00:CA:FE:00:00:01"
+  # wwpn-a-block = "20:00:00:CA:FE:0A:00:01"
+  # wwpn-b-block = "20:00:00:CA:FE:0B:00:01"
 
 
 #                          01 - 0 is for OFL and 1 is for Pod 1
 #  Need to substitute in Pod ID Variable and not pass starting Blocks
 # sending MOIDs for Identity Pools:  MAC, WWNN, WWPN
   mac_pool_moid = module.imm_pool_mod.mac_pool_moid
+  wwnn_pool_moid = module.imm_pool_mod.wwnn_pool_moid
+  wwpn_pool_a_moid = module.imm_pool_mod.wwpn_pool_a_moid
+  wwpn_pool_b_moid = module.imm_pool_mod.wwpn_pool_b_moid
 
 
   tags = [
