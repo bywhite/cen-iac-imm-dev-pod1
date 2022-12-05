@@ -38,7 +38,7 @@ module "intersight_policy_bundle" {
   wwpn-a-block = "20:00:00:CA:FE:0A:00:01"
   wwpn-b-block = "20:00:00:CA:FE:0B:00:01"
 
-  mac-block    = "00:25:B5:FE:00:01"
+
 #                          01 - 0 is for OFL and 1 is for Pod 1
 #  Need to substitute in Pod ID Variable and not pass starting Blocks
 # sending MOIDs for Identity Pools:  MAC, WWNN, WWPN
