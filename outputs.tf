@@ -19,7 +19,7 @@ output "ofl_pod1_ip_pool_moid" {
 }
 
 
-output "ofl_pod1_ip_pool_moid" {
+output "ofl_pod1_mac_pool_moid" {
     value = module.imm_pool_mod.mac_pool_moid
     description = "This is the moid of the Pod wide Mac_Pool for vNic's"
 }
