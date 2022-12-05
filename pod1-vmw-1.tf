@@ -44,4 +44,9 @@ module "intersight_policy_bundle" {
     { "key" : "Environment", "value" : "dev-ofl" },
     { "key" : "Orchestrator", "value" : "Terraform" }
   ]
+
+depends_on = [
+  module.imm_pool_mod
+]
+
 }
