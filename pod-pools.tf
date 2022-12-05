@@ -40,6 +40,7 @@ module "imm_pool_mod" {
   ip_primary_dns = "8.8.8.8"
 
   pod_id = local.pod_id
+  # used to create moids for Pools: MAC, WWNN, WWPN
 
   tags = [
     { "key" : "Environment", "value" : "dev-ofl" },
