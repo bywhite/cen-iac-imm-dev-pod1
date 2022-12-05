@@ -28,3 +28,13 @@ output "ofl_pod1_wwnn_pool_moid" {
     value = module.imm_pool_mod.wwnn_pool_moid
     description = "This is the moid of the WWNN pool for HBA's"
 }
+
+output "ofl_pod1_wwpn_pool_a_moid" {
+    value = module.imm_pool_mod.wwpn_pool_a_moid
+}
+
+
+output "ofl_pod1_wwpn_pool_b_moid" {
+    value = module.imm_pool_mod.wwpn_pool_b_moid
+}
+
