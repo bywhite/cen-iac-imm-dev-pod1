@@ -37,3 +37,6 @@ output "ofl_pod1_wwpn_pool_b_moid" {
     value = module.imm_pool_mod.wwpn_pool_b_moid
 }
 
+output "ofl_pod1_uuid_pool_moid" {
+    value = module.imm_pool_mod.uuid_pool_moid
+}
