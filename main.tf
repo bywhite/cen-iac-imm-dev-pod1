@@ -25,7 +25,4 @@ provider "intersight" {
 data "intersight_organization_organization" "ofl" {
     name = "ofl"
 }
-# print default org moid
-output "org_ofl_moid" {
-    value = data.intersight_organization_organization.ofl.moid
-}
+
