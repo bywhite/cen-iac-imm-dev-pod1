@@ -15,9 +15,12 @@ output "pod_id" {
 
 output "ofl_pod1_ip_pool_moid" {
     value = module.imm_pool_mod.ip_pool_moid
-    description = "This is the moid of the Pod wide IP_Pool for KVM & Chassis in-band IP's"
+    description = "This is the moid of the Pod wide IP_Pool for server IMC Access IP's"
 }
-
+output "ofl_pod1_ip_pool_chassis_moid" {
+    value = module.imm_pool_mod.ip_pool_chassis_moid
+    description = "This is the moid of the Pod wide IP_Pool for Chassis in-band IP's"
+}
 
 output "ofl_pod1_mac_pool_moid" {
     value = module.imm_pool_mod.mac_pool_moid

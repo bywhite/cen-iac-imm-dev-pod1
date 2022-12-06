@@ -39,11 +39,11 @@ module "imm_pool_mod" {
   ip_netmask  = "255.255.255.0"
   ip_primary_dns = "8.8.8.8"
 
-  # chassis_ip_size     = "150"
-  # chassis_ip_start = "10.10.2.11"
-  # chassis_ip_gateway  = "10.10.2.1"
-  # chassis_ip_netmask  = "255.255.255.0"
-  # chassis_ip_primary_dns = "8.8.8.8"
+  chassis_ip_size     = "150"
+  chassis_ip_start = "10.10.2.11"
+  chassis_ip_gateway  = "10.10.2.1"
+  chassis_ip_netmask  = "255.255.255.0"
+  chassis_ip_primary_dns = "8.8.8.8"
 
   pod_id = local.pod_id
   # used to create moids for Pools: MAC, WWNN, WWPN
