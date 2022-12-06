@@ -26,6 +26,10 @@ module "intersight_policy_bundle" {
   imc_admin_password = "Cisco123"
   imc_ip_pool_moid = module.imm_pool_mod.ip_pool_moid
 
+  chassis_imc_access_vlan    = 999
+  chassis_imc_ip_pool_moid = module.imm_pool_mod.ip_pool_moid
+  #Need to create separate IP Pool for Chassis
+
   ntp_servers = ["ca.pool.ntp.org"]
 
   dns_preferred = "172.22.16.254"
