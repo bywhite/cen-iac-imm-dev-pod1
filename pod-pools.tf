@@ -33,10 +33,10 @@ module "imm_pool_mod" {
   policy_prefix = "dev-ofl-pod1"
   description   = "Built by Terraform repo: cen-iac-imm-dev-pod1  module: pod-pools-mod"
 
-  ip_size     = "200"
-  ip_start = "10.10.10.11"
+  ip_size     = "500"
+  ip_start = "10.10.10.10"
   ip_gateway  = "10.10.10.1"
-  ip_netmask  = "255.255.255.0"
+  ip_netmask  = "255.255.254.0"
   ip_primary_dns = "8.8.8.8"
 
   chassis_ip_size     = "150"
