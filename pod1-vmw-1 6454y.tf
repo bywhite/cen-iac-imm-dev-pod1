@@ -4,13 +4,24 @@
 
 module "intersight_policy_bundle" {
   #source = "github.com/pl247/tf-intersight-policy-bundle"
-  source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods/imm-domain-fabric-6536"
+  source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods/imm-domain-fabric-module"
   # external sources
   organization    = data.intersight_organization_organization.ofl.id
 
   # every policy created will have this prefix in its name
-  policy_prefix = "dev-ofl-pod1-vmw1"
+  policy_prefix = "dev-ofl-pod1"
   description   = "Built by Terraform cen-iac-imm-dev-pod1 code"
+
+  # Fabric Interconnect 6454 config specifics
+  server_ports_6454 = [17, 18, 19, 20, 21, 22]
+  port_channel_6454 = [49, 50]
+  uplink_vlans_6454 = {
+    "vlan-998" : 998,
+    "vlan-999" : 999
+  }
+  fc_port_count_6454 = 4
+  #6454 FC ports start at Port 1 up to 16 (FC on left of slider)
+
 
  # Fabric Interconnect 6536 config specifics
   server_ports_6536 = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
