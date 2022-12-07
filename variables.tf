@@ -22,3 +22,6 @@ variable "organization" {
     default = "ofl"
 }
 
+variable "imc_admin_password" {
+    type = string
+}
