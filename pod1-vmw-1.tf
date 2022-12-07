@@ -19,8 +19,21 @@ module "intersight_policy_bundle" {
     "vlan-998" : 998,
     "vlan-999" : 999
   }
-
   fc_port_count_6454 = 4
+  #6454 FC ports start at Port 1 up to 16 (FC on left of slider)
+
+
+ # Fabric Interconnect 6536 config specifics
+  server_ports_6454 = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
+  port_channel_6454 = [31, 32, 33, 34]
+  uplink_vlans_6454 = {
+    "vlan-998" : 998,
+    "vlan-999" : 999
+  }
+  fc_port_count_6536 = 2
+     #For each port_count physical port above, it is broken-out into 4x 32G FC Ports
+     #A value of 2 results in 8x 32G FC Port breakouts from ports 35 & 36
+     # Unified Ports 33-36 (FC ports on right of the slider starting with 36)
 
   imc_access_vlan    = 999
   imc_admin_password = "Cisco123"
