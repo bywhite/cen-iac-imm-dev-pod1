@@ -24,9 +24,9 @@ module "intersight_policy_bundle" {
 
 
  # Fabric Interconnect 6536 config specifics
-  server_ports_6454 = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
-  port_channel_6454 = [31, 32, 33, 34]
-  uplink_vlans_6454 = {
+  server_ports_6536 = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
+  port_channel_6536 = [31, 32, 33, 34]
+  uplink_vlans_6536 = {
     "vlan-998" : 998,
     "vlan-999" : 999
   }
