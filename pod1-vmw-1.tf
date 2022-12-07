@@ -2,7 +2,7 @@
 # Modules are used with supplied values to define the desired configuration of the domain infrastructure
 
 
-module "intersight_policy_bundle" {
+module "intersight_policy_bundle_vmw_1" {
   #source = "github.com/pl247/tf-intersight-policy-bundle"
   source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods/imm-domain-fabric-6536"
   # external sources
