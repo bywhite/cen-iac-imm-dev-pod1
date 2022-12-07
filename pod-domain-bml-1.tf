@@ -23,18 +23,6 @@ module "intersight_policy_bundle" {
   #6454 FC ports start at Port 1 up to 16 (FC on left of slider)
 
 
- # Fabric Interconnect 6536 config specifics
-  server_ports_6536 = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
-  port_channel_6536 = [31, 32, 33, 34]
-  uplink_vlans_6536 = {
-    "vlan-998" : 998,
-    "vlan-999" : 999
-  }
-  fc_port_count_6536 = 2
-     #For each port_count physical port above, it is broken-out into 4x 32G FC Ports
-     #A value of 2 results in 8x 32G FC Port breakouts from ports 35 & 36
-     # Unified Ports 33-36 (FC ports on right of the slider starting with 36)
-
   imc_access_vlan    = 999
   imc_admin_password = "Cisco123"
   imc_ip_pool_moid = module.imm_pool_mod.ip_pool_moid
@@ -44,20 +32,10 @@ module "intersight_policy_bundle" {
   #Need to create separate IP Pool for Chassis
 
   ntp_servers = ["ca.pool.ntp.org"]
-
+  ntp_timezone = "America/Chicago"
   dns_preferred = "172.22.16.254"
   dns_alternate = "172.22.16.253"
 
-  ntp_timezone = "America/Chicago"
-
-# starting values for wwnn, wwpn-a/b and mac pools (size 255)
-  # wwnn-block   = "20:00:00:CA:FE:00:00:01"
-  # wwpn-a-block = "20:00:00:CA:FE:0A:00:01"
-  # wwpn-b-block = "20:00:00:CA:FE:0B:00:01"
-
-
-#                          01 - 0 is for OFL and 1 is for Pod 1
-#  Need to substitute in Pod ID Variable and not pass starting Blocks
 # sending MOIDs for Identity Pools:  MAC, WWNN, WWPN
   mac_pool_moid = module.imm_pool_mod.mac_pool_moid
   wwnn_pool_moid = module.imm_pool_mod.wwnn_pool_moid
