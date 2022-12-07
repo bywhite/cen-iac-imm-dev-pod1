@@ -9,7 +9,7 @@ module "intersight_policy_bundle" {
   organization    = data.intersight_organization_organization.ofl.id
 
   # every policy created will have this prefix in its name
-  policy_prefix = "dev-ofl-pod1"
+  policy_prefix = "dev-ofl-pod1-bml1"
   description   = "Built by Terraform cen-iac-imm-dev-pod1 code"
 
   # Fabric Interconnect 6454 config specifics
