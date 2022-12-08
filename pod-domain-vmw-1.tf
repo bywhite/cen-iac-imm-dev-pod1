@@ -13,8 +13,8 @@ module "intersight_policy_bundle_vmw_1" {
   description   = "Built by Terraform cen-iac-imm-dev-pod1 code"
 
  # Fabric Interconnect 6536 config specifics
-  server_ports_6536 = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
-  port_channel_6536 = [33, 34]
+  server_ports_6536 = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
+  port_channel_6536 = [31, 32, 33, 34]
   uplink_vlans_6536 = {
     "vlan-998" : 998,
     "vlan-999" : 999
