@@ -19,6 +19,8 @@ module "intersight_policy_bundle_vmw_1" {
     "vlan-998" : 998,
     "vlan-999" : 999
   }
+  allowed_vlans_6536 = "100,101,102,313,314,998-1000"
+
   fc_port_count_6536 = 2
      #For each port_count physical port above, it is broken-out into 4x 32G FC Ports
      #A value of 2 results in 8x 32G FC Port breakouts from ports 35 & 36
