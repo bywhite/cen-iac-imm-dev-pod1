@@ -23,10 +23,6 @@ module "intersight_policy_bundle" {
   #6454 FC ports start at Port 1 up to 16 (FC on left of slider)
 
 
-  imc_access_vlan    = 999
-  imc_admin_password = "Cisco123"
-  imc_ip_pool_moid = module.imm_pool_mod.ip_pool_moid
-
   chassis_imc_access_vlan    = 999
   chassis_imc_ip_pool_moid = module.imm_pool_mod.ip_pool_moid
   #Need to create separate IP Pool for Chassis
@@ -35,13 +31,6 @@ module "intersight_policy_bundle" {
   ntp_timezone = "America/Chicago"
   dns_preferred = "172.22.16.254"
   dns_alternate = "172.22.16.253"
-
-# sending MOIDs for Identity Pools:  MAC, WWNN, WWPN
-  mac_pool_moid = module.imm_pool_mod.mac_pool_moid
-  wwnn_pool_moid = module.imm_pool_mod.wwnn_pool_moid
-  wwpn_pool_a_moid = module.imm_pool_mod.wwpn_pool_a_moid
-  wwpn_pool_b_moid = module.imm_pool_mod.wwpn_pool_b_moid
-
 
   tags = [
     { "key" : "Environment", "value" : "dev-ofl" },
