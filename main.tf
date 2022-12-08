@@ -26,3 +26,5 @@ data "intersight_organization_organization" "ofl" {
     name = "ofl"
 }
 
+# IMM Code Examples Can Be Found at:
+# https://github.com/terraform-cisco-modules/terraform-intersight-imm/tree/master/modules
