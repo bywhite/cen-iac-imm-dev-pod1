@@ -33,9 +33,10 @@ module "intersight_policy_bundle_vmw_1" {
 
   dns_preferred = "172.22.16.254"
   dns_alternate = "172.22.16.253"
-
-  ntp_timezone = "America/Chicago"
-
+  ntp_timezone  = "America/Chicago"
+  snmp_ip       = "10.20.22.22"
+  snmp_password = "Cisco123"
+  
 
   tags = [
     { "key" : "Environment", "value" : "dev-ofl" },
