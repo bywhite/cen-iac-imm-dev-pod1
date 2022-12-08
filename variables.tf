@@ -25,3 +25,7 @@ variable "organization" {
 variable "imc_admin_password" {
     type = string
 }
+variable "snmp_password" {
+    type = string
+    default = "Cisco123"
+}
