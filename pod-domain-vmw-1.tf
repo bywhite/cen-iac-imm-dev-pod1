@@ -23,7 +23,16 @@ module "intersight_policy_bundle_vmw_1" {
      #For each port_count physical port above, it is broken-out into 4x 32G FC Ports
      #A value of 2 results in 8x 32G FC Port breakouts from ports 35 & 36
      # Unified Ports 33-36 (FC ports on right of the slider starting with 36)
-
+  fc_port_channel_6536 = [
+    { "aggport" : 35, "port" : 1 },
+    { "aggport" : 35, "port" : 2 },
+    { "aggport" : 35, "port" : 3 },
+    { "aggport" : 35, "port" : 4 },
+    { "aggport" : 36, "port" : 1 },
+    { "aggport" : 36, "port" : 2 },
+    { "aggport" : 36, "port" : 3 },
+    { "aggport" : 36, "port" : 4 }
+  ]
 
   chassis_imc_access_vlan    = 999
   chassis_imc_ip_pool_moid = module.imm_pool_mod.ip_pool_moid
