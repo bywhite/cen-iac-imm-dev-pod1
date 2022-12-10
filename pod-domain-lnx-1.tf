@@ -95,7 +95,7 @@ module "intersight_policy_bundle_lnx_1" {
   
 
   # Uplink VLANs Allowed List    Example: "5,6,7,8,100-130,998-1011"
-  switch_vlans_6536 = "100,101,102,313,314,997-999"
+  switch_vlans_6536 = "5,10,102,313-314,1000-1111"
 
   uplink_vlans_6536 = {
     "vlan-100" : 100,
