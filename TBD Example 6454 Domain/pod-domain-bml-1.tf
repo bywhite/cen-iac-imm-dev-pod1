@@ -4,7 +4,7 @@
 
 module "intersight_policy_bundle" {
   #source = "github.com/pl247/tf-intersight-policy-bundle"
-  source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods/imm-domain-fabric-module"
+  source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods/tbd-imm-domain-fabric-6454-mod"
   # external sources
   organization    = data.intersight_organization_organization.ofl.id
 
