@@ -97,16 +97,16 @@ module "intersight_policy_bundle_vmw_2" {
   # Uplink VLANs Allowed List    Example: "5,6,7,8,100-130,998-1011"
   switch_vlans_6536 = "100,101,102,313,314,997-999"
 
-  uplink_vlans_6536 = {
-    "vlan-100" : 100,
-    "vlan-101" : 101,
-    "vlan-102" : 102,
-    "vlan-313" : 313,
-    "vlan-314" : 314,
-    "vlan-997" : 997,
-    "vlan-998" : 998,
-    "vlan-999" : 999
-  }
+  # uplink_vlans_6536 = {
+  #   "vlan-100" : 100,
+  #   "vlan-101" : 101,
+  #   "vlan-102" : 102,
+  #   "vlan-313" : 313,
+  #   "vlan-314" : 314,
+  #   "vlan-997" : 997,
+  #   "vlan-998" : 998,
+  #   "vlan-999" : 999
+  # }
 
 # The Pools for the Pod must be created before this domain module executes
   depends_on = [
