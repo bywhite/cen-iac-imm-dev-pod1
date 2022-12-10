@@ -1,4 +1,9 @@
+# Output as needed to reveal Objects created
 
+output "pod_id" {
+    value = local.pod_id
+    description = "Pod ID is used in all identifiers: MAC, WWNN, WWPN, UUID"
+}
 
 # print default org moid
 output "org_ofl_moid" {
@@ -7,9 +12,13 @@ output "org_ofl_moid" {
     description = "moid of target Organization in Intersight"
 }
 
-output "pod_id" {
-    value = local.pod_id
-    description = "Pod ID is used in all identifiers: MAC, WWNN, WWPN, UUID"
+output "domain_vmw_1_name" {
+    value = module.intersight_policy_bundle_vmw_1.fi6536_cluster_profile.name
+    description = "UCS Domain VMW-1 object name"
+}
+output "domain_vmw_1_moid" {
+    value = module.intersight_policy_bundle_vmw_1.fi6536_cluster_profile.moid
+    description = "UCS Domain VMW-1 moid"
 }
 
 output "ofl_pod1_ip_pool_chassis_moid" {
