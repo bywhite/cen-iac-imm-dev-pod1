@@ -21,6 +21,10 @@ output "domain_vmw_1_moid" {
     description = "UCS Domain VMW-1 moid"
 }
 
+output "vmw_1_chassis_9508_profiles" {
+    value = module.intersight_policy_bundle_vmw_1.chassis_9508_profiles
+}
+
 output "ofl_pod1_ip_pool_chassis_moid" {
     value = module.imm_pool_mod.ip_pool_chassis_moid
     description = "This is the moid of the Pod wide IP_Pool for Chassis in-band IP's"
