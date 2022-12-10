@@ -2,7 +2,7 @@
 # Modules are used with supplied values to define the desired configuration of the domain infrastructure
 
 
-module "intersight_policy_bundle_vmw_1" {
+module "intersight_policy_bundle_lnx_1" {
   #source = "github.com/pl247/tf-intersight-policy-bundle"
   source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods/imm-domain-fabric-6536"
 
@@ -18,14 +18,14 @@ module "intersight_policy_bundle_vmw_1" {
 # -----------------------------------------------------------------------------
 
   # every policy created will have this prefix in its name
-  policy_prefix = "ofl-dev-pod1-vmw1"
+  policy_prefix = "ofl-dev-pod1-lnx1"
   description   = "built by Terraform cen-iac-imm-dev-pod1 code"
 
   #Every object created in the domain will have these tags
   tags = [
     { "key" : "environment", "value" : "ofl-dev" },
     { "key" : "orchestrator", "value" : "Terraform" },
-    { "key" : "domain", "value" : "ofl-dev-pod1-vmw1" }
+    { "key" : "domain", "value" : "ofl-dev-pod1-lnx1" }
   ]
 
 # =============================================================================
