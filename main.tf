@@ -22,6 +22,7 @@ provider "intersight" {
     endpoint = var.endpoint
 }
 
+#Organizations should be created manually in Intersight and changed below for each Data Center
 data "intersight_organization_organization" "ofl" {
     name = "ofl"
 }
