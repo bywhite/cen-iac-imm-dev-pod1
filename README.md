@@ -11,6 +11,7 @@ The Fabric Switch profiles and policies are functional.
 The chassis profiles are functional. Chassis profiles are created with the Domain Policy
 The Pod pools are functional and are created first.
 All that was required to create a new domain was to copy pod-domain-vmw-1.tf to a new file and change 4 identifiers at the top of the module (ofl-dev-vmw1 >> ofl-dev-vmw2 for example)
+
 Next Steps are to create the Server Profile Templates and Profiles
 Lastly as equipment becomes available, develop the association of profiles with physical equipment
 
