@@ -47,6 +47,10 @@ output "vmw_1_chassis_9508_profile_names" {
     value       = module.intersight_policy_bundle_vmw_1.chassis_9508_profile_names
     description = "Chassis moids for cluster"
 }
+output "fabric_vlan_list_moid" {
+    value       = module.intersight_policy_bundle_vmw_1.fabric_vlan_list_moid
+    description = "Moid for fabric_vlan pairs-list of VLAN-Name: VLAN-ID"
+}
 
 
 output "ofl_pod1_ip_pool_chassis_moid" {
