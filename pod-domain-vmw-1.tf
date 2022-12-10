@@ -55,7 +55,7 @@ module "intersight_policy_bundle_vmw_1" {
   ]
 
   # VSAN Name Prefix is prepended to the VSAN number
-    vsan_name_prefix = "VSAN-"
+    vsan_name_prefix = "vsan-"
 
 # VSAN Trunking is enabled by default. One or more VSANs are required for each FI
   # Fabric A VSANs
@@ -74,7 +74,7 @@ module "intersight_policy_bundle_vmw_1" {
 # Chassis
 # -----------------------------------------------------------------------------
 
-  chassis_9508_count = 5
+  chassis_9508_count = 15
   chassis_imc_access_vlan    = 999
   chassis_imc_ip_pool_moid = module.imm_pool_mod.ip_pool_moid
   # Chassis requires In-Band IP's Only  (ie must be a VLAN trunked to FI's)
@@ -86,23 +86,30 @@ module "intersight_policy_bundle_vmw_1" {
   ntp_servers = ["ca.pool.ntp.org"]
   ntp_timezone  = "America/Chicago"
 
-  dns_preferred = "172.22.16.254"
-  dns_alternate = "172.22.16.253"
+  dns_preferred = "8.8.8.8"
+  dns_alternate = "8.8.4.4"
 
-  snmp_ip       = "10.20.22.22"
+  snmp_ip       = "127.0.0.1"
   snmp_password = "Cisco123"
   
+
+  # Uplink VLANs Allowed List    Example: "5,6,7,8,100-130,998-1011"
+  switch_vlans_6536 = "100,101,102,313,314,997-999"
+
   uplink_vlans_6536 = {
+    "vlan-100" : 100,
+    "vlan-101" : 101,
+    "vlan-102" : 102,
+    "vlan-313" : 313,
+    "vlan-314" : 314,
+    "vlan-997" : 997,
     "vlan-998" : 998,
     "vlan-999" : 999
   }
-  # Uplink VLANs Allowed List    Example: "5,6,7,8,100-130,998-1011"
-  switch_vlans_6536 = "100,101,102,313,314,998-1000"
-
 
 # The Pools for the Pod must be created before this domain module executes
-depends_on = [
-  module.imm_pool_mod
+  depends_on = [
+    module.imm_pool_mod
 ]
 
 }
