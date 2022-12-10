@@ -21,8 +21,8 @@ output "domain_vmw_1_moid" {
     description = "UCS Domain VMW-1 moid"
 }
 
-output "vmw_1_chassis_9508_profiles" {
-    value = module.intersight_policy_bundle_vmw_1.chassis_9508_profiles
+output "vmw_1_chassis_9508_profile_moids" {
+    value = module.intersight_policy_bundle_vmw_1.chassis_9508_profile_moids
 }
 
 output "ofl_pod1_ip_pool_chassis_moid" {
