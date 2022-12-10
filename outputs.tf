@@ -1,15 +1,15 @@
 # Output as needed to reveal Objects created
 
-output "pod_id" {
-    value       = local.pod_id
-    description = "Pod ID is used in all identifiers: MAC, WWNN, WWPN, UUID"
-}
 
-# print default org moid
 output "org_ofl_moid" {
     #value = data.intersight_organization_organization.ofl.moid
     value       = local.org_moid
     description = "Organization in Intersight for Pod objects"
+}
+
+output "pod_id" {
+    value       = local.pod_id
+    description = "Pod ID is used in all identifiers: MAC, WWNN, WWPN, UUID"
 }
 
 output "domain_vmw_1_name" {
@@ -17,15 +17,15 @@ output "domain_vmw_1_name" {
     description = "IMM Domain Cluster VMW-1 TF object name"
 }
 
-output "vmw_1_chassis_count" {
-    value       = module.intersight_policy_bundle_vmw_1.chassis_count
-    description = "How many chassis were made by module"
-}
+# output "vmw_1_chassis_count" {
+#     value       = module.intersight_policy_bundle_vmw_1.chassis_count
+#     description = "How many chassis were made by module"
+# }
 
-output "vmw_1_chassis_index" {
-    value       = module.intersight_policy_bundle_vmw_1.chassis_index
-    description = "How many chassis were made by module"
-}
+# output "vmw_1_chassis_index" {
+#     value       = module.intersight_policy_bundle_vmw_1.chassis_index
+#     description = "How many chassis were made by module"
+# }
 
 
 output "domain_vmw_1_profile_name" {
@@ -38,10 +38,10 @@ output "domain_vmw_1_moid" {
     description = "IMM Domain Cluster VMW-1 moid"
 }
 
-output "vmw_1_chassis_9508_profile_moids" {
-    value       = module.intersight_policy_bundle_vmw_1.chassis_9508_profile_moids
-    description = "Chassis moids for cluster"
-}
+# output "vmw_1_chassis_9508_profile_moids" {
+#     value       = module.intersight_policy_bundle_vmw_1.chassis_9508_profile_moids
+#     description = "Chassis moids for cluster"
+# }
 
 output "ofl_pod1_ip_pool_chassis_moid" {
     value       = module.imm_pool_mod.ip_pool_chassis_moid
