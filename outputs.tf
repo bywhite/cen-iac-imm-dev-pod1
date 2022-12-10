@@ -17,6 +17,11 @@ output "domain_vmw_1_name" {
     description = "IMM Domain Cluster VMW-1 TF object name"
 }
 
+output "vmw_1_chassis_count" {
+    value       = module.intersight_policy_bundle_vmw_1.chassis_count
+    description = "How many chassis were made by module"
+}
+
 output "domain_vmw_1_profile_name" {
     value       = module.intersight_policy_bundle_vmw_1.fi6536_cluster_profile_name
     description = "IMM Domain Cluster VMW-1 TF object name"
