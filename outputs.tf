@@ -13,11 +13,11 @@ output "org_ofl_moid" {
 }
 
 output "domain_vmw_1_name" {
-    value = module.intersight_policy_bundle_vmw_1.fi6536_cluster_profile.name
+    value = module.intersight_policy_bundle_vmw_1.fi6536_cluster_profile_name
     description = "UCS Domain VMW-1 object name"
 }
 output "domain_vmw_1_moid" {
-    value = module.intersight_policy_bundle_vmw_1.fi6536_cluster_profile.moid
+    value = module.intersight_policy_bundle_vmw_1.fi6536_cluster_profile_moid
     description = "UCS Domain VMW-1 moid"
 }
 
