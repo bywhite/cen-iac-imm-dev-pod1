@@ -37,6 +37,7 @@ module "intersight_policy_bundle_vmw_1" {
 
   # Number of physical ethernet ports to be used for 25G 4x breakout ports to chassis
   eth_breakout_count = 2
+  eth_breakout_start = 1
 
   # FI physical port numbers to be attached to chassis 
   server_ports_6536 = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
