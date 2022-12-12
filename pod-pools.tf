@@ -23,15 +23,14 @@
 # }
 
 module "imm_pool_mod" {
-  source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods/pod-pools-mod"
-  #source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods/imm-domain-fabric-module"
+  source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods/imm-pod-pools-mod"
   
   # external sources
   organization    = data.intersight_organization_organization.ofl.id
 
   # every policy created will have this prefix in its name
   policy_prefix = "dev-ofl-pod1"
-  description   = "Built by Terraform repo: cen-iac-imm-dev-pod1  module: pod-pools-mod"
+  description   = "Built by Terraform repo: cen-iac-imm-dev-pod1  module: imm-pod-pools-mod"
 
   ip_size     = "500"
   ip_start = "10.10.10.10"
