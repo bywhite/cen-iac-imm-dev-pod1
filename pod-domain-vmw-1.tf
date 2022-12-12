@@ -1,7 +1,7 @@
 # # =============================================================================
 # # This defines the desired configuration of the dev-ofl-pod1-vmw-1 IMM domain
 # # 
-# # Builds: Domain Cluster Profile, Switch & Chassis Profiles & their Policies
+# # Builds: Domain Cluster, Switch, and Chassis Profiles & their Policies
 # # -----------------------------------------------------------------------------
 
 
@@ -22,7 +22,7 @@ module "intersight_policy_bundle_vmw_1" {
 
   # every policy created will have this prefix in its name
   policy_prefix = "ofl-dev-pod1-vmw1"
-  description   = "built by Terraform cen-iac-imm-dev-pod1 code"
+  description   = "built by Terraform cen-iac-imm-dev-pod1"
 
   #Every object created in the domain will have these tags
   tags = [

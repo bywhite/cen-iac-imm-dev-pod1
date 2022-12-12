@@ -1,3 +1,13 @@
+# ==========================================================================================
+# The purpose of this module is to create a Pod of Multiple IMM Domains
+# The Pod is similar to a VPC in that it has shared networks & storage
+# The pod uses a common set of large pools of identifiers (UUID, MAC, WWNN, WWPN, IMC-IP's)
+#     - pod-domain config files define each IMM domain
+#     - pod-pools config file defines the pod-wide identity pools
+#     - pod-srv-template config files create template based server profiles
+# ------------------------------------------------------------------------------------------
+
+
 terraform {
 
   backend "remote" {
