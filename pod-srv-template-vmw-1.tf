@@ -38,12 +38,15 @@ module "imm_pod_server_1" {
   wwpn_pool_b_moid  = module.imm_pool_mod.wwpn_pool_b_moid
   uuid_pool_moid    = module.imm_pool_mod.uuid_pool_moid
 
+# Number of servers to create from template
+  server_count = 4
+
 # Define port names and their vlan assignments - dependent on target IMM Domain Eth-VLAN Uplinks
   server_nic_vlans = [
     { "eth0" : "42", "native" : "42" },
     { "eth1" : "42", "native" : "42" },
-    { "eth2" : "50,55,1000-1011", "native" : "" },
-    { "eth3" : "50,55,1000-1011", "native" : "" }
+    { "eth2" : "42,43,1000-1001", "native" : "" },
+    { "eth3" : "42,43,1000-1001", "native" : "" }
   ]
 
   imc_access_vlan    = 999
