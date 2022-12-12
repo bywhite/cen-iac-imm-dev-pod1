@@ -2,6 +2,7 @@
 # # This defines the desired configuration of the dev-ofl-pod1-vmw-1 IMM domain
 # # 
 # # Builds: Domain Cluster, Switch, and Chassis Profiles & their Policies
+# #         configured for 6536 FI and 9508 chassis (May work with 5108 chassis)
 # # -----------------------------------------------------------------------------
 
 
