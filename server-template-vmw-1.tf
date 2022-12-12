@@ -34,8 +34,8 @@ module "imm_pod_server_1" {
   mac_pool_moid     = module.imm_pool_mod.mac_pool_moid
   imc_ip_pool_moid  = module.imm_pool_mod.ip_pool_moid
   wwnn_pool_moid    = module.imm_pool_mod.wwnn_pool_moid
-  wwpn_a_pool_moid  = module.imm_pool_mod.wwpn_pool_a_moid
-  wwpn_b_pool_moid  = module.imm_pool_mod.wwpn_pool_b_moid
+  wwpn_pool_a_moid  = module.imm_pool_mod.wwpn_pool_a_moid
+  wwpn_pool_b_moid  = module.imm_pool_mod.wwpn_pool_b_moid
   uuid_pool_moid    = module.imm_pool_mod.uuid_pool_moid
 
 # Define port names and their vlan assignments - dependent on target IMM Domain Eth-VLAN Uplinks
