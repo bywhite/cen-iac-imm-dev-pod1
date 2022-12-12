@@ -82,3 +82,10 @@ output "ofl_pod1_uuid_pool_moid" {
     value       = module.imm_pool_mod.uuid_pool_moid
     description = "UUID Pool moid for cluster"
 }
+
+output "server_profile_template_moid" {
+    value       = module.imm_pod_server_1.server_profile_template_moid
+}
+output "server_profile_template_name" {
+    value       = module.imm_pod_server_1.server_profile_template_name
+}
