@@ -1,5 +1,8 @@
-# This defines the desired configuration of the dev-ofl-pod1-vmw-1 IMM domain
-# Modules are used with supplied values to define the desired configuration of the domain infrastructure
+# # =============================================================================
+# # This defines the desired configuration of the dev-ofl-pod1-vmw-1 IMM domain
+# # 
+# # Builds: Domain Cluster Profile, Switch & Chassis Profiles & their Policies
+# # -----------------------------------------------------------------------------
 
 
 module "intersight_policy_bundle_vmw_1" {
