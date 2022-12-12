@@ -46,7 +46,7 @@ module "imm_pod_server_1" {
     { "eth3" : "50,55,1000-1011", "native" : "" }
   ]
 
-  server_imc_access_vlan    = 999
+  imc_access_vlan    = 999
   server_imc_admin_password = "Cisco123"
  # Need to pass this as a variable from TFCB Workspace
 
