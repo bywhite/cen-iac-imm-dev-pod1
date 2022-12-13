@@ -54,6 +54,11 @@ module "imm_pod_server_vmw_1" {
   server_imc_admin_password = "Cisco123"
  # Need to pass this as a variable from TFCB Workspace
 
+ # SNMP variables
+  snmp_ip       = "127.0.0.1"
+  snmp_password = "Cisco123"
+  
+
 # The Pools for the Pod must be created before this domain fabric module executes
   depends_on = [
     module.imm_pool_mod
