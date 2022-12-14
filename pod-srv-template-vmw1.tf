@@ -42,13 +42,26 @@ module "imm_pod_server_vmw_1" {
 # Number of servers to create from template
   server_count = 4
 
-# Define port names and their vlan assignments - dependent on target IMM Domain Eth-VLAN Uplinks
-  server_nic_vlans = [
-    { "eth0" : "42", "native" : "42" },
-    { "eth1" : "42", "native" : "42" },
-    { "eth2" : "42,43,1000-1001", "native" : "" },
-    { "eth3" : "42,43,1000-1001", "native" : "" }
-  ]
+# # Define port names and their vlan assignments - dependent on target IMM Domain Eth-VLAN Uplinks
+#   server_nic_vlans = [
+#     { "eth0" : "42", "native" : "42" },
+#     { "eth1" : "42", "native" : "42" },
+#     { "eth2" : "42,43,1000-1001", "native" : "" },
+#     { "eth3" : "42,43,1000-1001", "native" : "" }
+#   ]
+
+  "vnic_vlan_sets" = {
+    "eth0"  = {
+      vnic_name  = "eth0"
+      native_vlan = 44
+      vlan_range  = "44, 50, 1000-1011"
+    }
+    "eth1"  = {
+      vnic_name   = "eth1"
+      native_vlan = "44"
+      vlan_range  = "44, 50, 1000-1011"
+    }
+  }
 
   imc_access_vlan    = 999
   server_imc_admin_password = "Cisco123"  #Recommend adding var to TFCB Workspace
