@@ -5,7 +5,7 @@
 # # -----------------------------------------------------------------------------
 
 
-module "imm_pod_server_1" {
+module "imm_pod_srv1" {
   source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods/imm-pod-servers-mod"
 
 # =============================================================================
@@ -20,7 +20,7 @@ module "imm_pod_server_1" {
 # -----------------------------------------------------------------------------
 
   # every policy created will have this prefix in its name
-  server_policy_prefix = "ofl-dev-pod1-srv"
+  server_policy_prefix = "ofl-dev-pod1-srv1"
   description   = "built by Terraform cen-iac-imm-dev-pod1 code"
 
   #Every object created in the domain will have these tags
