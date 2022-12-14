@@ -26,7 +26,7 @@ module "imm_pod_server_vmw_1" {
   #Every object created in the domain will have these tags
   tags = [
     { "key" : "environment", "value" : "ofl-dev" },
-    { "key" : "orchestrator", "value" : "Terraform" }
+    { "key" : "orchestrator", "value" : "Terraform" },
     { "key" : "pod", "value" : "ofl-dev-pod1" }
   ]
 
