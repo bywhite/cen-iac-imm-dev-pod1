@@ -47,7 +47,7 @@ module "imm_pod_server_vmw_1" {
 #     { "eth0" : "42", "native" : "42" },
 #     { "eth1" : "42", "native" : "42" },
 #     { "eth2" : "42,43,1000-1001", "native" : "" },
-#     { "eth3" : "42,43,1000-1001", "native" : "" }
+#     { "eth3" : "42,43,1000-1001", "native" : "" }  ## No Spaces between numbers
 #   ]
 
 vnic_vlan_sets = {
