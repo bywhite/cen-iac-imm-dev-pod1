@@ -26,8 +26,8 @@ module "imm_pod_server_vmw_1" {
   #Every object created in the domain will have these tags
   tags = [
     { "key" : "environment", "value" : "ofl-dev" },
-    { "key" : "orchestrator", "value" : "Terraform" },
-    { "key" : "domain", "value" : "ofl-dev-pod1-vmw1" }
+    { "key" : "orchestrator", "value" : "Terraform" }
+    { "key" : "pod", "value" : "ofl-dev-pod1" }
   ]
 
 # Pass pools created by pod for servers

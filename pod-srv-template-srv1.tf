@@ -27,7 +27,7 @@ module "imm_pod_srv1" {
   tags = [
     { "key" : "environment", "value" : "ofl-dev" },
     { "key" : "orchestrator", "value" : "Terraform" },
-    { "key" : "domain", "value" : "ofl-dev-pod1-vmw1" }
+    { "key" : "pod", "value" : "ofl-dev-pod1" }
   ]
 
 # Pass pools created by pod for servers

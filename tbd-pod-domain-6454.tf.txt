@@ -37,7 +37,9 @@ module "intersight_policy_bundle" {
 
   tags = [
     { "key" : "Environment", "value" : "dev-ofl" },
-    { "key" : "Orchestrator", "value" : "Terraform" }
+    { "key" : "Orchestrator", "value" : "Terraform" },
+    { "key" : "pod", "value" : "ofl-dev-pod1" },
+    { "key" : "domain", "value" : "ofl-dev-pod1-dom6454" }
   ]
 
 depends_on = [
