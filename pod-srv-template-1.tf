@@ -6,7 +6,7 @@
 
 
 module "imm_pod_server_vmw_1" {
-  source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods/imm-pod-servers-vmw1-mod"
+  source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods/imm-pod-servers-mod"
 
 # =============================================================================
 # Org external references
