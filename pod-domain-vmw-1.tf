@@ -29,7 +29,7 @@ module "intersight_policy_bundle_vmw_1" {
   tags = [
     { "key" : "environment", "value" : "ofl-dev" },
     { "key" : "orchestrator", "value" : "Terraform" },
-    { "key" : "pod", "value" : "ofl-dev-pod1" }
+    { "key" : "pod", "value" : "ofl-dev-pod1" },
     { "key" : "domain", "value" : "ofl-dev-pod1-vmw1" }
   ]
 
