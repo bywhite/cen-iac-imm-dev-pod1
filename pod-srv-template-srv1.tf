@@ -5,8 +5,8 @@
 # # -----------------------------------------------------------------------------
 
 
-module "imm_pod_server_vmw_1" {
-  source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods/imm-pod-servers-vmw1-mod"
+module "imm_pod_server_1" {
+  source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods/imm-pod-servers-mod"
 
 # =============================================================================
 # Org external references
@@ -20,7 +20,7 @@ module "imm_pod_server_vmw_1" {
 # -----------------------------------------------------------------------------
 
   # every policy created will have this prefix in its name
-  server_policy_prefix = "ofl-dev-pod1-vmw1-esx"
+  server_policy_prefix = "ofl-dev-pod1-srv"
   description   = "built by Terraform cen-iac-imm-dev-pod1 code"
 
   #Every object created in the domain will have these tags
