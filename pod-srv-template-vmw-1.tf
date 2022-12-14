@@ -37,7 +37,7 @@ module "imm_pod_server_vmw_1" {
   wwpn_pool_a_moid  = module.imm_pool_mod.wwpn_pool_a_moid
   wwpn_pool_b_moid  = module.imm_pool_mod.wwpn_pool_b_moid
   server_uuid_pool_moid    = module.imm_pool_mod.uuid_pool_moid
-  uuid_pool_name    = module.imm_pool_mod.uuid_pool_name
+  server_uuid_pool_name    = module.imm_pool_mod.uuid_pool_name
 
 # Number of servers to create from template
   server_count = 4
