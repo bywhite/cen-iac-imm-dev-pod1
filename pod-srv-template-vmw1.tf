@@ -50,7 +50,7 @@ module "imm_pod_server_vmw_1" {
 #     { "eth3" : "42,43,1000-1001", "native" : "" }
 #   ]
 
-  "vnic_vlan_sets" = {
+vnic_vlan_sets = {
     "eth0"  = {
       vnic_name  = "eth0"
       native_vlan = 44
