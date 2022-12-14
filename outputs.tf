@@ -90,5 +90,6 @@ output "ofl_pod1_uuid_pool_moid" {
 #     value       = module.imm_pod_server_vmw_1.server_profile_template_name
 # }
 output "server_profile_template_vmw_1_interfaces {
-      value       = module.imm_pod_server_vmw_1.server_interfaces
+    value       = module.imm_pod_server_vmw_1.server_interfaces
+    description = "List of server template interfaces"
 }"
