@@ -53,15 +53,15 @@ module "imm_pod_server_vmw_1" {
 vnic_vlan_sets = {
     "eth0"  = {           # Needs to match vnic_name
       vnic_name  = "eth0"
-      native_vlan = 44
-      vlan_range  = "44,50,1000-1011"
+      native_vlan = 45
+      vlan_range  = "45,50,1000-1011"
       switch_id   = "A"
     }
     "eth1"  = {
       vnic_name   = "eth1"
-      native_vlan = "44"
-      vlan_range  = "44,50,1000-1011"
-      switch_id   = "A"
+      native_vlan = "45"
+      vlan_range  = "45,50,1000-1011"
+      switch_id   = "B"
     }
   }
 
