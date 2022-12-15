@@ -5,8 +5,8 @@
 # # -----------------------------------------------------------------------------
 
 
-module "imm_pod_srv1" {
-  source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods/imm-pod-servers-mod"
+module "imm_pod_lnx_srv1" {
+  source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods/imm-pod-servers-lnx1-mod"
 
 # =============================================================================
 # Org external references
@@ -20,14 +20,15 @@ module "imm_pod_srv1" {
 # -----------------------------------------------------------------------------
 
   # every policy created will have this prefix in its name
-  server_policy_prefix = "ofl-dev-pod1-bml-srv1"
+  server_policy_prefix = "ofl-dev-pod1-lnx1-srv1"
   description   = "built by Terraform cen-iac-imm-dev-pod1 code"
 
   #Every object created in the domain will have these tags
   tags = [
     { "key" : "environment", "value" : "ofl-dev" },
     { "key" : "orchestrator", "value" : "Terraform" },
-    { "key" : "pod", "value" : "ofl-dev-pod1" }
+    { "key" : "pod", "value" : "ofl-dev-pod1" },
+    { "key" : "ServerGroup", "value" : "ofl-dev-pod1-lnx1-srv1" }
   ]
 
 # Pass pools created by pod for servers
@@ -42,7 +43,7 @@ module "imm_pod_srv1" {
 # Number of servers to create from template
   server_count = 4
 
-# Define port names and their vlan assignments - dependent on target IMM Domain Eth-VLAN Uplinks
+# Define port names and their vlan assignments - dependent on target IMM Domain Eth-VLAN Uplinks  NO Spaces in VLAN List
   server_nic_vlans = [
     { "eth0" : "42", "native" : "42" },
     { "eth1" : "42", "native" : "42" },
