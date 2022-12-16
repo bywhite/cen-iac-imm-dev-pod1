@@ -26,7 +26,7 @@ module "server_template_vmw1" {                      # <<-- Change to duplicate
 
   # prefix for all created policies
   server_policy_prefix = "ofl-dev-pod1-vmw1"         # <<-- Change to duplicate
-  description   = "built by Terraform cen-iac-imm-dev-pod1 code. new description"
+  description   = "built by Terraform cen-iac-imm-dev-pod1 code"
 
   #Every object created in the domain will have these tags
   tags = [
@@ -46,7 +46,7 @@ module "server_template_vmw1" {                      # <<-- Change to duplicate
   server_uuid_pool_name    = module.imm_pool_mod.uuid_pool_name
 
 # Number of servers to create from template
-  server_count = 2
+  server_count = 0
 
 # # Define port names and their vlan assignments - dependent on target IMM Domain Eth-VLAN Uplinks
 #   server_nic_vlans = [
