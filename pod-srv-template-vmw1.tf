@@ -5,6 +5,7 @@
 # # To Duplicate Template:
 # #    * Change module: "server_template_vmw1"  >> "server_template_vmw2"
 # #    * Change server_policy_prefix: "ofl-dev-pod1-vmw1" > "ofl-dev-pod1-vmw2"
+# #    * Change Tag value for "ServerGroup" to include new name
 # # -----------------------------------------------------------------------------
 
 
@@ -31,7 +32,8 @@ module "server_template_vmw1" {                      # <<-- Change to duplicate
   tags = [
     { "key" : "environment", "value" : "ofl-dev" },
     { "key" : "orchestrator", "value" : "Terraform" },
-    { "key" : "pod", "value" : "ofl-dev-pod1" }
+    { "key" : "pod", "value" : "ofl-dev-pod1" },
+    { "key" : "ServerGroup", "value" : "ofl-dev-pod1-vmw1-srvgroup" } # <-- Change
   ]
 
 # Pass pools created by pod for servers
