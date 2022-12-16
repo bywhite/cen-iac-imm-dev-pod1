@@ -1,12 +1,16 @@
 # # =============================================================================
 # # This defines a single Server Profile Template using a remote module
-# # Builds: Server Profile Template and spawns Server Profiles
-# # Each server profile template will have its own creation file (like this one).
+# # Builds: Server Profile Template and associated Server Resource Pool
+# # Creates: Server Profiles by "Count" ("Resource Pool" not enabled yet)
+# # To Duplicate Template:
+# #    * Change module: "server_template_vmw1"  >> "server_template_vmw2"
+# #    * Change server_policy_prefix: "ofl-dev-pod1-vmw1" > "ofl-dev-pod1-vmw2"
 # # -----------------------------------------------------------------------------
 
 
-module "imm_pod_server_vmw_1" {
+module "server_template_vmw1" {                      # <<-- Change to duplicate
   source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods/imm-pod-servers-vmw1-mod"
+            # remote module name above should not be changed when duplicating
 
 # =============================================================================
 # Org external references
@@ -19,8 +23,8 @@ module "imm_pod_server_vmw_1" {
 # Naming and tagging
 # -----------------------------------------------------------------------------
 
-  # every policy created will have this prefix in its name
-  server_policy_prefix = "ofl-dev-pod1-vmw-srv1"
+  # prefix for all created policies
+  server_policy_prefix = "ofl-dev-pod1-vmw1"         # <<-- Change to duplicate
   description   = "built by Terraform cen-iac-imm-dev-pod1 code"
 
   #Every object created in the domain will have these tags
