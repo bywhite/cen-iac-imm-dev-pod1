@@ -1,11 +1,13 @@
 # # =============================================================================
 # # This defines a single Server Profile Template using a remote module
-# # Builds: Server Profile Template and spawns Server Profiles
-# # Each server profile template will have its own creation file (like this one).
+# # Builds: Server Profile Template and associated Server Resource Pool
+# # Creates: Server Profiles by "Count" ("Resource Pool" not enabled yet)
+# # To Duplicate Template:
+# #    * Change module: "server_template_lnx1"  >> "server_template_vlnx2"
+# #    * Change server_policy_prefix: "ofl-dev-pod1-lnx1" > "ofl-dev-pod1-lnx2"
 # # -----------------------------------------------------------------------------
 
-
-module "imm_pod_lnx_srv1" {
+module "server_template_lnx1" {     # <-- Change
   source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods/imm-pod-servers-lnx1-mod"
 
 # =============================================================================
@@ -20,7 +22,7 @@ module "imm_pod_lnx_srv1" {
 # -----------------------------------------------------------------------------
 
   # every policy created will have this prefix in its name
-  server_policy_prefix = "ofl-dev-pod1-lnx1-srv1"
+  server_policy_prefix = "ofl-dev-pod1-lnx1"                    # <-- Change
   description   = "built by Terraform cen-iac-imm-dev-pod1 code"
 
   #Every object created in the domain will have these tags
@@ -28,7 +30,7 @@ module "imm_pod_lnx_srv1" {
     { "key" : "environment", "value" : "ofl-dev" },
     { "key" : "orchestrator", "value" : "Terraform" },
     { "key" : "pod", "value" : "ofl-dev-pod1" },
-    { "key" : "ServerGroup", "value" : "ofl-dev-pod1-lnx1-srv1" }
+    { "key" : "ServerGroup", "value" : "ofl-dev-pod1-lnx1-srvgroup" } # <-- Change
   ]
 
 # Pass pools created by pod for servers
