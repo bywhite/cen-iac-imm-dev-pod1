@@ -46,7 +46,7 @@ module "server_template_vmw1" {                      # <<-- Change to duplicate
   server_uuid_pool_name    = module.imm_pool_mod.uuid_pool_name
 
 # Number of servers to create from template
-  server_count = 4
+  server_count = 0
 
 # # Define port names and their vlan assignments - dependent on target IMM Domain Eth-VLAN Uplinks
 #   server_nic_vlans = [
