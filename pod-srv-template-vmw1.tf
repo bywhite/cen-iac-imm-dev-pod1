@@ -26,7 +26,7 @@ module "server_template_vmw1" {                      # <<-- Change to duplicate
 
   # prefix for all created policies
   server_policy_prefix = "ofl-dev-pod1-vmw1"         # <<-- Change to duplicate
-  description   = "built by Terraform cen-iac-imm-dev-pod1 code"
+  description   = "built by Terraform cen-iac-imm-dev-pod1 code."
 
   #Every object created in the domain will have these tags
   tags = [
