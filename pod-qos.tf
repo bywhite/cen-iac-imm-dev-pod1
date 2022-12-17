@@ -13,7 +13,7 @@ resource "intersight_fabric_system_qos_policy" "pod_qos1" {
   name        = "${local.pod_policy_prefix}-pod-qos-policy1"
   description = "Common QoS - CoS Definition for the Pod"
   organization {
-    moid        = var.organization
+    moid        = local.org_moid
     object_type = "organization.Organization"
   }
   classes {
@@ -103,7 +103,7 @@ resource "intersight_vnic_eth_qos_policy" "pod_qos_besteffort" {
   priority       = "Best Effort"
   trust_host_cos = false
   organization {
-    moid = var.organization
+    moid = local.org_moid
   }
 }
 
@@ -117,7 +117,7 @@ resource "intersight_vnic_eth_qos_policy" "pod_qos_bronze" {
   priority       = "Bronze"
   trust_host_cos = false
   organization {
-    moid = var.organization
+    moid = local.org_moid
   }
 }
 
@@ -131,10 +131,9 @@ resource "intersight_vnic_eth_qos_policy" "vnic_qos_silver" {
   priority       = "Silver"
   trust_host_cos = false
   organization {
-    moid = var.organization
+    moid = local.org_moid
   }
 }
-
 
 resource "intersight_vnic_eth_qos_policy" "vnic_qos_gold" {
   name           = "${local.pod_policy_prefix}-qos-gold"
@@ -146,12 +145,9 @@ resource "intersight_vnic_eth_qos_policy" "vnic_qos_gold" {
   priority       = "Gold"
   trust_host_cos = false
   organization {
-    moid = var.organization
+    moid = local.org_moid
   }
 }
-
-
-
 
 
 resource "intersight_vnic_fc_qos_policy" "pod_qos_fc" {
@@ -163,6 +159,6 @@ resource "intersight_vnic_fc_qos_policy" "pod_qos_fc" {
   max_data_field_size = 2112
   organization {
     object_type = "organization.Organization"
-    moid        = var.organization
+    moid        = local.org_moid
   }
 }
