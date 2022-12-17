@@ -93,13 +93,13 @@ module "server_template_vmw2" {                      # <<-- Change to duplicate
       vhba_name = "fc0"
       vsan_id   = 100
       switch_id = "A"
-      pci_order = 2
+      pci_order = 4
     }
     "fc1"  = {
       vvhba_name = "fc1"
       vsan_id    = 200
       switch_id   = "B"
-      pci_order  = 3
+      pci_order  = 5
     }
   }
 
