@@ -88,7 +88,7 @@ module "server_template_vmw2" {                      # <<-- Change to duplicate
     }
   }
 
-  vhba_vsan_sets {
+  vhba_vsan_sets = {
     "fc0" = {
       vhba_name = "fc0"
       vsan_id   = 100
