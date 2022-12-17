@@ -57,20 +57,33 @@ module "server_template_vmw2" {                      # <<-- Change to duplicate
 # Server Networking Configurations
 # -----------------------------------------------------------------------------
 
-vnic_vlan_sets = {
+  vnic_vlan_sets = {
     "eth0"  = {           # Needs to match vnic_name
       vnic_name  = "eth0"
-      native_vlan = 45
-      vlan_range  = "45,50,1000-1011"
+      native_vlan = "45"
+      vlan_range  = "45"
       switch_id   = "A"
     }
     "eth1"  = {
+      vnic_name   = "eth1"
+      native_vlan = "45"
+      vlan_range  = "45"
+      switch_id   = "B"
+    }
+   "eth2"  = {           # Needs to match vnic_name
+      vnic_name  = "eth0"
+      native_vlan = "45"
+      vlan_range  = "45,50,1000-1011"
+      switch_id   = "A"
+    }
+    "eth3"  = {
       vnic_name   = "eth1"
       native_vlan = "45"
       vlan_range  = "45,50,1000-1011"
       switch_id   = "B"
     }
   }
+
 
   imc_access_vlan    = 999
   server_imc_admin_password = "Cisco123"  #Recommend adding var to TFCB Workspace
@@ -92,6 +105,6 @@ vnic_vlan_sets = {
 # The Pools for the Pod must be created before this domain fabric module executes
   depends_on = [
     module.imm_pool_mod
-]
+  ]
 
 }
