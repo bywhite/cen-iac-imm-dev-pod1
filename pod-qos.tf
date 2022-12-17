@@ -108,13 +108,42 @@ resource "intersight_vnic_eth_qos_policy" "pod_qos_besteffort" {
 }
 
 resource "intersight_vnic_eth_qos_policy" "pod_qos_bronze" {
-  name           = "${local.pod_policy_prefix}-qos-besteffort"
-  description    = "Pod QoS policy Best-Effort"
+  name           = "${local.pod_policy_prefix}-qos-bronze"
+  description    = "Pod QoS policy Bronze"
   mtu            = 1500
   rate_limit     = 0
-  cos            = 0
+  cos            = 1
   burst          = 1024
   priority       = "Bronze"
+  trust_host_cos = false
+  organization {
+    moid = var.organization
+  }
+}
+
+resource "intersight_vnic_eth_qos_policy" "vnic_qos_silver" {
+  name           = "${local.pod_policy_prefix}-qos-silver"
+  description    = "Pod QoS policy Silver"
+  mtu            = 9000       # Max value 9000
+  rate_limit     = 0
+  cos            = 2
+  burst          = 1024
+  priority       = "Silver"
+  trust_host_cos = false
+  organization {
+    moid = var.organization
+  }
+}
+
+
+resource "intersight_vnic_eth_qos_policy" "vnic_qos_gold" {
+  name           = "${local.pod_policy_prefix}-qos-gold"
+  description    = "Pod QoS policy Gold"
+  mtu            = 9000       # Max value 9000
+  rate_limit     = 0
+  cos            = 4
+  burst          = 1024
+  priority       = "Gold"
   trust_host_cos = false
   organization {
     moid = var.organization
