@@ -54,7 +54,7 @@ module "server_template_vmw2" {                      # <<-- Change to duplicate
   server_uuid_pool_name    = module.imm_pool_mod.uuid_pool_name
 
 # =============================================================================
-# Server Networking Configurations
+# Server vNic Configurations & FC SAN HBA's
 # -----------------------------------------------------------------------------
 
   vnic_vlan_sets = {
@@ -88,6 +88,20 @@ module "server_template_vmw2" {                      # <<-- Change to duplicate
     }
   }
 
+  vhba_vsan_sets {
+    "fc0"  = {
+      vhba_name = "fc0"
+      vsan_id   = 100
+      switch_id = "A"
+      pci_order = 2
+    }
+    "fc1"  = {
+      vvhba_name = "fc1"
+      vsan_id    = 200
+      switch_id   = "B"
+      pci_order  = 3
+    }
+  }
 
   imc_access_vlan    = 999
   server_imc_admin_password = "Cisco123"  #Recommend adding var to TFCB Workspace
