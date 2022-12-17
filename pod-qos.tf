@@ -1,0 +1,150 @@
+# =============================================================================
+# Pod FI and Server Related QoS Policies
+#  - System QoS Policy to define enabled Classes of Service (CoS)
+#  - vNic QoS Policies for each class of service
+# -----------------------------------------------------------------------------
+
+
+
+# This will create the default System QoS policy with some generic settings
+# FlexPod: https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_datacenter_vmware_netappaffa.html
+# Needs customization for vNics to change from best effort with MTU 1500 to MTU 9216 and higher priority
+resource "intersight_fabric_system_qos_policy" "pod_qos1" {
+  name        = "${local.pod_policy_prefix}-pod-qos-policy1"
+  description = var.description
+  organization {
+    moid        = var.organization
+    object_type = "organization.Organization"
+  }
+  classes {
+    admin_state        = "Enabled"
+    bandwidth_percent  = 14  # Optional
+    weight             = 5
+    cos                = 255
+    mtu                = 1500
+    multicast_optimize = false
+    name               = "Best Effort"
+    packet_drop        = true
+    class_id           = "fabric.QosClass"
+    object_type        = "fabric.QosClass"    
+  }
+  classes {
+    admin_state        = "Enabled"
+    bandwidth_percent  = 20   # Optional
+    weight             = 7     
+    cos                = 1
+    mtu                = 1500
+    multicast_optimize = false
+    name               = "Bronze"
+    packet_drop        = true
+    class_id           = "fabric.QosClass"
+    object_type        = "fabric.QosClass"  
+  }
+  classes {
+    admin_state        = "Enabled"
+    bandwidth_percent  = 23    # Optional
+    weight             = 8
+    cos                = 2
+    mtu                = 9216
+    multicast_optimize = false
+    name               = "Silver"
+    packet_drop        = true
+    class_id           = "fabric.QosClass"
+    object_type        = "fabric.QosClass"    
+  }
+  # Class of Service 3 is used for FibreChannel (fcoe)
+  classes {
+    admin_state        = "Enabled"
+    bandwidth_percent  = 14     # Optional
+    weight             = 5
+    cos                = 3
+    mtu                = 2240
+    multicast_optimize = false
+    name               = "FC"
+    packet_drop        = false
+    class_id           = "fabric.QosClass"
+    object_type        = "fabric.QosClass"    
+  }
+  classes {
+    admin_state        = "Enabled"
+    bandwidth_percent  = 29     # Optional
+    weight             = 9
+    cos                = 4
+    mtu                = 9216
+    multicast_optimize = false
+    name               = "Gold"
+    packet_drop        = true
+    class_id           = "fabric.QosClass"
+    object_type        = "fabric.QosClass"    
+  }
+  classes {
+    admin_state        = "Disabled"
+    # bandwidth_percent  = 0      # Optional
+    weight             = 10
+    cos                = 5
+    mtu                = 9216
+    multicast_optimize = false
+    name               = "Platinum"
+    packet_drop        = true
+    class_id           = "fabric.QosClass"
+    object_type        = "fabric.QosClass"    
+  }
+  # assign this policy to the switch profiles being created
+  profiles {
+    moid        = intersight_fabric_switch_profile.fi6536_switch_profile_a.moid
+    object_type = "fabric.SwitchProfile"
+  }
+  profiles {
+    moid        = intersight_fabric_switch_profile.fi6536_switch_profile_b.moid
+    object_type = "fabric.SwitchProfile"
+  }
+  dynamic "tags" {
+    for_each = var.tags
+    content {
+      key   = tags.value.key
+      value = tags.value.value
+    }
+  }
+}
+
+
+# Need Pod wide adapter QoS settings and pass in qos_moid for each adapter (need to set pod wide Domain CoS to match)
+resource "intersight_vnic_eth_qos_policy" "v_qos_besteffort" {
+  name           = "${var.server_policy_prefix}-qos-besteffort"
+  description    = var.description
+  mtu            = 1500
+  rate_limit     = 0
+  cos            = 0
+  burst          = 1024
+  priority       = "Best Effort"
+  trust_host_cos = false
+  organization {
+    moid = var.organization
+  }
+  dynamic "tags" {
+    for_each = var.tags
+    content {
+      key   = tags.value.key
+      value = tags.value.value
+    }
+  }
+}
+
+
+resource "intersight_vnic_fc_qos_policy" "v_fc_qos1" {
+  name                = "${var.server_policy_prefix}-fc-qos1"
+  description         = var.description
+  burst               = 10240
+  rate_limit          = 0
+  cos                 = 3
+  max_data_field_size = 2112
+  organization {
+    object_type = "organization.Organization"
+    moid        = var.organization
+  }
+}
+
+
+
+
+
