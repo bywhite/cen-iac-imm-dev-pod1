@@ -16,9 +16,14 @@ module "server_template_vmw1" {                      # <<-- Change to duplicate
 # =============================================================================
 # Org external references
 # -----------------------------------------------------------------------------
-
   # external sources
   organization    = data.intersight_organization_organization.ofl.id
+
+# =============================================================================
+# Servers to create from Template
+# -----------------------------------------------------------------------------
+
+  server_count = 2
 
 # =============================================================================
 # Naming and tagging
@@ -36,7 +41,10 @@ module "server_template_vmw1" {                      # <<-- Change to duplicate
     { "key" : "ServerGroup", "value" : "ofl-dev-pod1-vmw1-srvgroup" } # <-- Change
   ]
 
-# Pass pools created by pod for servers
+# =============================================================================
+# Pod-wide pools
+# -----------------------------------------------------------------------------
+
   mac_pool_moid     = module.imm_pool_mod.mac_pool_moid
   imc_ip_pool_moid  = module.imm_pool_mod.ip_pool_moid
   wwnn_pool_moid    = module.imm_pool_mod.wwnn_pool_moid
@@ -45,16 +53,9 @@ module "server_template_vmw1" {                      # <<-- Change to duplicate
   server_uuid_pool_moid    = module.imm_pool_mod.uuid_pool_moid
   server_uuid_pool_name    = module.imm_pool_mod.uuid_pool_name
 
-# Number of servers to create from template
-  server_count = 2
-
-# # Define port names and their vlan assignments - dependent on target IMM Domain Eth-VLAN Uplinks
-#   server_nic_vlans = [
-#     { "eth0" : "42", "native" : "42" },
-#     { "eth1" : "42", "native" : "42" },
-#     { "eth2" : "42,43,1000-1001", "native" : "" },
-#     { "eth3" : "42,43,1000-1001", "native" : "" }  ## No Spaces between numbers
-#   ]
+# =============================================================================
+# Server Networking Configurations
+# -----------------------------------------------------------------------------
 
 vnic_vlan_sets = {
     "eth0"  = {           # Needs to match vnic_name
@@ -74,6 +75,10 @@ vnic_vlan_sets = {
   imc_access_vlan    = 999
   server_imc_admin_password = "Cisco123"  #Recommend adding var to TFCB Workspace
 
+# =============================================================================
+# Server monitoring configurations
+# -----------------------------------------------------------------------------
+
  # SNMP
   snmp_ip       = "127.0.0.1"
   snmp_password = "Cisco123"              #Recommend adding var to TFCB Workspace
@@ -81,6 +86,9 @@ vnic_vlan_sets = {
   # SysLog 
   syslog_remote_ip = "127.0.0.1"
 
+# =============================================================================
+# Dependencies
+# -----------------------------------------------------------------------------
 # The Pools for the Pod must be created before this domain fabric module executes
   depends_on = [
     module.imm_pool_mod
