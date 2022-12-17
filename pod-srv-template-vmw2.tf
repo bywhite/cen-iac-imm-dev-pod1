@@ -10,7 +10,7 @@
 
 
 module "server_template_vmw2" {                      # <<-- Change to duplicate
-  source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods/imm-pod-servers-vmw1-mod"
+  source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods/imm-pod-servers-vmw2-mod"
             # remote module name above should not be changed when duplicating
 
 # =============================================================================
@@ -93,12 +93,14 @@ module "server_template_vmw2" {                      # <<-- Change to duplicate
       vhba_name = "fc0"
       vsan_id   = 100
       switch_id = "A"
+      wwpn_pool_moid = module.imm_pool_mod.wwpn_pool_a_moid
       pci_order = 4
     }
     "fc1"  = {
       vvhba_name = "fc1"
       vsan_id    = 200
       switch_id   = "B"
+      wwpn_pool_moid = module.imm_pool_mod.wwpn_pool_b_moid
       pci_order  = 5
     }
   }
