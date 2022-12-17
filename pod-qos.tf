@@ -149,6 +149,20 @@ resource "intersight_vnic_eth_qos_policy" "vnic_qos_gold" {
   }
 }
 
+# resource "intersight_vnic_eth_qos_policy" "vnic_qos_platinum" {
+#   name           = "${local.pod_policy_prefix}-qos-platinum"
+#   description    = "Pod QoS policy Platinum"
+#   mtu            = 9000       # Max value 9000
+#   rate_limit     = 0
+#   cos            = 5
+#   burst          = 1024
+#   priority       = "Platinum"
+#   trust_host_cos = false
+#   organization {
+#     moid = local.org_moid
+#   }
+# }
+
 
 resource "intersight_vnic_fc_qos_policy" "pod_qos_fc" {
   name                = "${local.pod_policy_prefix}-qos-fc"
