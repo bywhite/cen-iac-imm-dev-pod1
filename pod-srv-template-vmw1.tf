@@ -30,7 +30,7 @@ module "server_template_vmw1" {                      # <<-- Change to duplicate
 
   #Every object created in the domain will have these tags
   tags = [
-    { "key" : "environment", "value" : "ofl-dev" },
+    { "key" : "environment", "value" : "dev" },
     { "key" : "orchestrator", "value" : "Terraform" },
     { "key" : "pod", "value" : "ofl-dev-pod1" },
     { "key" : "ServerGroup", "value" : "ofl-dev-pod1-vmw1-srvgroup" } # <-- Change
