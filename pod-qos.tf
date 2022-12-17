@@ -11,7 +11,7 @@
 # Needs customization for vNics to change from best effort with MTU 1500 to MTU 9216 and higher priority
 resource "intersight_fabric_system_qos_policy" "pod_qos1" {
   name        = "${local.pod_policy_prefix}-pod-qos-policy1"
-  description = var.description
+  description = "Common QoS - CoS Definition for the Pod"
   organization {
     moid        = var.organization
     object_type = "organization.Organization"
@@ -89,29 +89,13 @@ resource "intersight_fabric_system_qos_policy" "pod_qos1" {
     class_id           = "fabric.QosClass"
     object_type        = "fabric.QosClass"    
   }
-  # assign this policy to the switch profiles being created
-  profiles {
-    moid        = intersight_fabric_switch_profile.fi6536_switch_profile_a.moid
-    object_type = "fabric.SwitchProfile"
-  }
-  profiles {
-    moid        = intersight_fabric_switch_profile.fi6536_switch_profile_b.moid
-    object_type = "fabric.SwitchProfile"
-  }
-  dynamic "tags" {
-    for_each = var.tags
-    content {
-      key   = tags.value.key
-      value = tags.value.value
-    }
-  }
+
 }
 
 
-# Need Pod wide adapter QoS settings and pass in qos_moid for each adapter (need to set pod wide Domain CoS to match)
-resource "intersight_vnic_eth_qos_policy" "v_qos_besteffort" {
-  name           = "${var.server_policy_prefix}-qos-besteffort"
-  description    = var.description
+resource "intersight_vnic_eth_qos_policy" "vnic_qos_besteffort" {
+  name           = "${local.pod_policy_prefix}-qos-besteffort"
+  description    = "Pod QoS policy Best-Effort"
   mtu            = 1500
   rate_limit     = 0
   cos            = 0
@@ -121,19 +105,29 @@ resource "intersight_vnic_eth_qos_policy" "v_qos_besteffort" {
   organization {
     moid = var.organization
   }
-  dynamic "tags" {
-    for_each = var.tags
-    content {
-      key   = tags.value.key
-      value = tags.value.value
-    }
+}
+
+resource "intersight_vnic_eth_qos_policy" "vnic_qos_besteffort" {
+  name           = "${local.pod_policy_prefix}-qos-besteffort"
+  description    = "Pod QoS policy Best-Effort"
+  mtu            = 1500
+  rate_limit     = 0
+  cos            = 0
+  burst          = 1024
+  priority       = "Bronze"
+  trust_host_cos = false
+  organization {
+    moid = var.organization
   }
 }
 
 
-resource "intersight_vnic_fc_qos_policy" "v_fc_qos1" {
-  name                = "${var.server_policy_prefix}-fc-qos1"
-  description         = var.description
+
+
+
+resource "intersight_vnic_fc_qos_policy" "vnic_qos_fc" {
+  name                = "${local.pod_policy_prefix}-qos-fc"
+  description         = "Pod QoS policy for FC"
   burst               = 10240
   rate_limit          = 0
   cos                 = 3
@@ -143,8 +137,3 @@ resource "intersight_vnic_fc_qos_policy" "v_fc_qos1" {
     moid        = var.organization
   }
 }
-
-
-
-
-
