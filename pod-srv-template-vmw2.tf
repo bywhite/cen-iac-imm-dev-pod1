@@ -71,13 +71,13 @@ module "server_template_vmw2" {                      # <<-- Change to duplicate
       switch_id   = "B"
     }
    "eth2"  = {           # Needs to match vnic_name
-      vnic_name  = "eth0"
+      vnic_name  = "eth2"
       native_vlan = "45"
       vlan_range  = "45,50,1000-1011"
       switch_id   = "A"
     }
     "eth3"  = {
-      vnic_name   = "eth1"
+      vnic_name   = "eth3"
       native_vlan = "45"
       vlan_range  = "45,50,1000-1011"
       switch_id   = "B"
