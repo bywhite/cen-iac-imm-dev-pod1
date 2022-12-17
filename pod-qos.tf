@@ -93,7 +93,7 @@ resource "intersight_fabric_system_qos_policy" "pod_qos1" {
 }
 
 
-resource "intersight_vnic_eth_qos_policy" "vnic_qos_besteffort" {
+resource "intersight_vnic_eth_qos_policy" "pod_qos_besteffort" {
   name           = "${local.pod_policy_prefix}-qos-besteffort"
   description    = "Pod QoS policy Best-Effort"
   mtu            = 1500
@@ -107,7 +107,7 @@ resource "intersight_vnic_eth_qos_policy" "vnic_qos_besteffort" {
   }
 }
 
-resource "intersight_vnic_eth_qos_policy" "vnic_qos_besteffort" {
+resource "intersight_vnic_eth_qos_policy" "pod_qos_bronze" {
   name           = "${local.pod_policy_prefix}-qos-besteffort"
   description    = "Pod QoS policy Best-Effort"
   mtu            = 1500
@@ -125,7 +125,7 @@ resource "intersight_vnic_eth_qos_policy" "vnic_qos_besteffort" {
 
 
 
-resource "intersight_vnic_fc_qos_policy" "vnic_qos_fc" {
+resource "intersight_vnic_fc_qos_policy" "pod_qos_fc" {
   name                = "${local.pod_policy_prefix}-qos-fc"
   description         = "Pod QoS policy for FC"
   burst               = 10240
