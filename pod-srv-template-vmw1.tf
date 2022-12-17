@@ -66,7 +66,7 @@ vnic_vlan_sets = {
     }
     "eth1"  = {
       vnic_name   = "eth1"
-      native_vlan = "45"
+      native_vlan = 45
       vlan_range  = "45,50,1000-1011"
       switch_id   = "B"
     }

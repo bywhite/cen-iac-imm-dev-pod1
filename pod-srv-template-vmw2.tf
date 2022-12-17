@@ -60,27 +60,31 @@ module "server_template_vmw2" {                      # <<-- Change to duplicate
   vnic_vlan_sets = {
     "eth0"  = {           # Needs to match vnic_name
       vnic_name  = "eth0"
-      native_vlan = "45"
+      native_vlan = 45
       vlan_range  = "45"
       switch_id   = "A"
+      pci_order   = 0
     }
     "eth1"  = {
       vnic_name   = "eth1"
-      native_vlan = "45"
+      native_vlan = 45
       vlan_range  = "45"
       switch_id   = "B"
+      pci_order   = 1
     }
    "eth2"  = {           # Needs to match vnic_name
       vnic_name  = "eth2"
-      native_vlan = "45"
+      native_vlan = 45
       vlan_range  = "45,50,1000-1011"
       switch_id   = "A"
+      pci_order   = 2
     }
     "eth3"  = {
       vnic_name   = "eth3"
-      native_vlan = "45"
+      native_vlan = 45
       vlan_range  = "45,50,1000-1011"
       switch_id   = "B"
+      pci_order   = 3
     }
   }
 
