@@ -17,6 +17,9 @@ module "server_template_lnx1" {     # <-- Change
   # external sources
   organization    = data.intersight_organization_organization.ofl.id
 
+# Number of servers to create from template
+  server_count = 0
+
 # =============================================================================
 # Naming and tagging
 # -----------------------------------------------------------------------------
@@ -41,9 +44,6 @@ module "server_template_lnx1" {     # <-- Change
   wwpn_pool_b_moid  = module.imm_pool_mod.wwpn_pool_b_moid
   server_uuid_pool_moid    = module.imm_pool_mod.uuid_pool_moid
   server_uuid_pool_name    = module.imm_pool_mod.uuid_pool_name
-
-# Number of servers to create from template
-  server_count = 0
 
 # Define port names and their vlan assignments - dependent on target IMM Domain Eth-VLAN Uplinks  NO Spaces in VLAN List
   server_nic_vlans = [

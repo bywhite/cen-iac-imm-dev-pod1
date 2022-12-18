@@ -23,7 +23,7 @@ module "server_template_vmw_basic" {                      # <<-- Change to dupli
 # Servers to create from Template
 # -----------------------------------------------------------------------------
 
-  server_count = 1
+  server_count = 2
 
 # =============================================================================
 # Naming and tagging
