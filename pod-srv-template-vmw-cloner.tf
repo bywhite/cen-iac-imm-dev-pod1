@@ -23,7 +23,7 @@ module "server_template_vmw_cloner" {                      # <<-- Change to dupl
 # Servers to create from Template
 # -----------------------------------------------------------------------------
 
-  server_count = 2
+  server_count = 0
 
 # =============================================================================
 # Naming and tagging
