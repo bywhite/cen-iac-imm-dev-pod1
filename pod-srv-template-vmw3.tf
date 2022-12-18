@@ -11,7 +11,7 @@
 
 module "server_profiles_vmw3" {                      # <<-- Change to duplicate
   source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods/imm-pod-servers-vmw3-mod"
-            # remote module name above should not be changed when duplicating
+            # remote module source above should not be changed when duplicating
 
 # =============================================================================
 # Org external references
