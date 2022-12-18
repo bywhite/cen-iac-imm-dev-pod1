@@ -1,16 +1,16 @@
 # # =============================================================================
-# # This defines a single Server Profile Template using a remote module
-# # Builds: Server Profile Template and associated Server Resource Pool
+# # Main.tf defines Server Profiles - without a template - using a remote module
+# # Builds: Server Profiles and associated Server Resource Pool
 # # Creates: Server Profiles by "Count" ("Resource Pool" not enabled yet)
 # # To Duplicate Template:
-# #    * Change module: "server_template_vmw1"  >> "server_template_vmw2"
-# #    * Change server_policy_prefix: "ofl-dev-pod1-vmw1" > "ofl-dev-pod1-vmw2"
-# #    * Change Tag value for "ServerGroup" to include new name
+# #    * Change module: "server_profiles_vmw3"  >> "server_profiles_vmw4"
+# #    * Change server_policy_prefix: "ofl-dev-pod1-vmw3" > "ofl-dev-pod1-vmw4"
+# #    * Change Tag value for "ServerGroup" to include new profile prefix name
 # # -----------------------------------------------------------------------------
 
 
-module "server_template_vmw_basic" {                      # <<-- Change to duplicate
-  source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods/imm-pod-servers-vmw-basic-mod"
+module "server_profiles_vmw3" {                      # <<-- Change to duplicate
+  source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods/imm-pod-servers-vmw3-mod"
             # remote module name above should not be changed when duplicating
 
 # =============================================================================
@@ -23,14 +23,14 @@ module "server_template_vmw_basic" {                      # <<-- Change to dupli
 # Servers to create from Template
 # -----------------------------------------------------------------------------
 
-  server_count = 0
+  server_count = 1
 
 # =============================================================================
 # Naming and tagging
 # -----------------------------------------------------------------------------
 
   # prefix for all created policies
-  server_policy_prefix = "ofl-dev-pod1-vmw-basic"         # <<-- Change to duplicate
+  server_policy_prefix = "ofl-dev-pod1-vmw3"         # <<-- Change to duplicate
   description   = "built by Terraform cen-iac-imm-dev-pod1 derived"
 
   #Every object created in the domain will have these tags
@@ -38,7 +38,7 @@ module "server_template_vmw_basic" {                      # <<-- Change to dupli
     { "key" : "environment", "value" : "dev" },
     { "key" : "orchestrator", "value" : "Terraform" },
     { "key" : "pod", "value" : "ofl-dev-pod1" },
-    { "key" : "ServerGroup", "value" : "ofl-dev-pod1-vmw-basic-srvgroup" } # <-- Change
+    { "key" : "ServerGroup", "value" : "ofl-dev-pod1-vmw3-srvgroup" } # <-- Change
   ]
 
 # =============================================================================
