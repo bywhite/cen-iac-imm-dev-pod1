@@ -4,6 +4,15 @@
 #__________________________________________________________
 
 locals {
+
+#  The following are defined as variables (var.) in the TFCB workspace
+#  endpoint (http://intersight.com)
+#  api_key  (ID for Intersight)
+#  secretkey (Key for Intersight)
+#  imc_admin_password
+
+
+
   # Intersight Organization Variable
   org_moid = data.intersight_organization_organization.ofl.id
   
