@@ -74,8 +74,8 @@ resource "intersight_iam_end_point_user_role" "admin" {
     moid = intersight_iam_end_point_user_policy.pod_user_policy_1.moid
   }
   end_point_role {
-    # moid = data.intersight_iam_end_point_role.imc_admin.results[0].moid
-    moid = local.local_user_admin_moid
+    moid = data.intersight_iam_end_point_role.imc_admin.results[0].moid
+  
   }
   dynamic "tags" {
     for_each = local.pod_tags
@@ -134,8 +134,7 @@ resource "intersight_iam_end_point_user_role" "ro_user1" {
     moid = intersight_iam_end_point_user_policy.pod_user_policy_1.moid
   }
   end_point_role {
-    moid = local.local_user_ro_moid
-    #moid = data.intersight_iam_end_point_role.imc_readonly.results[0].moid
+    moid = data.intersight_iam_end_point_role.imc_readonly.results[0].moid
   }
  dynamic "tags" {
    for_each = local.pod_tags
