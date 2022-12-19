@@ -23,7 +23,7 @@ module "server_template_vmw1" {                      # <<-- Change to duplicate
 # Servers to create from Template
 # -----------------------------------------------------------------------------
 
-  server_count = 3
+  server_count = 4
 
 # =============================================================================
 # Naming and tagging
