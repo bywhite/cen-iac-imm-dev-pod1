@@ -16,5 +16,11 @@ locals {
 #  Example RCO Pod 2 ID would be:  "12"
 #  All Identity Pools for a Pod will contain the POD ID (MAc, WWNN, WWPN, UUID)
 
+  #Every object created in the pod main module will have these tags
+  pod_tags = [
+    { "key" : "environment", "value" : "ofl-dev" },
+    { "key" : "orchestrator", "value" : "Terraform" },
+    { "key" : "pod", "value" : "ofl-dev-pod1" }
+  ]
 
 }
