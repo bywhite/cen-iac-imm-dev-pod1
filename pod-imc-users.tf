@@ -14,7 +14,7 @@
 
 ## Standard Local User Policy for all local IMC users
 resource "intersight_iam_end_point_user_policy" "pod_user_policy_1"  {
-  description     = var.description
+  description     = "Local IMC User Policy"
   name            = "${local.pod_policy_prefix}-imc-user-policy1"
   password_properties {
     enforce_strong_password  = false
@@ -26,11 +26,11 @@ resource "intersight_iam_end_point_user_policy" "pod_user_policy_1"  {
     object_type              = "iam.EndPointPasswordProperties"
   }
  organization {
-   moid        = var.organization
+   moid        = local.org_moid
    object_type = "organization.Organization"
  }
  dynamic "tags" {
-   for_each = var.tags
+   for_each = local.pod_tags
    content {
      key   = tags.value.key
      value = tags.value.value
@@ -43,11 +43,11 @@ resource "intersight_iam_end_point_user_policy" "pod_user_policy_1"  {
 resource "intersight_iam_end_point_user" "admin" {
   name = "${local.pod_policy_prefix}-admin"
   organization {
-    moid = var.organization
+    moid = local.org_moid
    object_type = "organization.Organization"
   }
   dynamic "tags" {
-    for_each = var.tags
+    for_each = local.pod_tags
     content {
       key   = tags.value.key
       value = tags.value.value
@@ -66,7 +66,7 @@ data "intersight_iam_end_point_role" "imc_admin" {
 # Notably, the password is set in this resource and NOT in the user resource above.
 resource "intersight_iam_end_point_user_role" "admin" {
   enabled  = true
-  password = var.server_imc_admin_password
+  password = var.imc_admin_password
   end_point_user {
     moid = intersight_iam_end_point_user.admin.moid
   }
@@ -78,7 +78,7 @@ resource "intersight_iam_end_point_user_role" "admin" {
     moid = local.local_user_admin_moid
   }
   dynamic "tags" {
-    for_each = var.tags
+    for_each = local.pod_tags
     content {
       key   = tags.value.key
       value = tags.value.value
@@ -95,11 +95,11 @@ resource "intersight_iam_end_point_user" "ro_user1" {
   name = "${local.pod_policy_prefix}-ro_user1"
 
   organization {
-    moid = var.organization
+    moid = local.org_moid
    object_type = "organization.Organization"
   }
  dynamic "tags" {
-   for_each = var.tags
+   for_each = local.pod_tags
    content {
      key   = tags.value.key
      value = tags.value.value
@@ -124,7 +124,7 @@ resource "random_password" "example_password" {
 # Notably, the password is set in this resource and NOT in the user resource above.
 resource "intersight_iam_end_point_user_role" "ro_user1" {
   enabled  = true
-  password = var.server_imc_admin_password
+  password = var.imc_admin_password
   # Alternatively, we could assign a random passwrod to be changed later
   # password = random_password.example_password.result
   end_point_user {
@@ -138,7 +138,7 @@ resource "intersight_iam_end_point_user_role" "ro_user1" {
     #moid = data.intersight_iam_end_point_role.imc_readonly.results[0].moid
   }
  dynamic "tags" {
-   for_each = var.tags
+   for_each = local.pod_tags
    content {
      key   = tags.value.key
      value = tags.value.value
