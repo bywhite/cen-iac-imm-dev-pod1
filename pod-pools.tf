@@ -29,7 +29,7 @@ module "imm_pool_mod" {
   organization    = data.intersight_organization_organization.ofl.id
 
   # every policy created will have this prefix in its name
-  policy_prefix = "dev-ofl-pod1"
+  policy_prefix = local.pod_policy_prefix
   description   = "Built by Terraform repo: cen-iac-imm-dev-pod1  module: imm-pod-pools-mod"
 
   ip_size     = "500"

@@ -121,11 +121,19 @@ module "server_template_vmw2" {                      # <<-- Change to duplicate
   syslog_remote_ip = "127.0.0.1"
 
 # =============================================================================
+# Local IMC Users - defined pod wide
+# -----------------------------------------------------------------------------
+  # Sets local users and their permissions and passwords
+  user_policy_moid = intersight_iam_end_point_user_policy.pod_user_policy_1.moid
+
+
+
+# =============================================================================
 # Dependencies
 # -----------------------------------------------------------------------------
 # The Pools for the Pod must be created before this domain fabric module executes
   depends_on = [
-    module.imm_pool_mod
+    module.imm_pool_mod, intersight_iam_end_point_user_polic.pod_user_policy_1
   ]
 
 }
