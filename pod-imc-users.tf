@@ -41,7 +41,7 @@ resource "intersight_iam_end_point_user_policy" "pod_user_policy_1"  {
 ##  Admin user
 # This resource is a user that will be added to the policy.
 resource "intersight_iam_end_point_user" "admin" {
-  name = "${local.pod_policy_prefix}-admin"
+  name = "admin"
   organization {
     moid = local.org_moid
    object_type = "organization.Organization"
@@ -57,7 +57,7 @@ resource "intersight_iam_end_point_user" "admin" {
 
 # This data source retrieves a system built-in role that we want to assign to the admin user.
 data "intersight_iam_end_point_role" "imc_admin" {
-  name      = "${local.pod_policy_prefix}-admin"
+  name      = "admin"
   role_type = "endpoint-admin"
   type      = "IMC"
 }
@@ -92,7 +92,7 @@ resource "intersight_iam_end_point_user_role" "admin" {
 ## Example Read Only user
 # This resource is a user that will be added to the policy.
 resource "intersight_iam_end_point_user" "ro_user1" {
-  name = "${local.pod_policy_prefix}-ro_user1"
+  name = "ro-user1"
 
   organization {
     moid = local.org_moid
@@ -109,7 +109,7 @@ resource "intersight_iam_end_point_user" "ro_user1" {
 
 # This data source retrieves a system built-in role that we want to assign to the user.
 data "intersight_iam_end_point_role" "imc_readonly" {
-  name      = "${local.pod_policy_prefix}-readonly"
+  name      = "imc-readonly"
   role_type = "endpoint-readonly"
   type      = "IMC"
 }
