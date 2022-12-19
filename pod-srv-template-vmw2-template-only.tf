@@ -133,7 +133,7 @@ module "server_template_vmw2" {                      # <<-- Change to duplicate
 # -----------------------------------------------------------------------------
 # The Pools for the Pod must be created before this domain fabric module executes
   depends_on = [
-    module.imm_pool_mod, intersight_iam_end_point_user_polic.pod_user_policy_1
+    module.imm_pool_mod, intersight_iam_end_point_user_policy.pod_user_policy_1
   ]
 
 }
