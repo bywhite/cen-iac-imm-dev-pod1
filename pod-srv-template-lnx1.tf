@@ -18,7 +18,7 @@ module "server_template_lnx1" {     # <-- Change
   organization    = data.intersight_organization_organization.ofl.id
 
 # Number of servers to create from template
-  server_count = 0
+  server_count = 1
 
 # =============================================================================
 # Naming and tagging
