@@ -109,7 +109,7 @@ resource "intersight_iam_end_point_user" "ro_user1" {
 
 # This data source retrieves a system built-in role that we want to assign to the user.
 data "intersight_iam_end_point_role" "imc_readonly" {
-  name      = "imc-readonly"
+  name      = "readonly"
   role_type = "endpoint-readonly"
   type      = "IMC"
 }
