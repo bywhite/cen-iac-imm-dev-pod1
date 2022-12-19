@@ -23,7 +23,7 @@ module "server_profiles_vmw3" {                      # <<-- Change to duplicate
 # Servers to create from Template
 # -----------------------------------------------------------------------------
 
-  server_count = 2
+  server_count = 1
 
 # =============================================================================
 # Naming and tagging
