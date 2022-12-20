@@ -10,7 +10,7 @@
 
 
 module "server_template_vmw2" {                      # <<-- Change to duplicate
-  source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods/imm-pod-servers-vmw2-mod"
+  source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods/imm-pod-servers-vmw-mod"
             # remote module name above should not be changed when duplicating
 
 # =============================================================================
@@ -23,7 +23,7 @@ module "server_template_vmw2" {                      # <<-- Change to duplicate
 # Servers to create from Template
 # -----------------------------------------------------------------------------
 
-  server_count = 1
+  server_count = 0
 
 # =============================================================================
 # Naming and tagging
