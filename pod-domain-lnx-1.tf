@@ -6,7 +6,7 @@
 # # -----------------------------------------------------------------------------
 
 
-module "intersight_policy_bundle_vmw_1" {              # <-- change when copying
+module "intersight_policy_bundle_lnx_1" {             # <-- change when copying
   #source = "github.com/pl247/tf-intersight-policy-bundle"
   source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods/imm-domain-fabric-6536"
 
@@ -22,7 +22,7 @@ module "intersight_policy_bundle_vmw_1" {              # <-- change when copying
 # -----------------------------------------------------------------------------
 
   # every policy created will have this prefix in its name
-  policy_prefix = "ofl-dev-pod1-vmw-1"                # <-- change when copying
+  policy_prefix = "ofl-dev-pod1-lnx-1"                # <-- change when copying
   description   = "built by Terraform cen-iac-imm-dev-pod1"
 
   #Every object created in the domain will have these tags
@@ -30,7 +30,7 @@ module "intersight_policy_bundle_vmw_1" {              # <-- change when copying
     { "key" : "environment", "value" : "ofl-dev" },
     { "key" : "orchestrator", "value" : "Terraform" },
     { "key" : "pod", "value" : "ofl-dev-pod1" },
-    { "key" : "domain", "value" : "ofl-dev-pod1-vmw1" } # <-- change when copying
+    { "key" : "domain", "value" : "ofl-dev-pod1-lnx1" } # <-- change when copying
   ]
 
 # =============================================================================
