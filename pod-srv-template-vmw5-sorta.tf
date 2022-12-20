@@ -1,4 +1,5 @@
 # # =============================================================================
+# #        This is not the preferred method - use template only
 # # This defines a single Server Profile Template using a remote module
 # # Builds: Server Profile Template and associated Server Resource Pool
 # # Creates: Server Profiles by "Count" ("Resource Pool" not enabled yet)

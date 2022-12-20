@@ -1,4 +1,5 @@
 # # =============================================================================
+# #           This is not the preferred method - use template only
 # # Main.tf defines Server Profiles - without a template - using a remote module
 # # Builds: Server Profiles and associated Server Resource Pool
 # # Creates: Server Profiles by "Count" ("Resource Pool" not enabled yet)
