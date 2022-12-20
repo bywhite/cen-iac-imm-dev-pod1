@@ -40,7 +40,7 @@ resource "intersight_iam_end_point_user_policy" "pod_user_policy_1"  {
 
 ##  Admin user
 # This resource is a user that will be added to the policy.
-resource "intersight_iam_end_point_user" "admin" {
+resource "intersight_iam_end_point_user" "admin1" {
   name = "admin"
   organization {
     moid = local.org_moid
@@ -64,11 +64,11 @@ data "intersight_iam_end_point_role" "imc_admin" {
 
 # This resource adds the user to the policy using the role we retrieved.
 # Notably, the password is set in this resource and NOT in the user resource above.
-resource "intersight_iam_end_point_user_role" "admin" {
+resource "intersight_iam_end_point_user_role" "admin1" {
   enabled  = true
   password = var.imc_admin_password
   end_point_user {
-    moid = intersight_iam_end_point_user.admin.moid
+    moid = intersight_iam_end_point_user.admin1.moid
   }
   end_point_user_policy {
     moid = intersight_iam_end_point_user_policy.pod_user_policy_1.moid
@@ -85,7 +85,7 @@ resource "intersight_iam_end_point_user_role" "admin" {
     }
   }
   depends_on = [
-    intersight_iam_end_point_user.admin, intersight_iam_end_point_user_policy.pod_user_policy_1
+    intersight_iam_end_point_user.admin1, intersight_iam_end_point_user_policy.pod_user_policy_1
   ]
 }
 
