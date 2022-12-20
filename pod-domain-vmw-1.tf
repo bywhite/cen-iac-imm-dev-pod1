@@ -47,6 +47,10 @@ module "intersight_policy_bundle_vmw_1" {
   # FI physical port numbers to be attached to chassis 
   server_ports_6536 = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
 
+  # Uplink VLANs Allowed List    Example: "5,6,7,8,100-130,998-1011"
+  switch_vlans_6536 = "100,101,102,313,314,997-999"
+
+
 # =============================================================================
 # Fabric Interconnect 6536 FC Ports and VSANs
 # -----------------------------------------------------------------------------
@@ -106,10 +110,6 @@ module "intersight_policy_bundle_vmw_1" {
   snmp_ip       = "127.0.0.1"
   snmp_password = "Cisco123"
   
-
-  # Uplink VLANs Allowed List    Example: "5,6,7,8,100-130,998-1011"
-  switch_vlans_6536 = "100,101,102,313,314,997-999"
-
 
 # The Pools for the Pod must be created before this domain fabric module executes
   depends_on = [
