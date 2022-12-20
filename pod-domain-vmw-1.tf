@@ -110,7 +110,7 @@ module "intersight_policy_bundle_vmw_1" {
   snmp_ip       = "127.0.0.1"
   snmp_password = "Cisco123"
   
-  # pod_qos_moid = intersight_fabric_system_qos_policy.pod_qos1.moid
+  pod_qos_moid = intersight_fabric_system_qos_policy.pod_qos1.moid
 
 # The Pools for the Pod must be created before this domain fabric module executes
   depends_on = [
