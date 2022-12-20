@@ -3,14 +3,14 @@
 # # Builds: Server Profile Template and associated Server Resource Pool
 # # Creates: Server Profiles by "Count" ("Resource Pool" not enabled yet)
 # # To Duplicate Template:
-# #    * Change module: "server_template_vmw1"  >> "server_template_vmw2"
-# #    * Change server_policy_prefix: "ofl-dev-pod1-vmw1" > "ofl-dev-pod1-vmw2"
+# #    * Change module: "server_template_vmwX"  >> "server_template_vmwY"
+# #    * Change server_policy_prefix: "ofl-dev-pod1-vmwX" > "ofl-dev-pod1-vmwY"
 # #    * Change Tag value for "ServerGroup" to include new name
 # # -----------------------------------------------------------------------------
 
 
-module "server_template_vmw1" {                      # <<-- Change to duplicate
-  source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods/imm-pod-servers-vmw1-mod"
+module "server_template_sorta1" {                      # <<-- Change to duplicate
+  source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods/imm-pod-servers-sorta-mod"
             # remote module name above should not be changed when duplicating
 
 # =============================================================================
@@ -23,14 +23,14 @@ module "server_template_vmw1" {                      # <<-- Change to duplicate
 # Servers to create from Template
 # -----------------------------------------------------------------------------
 
-  server_count = 1
+  server_count = 0
 
 # =============================================================================
 # Naming and tagging
 # -----------------------------------------------------------------------------
 
   # prefix for all created policies
-  server_policy_prefix = "ofl-dev-pod1-vmw1"         # <<-- Change to duplicate
+  server_policy_prefix = "ofl-dev-pod1-vmw5"         # <<-- Change to duplicate
   description   = "built by Terraform cen-iac-imm-dev-pod1 derived"
 
   #Every object created in the domain will have these tags
@@ -38,7 +38,7 @@ module "server_template_vmw1" {                      # <<-- Change to duplicate
     { "key" : "environment", "value" : "dev" },
     { "key" : "orchestrator", "value" : "Terraform" },
     { "key" : "pod", "value" : "ofl-dev-pod1" },
-    { "key" : "ServerGroup", "value" : "ofl-dev-pod1-vmw1-srvgroup" } # <-- Change
+    { "key" : "ServerGroup", "value" : "ofl-dev-pod1-vmw5-srvgroup" } # <-- Change
   ]
 
 # =============================================================================
