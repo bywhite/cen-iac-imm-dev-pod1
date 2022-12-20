@@ -9,7 +9,7 @@
 # # -----------------------------------------------------------------------------
 
 
-module "server_template_vmw2" {                      # <<-- Change to duplicate
+module "server_template_vmw1" {                      # <<-- Change to duplicate
   source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods/imm-pod-servers-vmw-mod"
             # remote module name above should not be changed when duplicating
 
@@ -30,7 +30,7 @@ module "server_template_vmw2" {                      # <<-- Change to duplicate
 # -----------------------------------------------------------------------------
 
   # prefix for all created policies
-  server_policy_prefix = "ofl-dev-pod1-vmw2"         # <<-- Change to duplicate
+  server_policy_prefix = "ofl-dev-pod1-vmw1"         # <<-- Change to duplicate
   description   = "built by Terraform cen-iac-imm-dev-pod1 derived"
 
   #Every object created in the domain will have these tags
@@ -38,7 +38,7 @@ module "server_template_vmw2" {                      # <<-- Change to duplicate
     { "key" : "environment", "value" : "dev" },
     { "key" : "orchestrator", "value" : "Terraform" },
     { "key" : "pod", "value" : "ofl-dev-pod1" },
-    { "key" : "ServerGroup", "value" : "ofl-dev-pod1-vmw2-srvgroup" } # <-- Change
+    { "key" : "ServerGroup", "value" : "ofl-dev-pod1-vmw1-srvgroup" } # <-- Change
   ]
 
 # =============================================================================
