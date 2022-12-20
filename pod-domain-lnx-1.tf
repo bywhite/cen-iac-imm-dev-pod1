@@ -45,7 +45,7 @@ module "intersight_policy_bundle_lnx_1" {             # <-- change when copying
   eth_breakout_start = 29
 
   # FI physical port numbers to be attached to chassis 
-  server_ports_6536 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
+  server_ports_6536 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28]
 
   # Uplink VLANs Allowed List    Example: "5,6,7,8,100-130,998-1011"
   switch_vlans_6536 = "100,101,102,313,314,997-999"
