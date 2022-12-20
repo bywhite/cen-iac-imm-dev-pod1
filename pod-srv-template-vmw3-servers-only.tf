@@ -106,8 +106,6 @@ module "server_profiles_vmw3" {                      # <<-- Change to duplicate
     }
   }
 
-  imc_access_vlan    = 999
-  server_imc_admin_password = "Cisco123"  #Recommend adding var to TFCB Workspace
 
 # =============================================================================
 # Server monitoring configurations
@@ -119,6 +117,14 @@ module "server_profiles_vmw3" {                      # <<-- Change to duplicate
   
   # SysLog 
   syslog_remote_ip = "127.0.0.1"
+
+# =============================================================================
+# Local IMC Users - defined pod wide
+# -----------------------------------------------------------------------------
+  # Sets local users and their permissions and passwords
+  user_policy_moid          = intersight_iam_end_point_user_policy.pod_user_policy_1.moid
+  imc_access_vlan           = 999
+  server_imc_admin_password = "Cisco123"  #Recommend adding var to TFCB Workspace
 
 # =============================================================================
 # Dependencies

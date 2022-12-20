@@ -106,9 +106,7 @@ module "server_template_vmw2" {                      # <<-- Change to duplicate
     }
   }
 
-  imc_access_vlan    = 999
-  server_imc_admin_password = "Cisco123"  #Recommend adding var to TFCB Workspace
-
+ 
 # =============================================================================
 # Server monitoring configurations
 # -----------------------------------------------------------------------------
@@ -124,8 +122,9 @@ module "server_template_vmw2" {                      # <<-- Change to duplicate
 # Local IMC Users - defined pod wide
 # -----------------------------------------------------------------------------
   # Sets local users and their permissions and passwords
-  user_policy_moid = intersight_iam_end_point_user_policy.pod_user_policy_1.moid
-
+  user_policy_moid          = intersight_iam_end_point_user_policy.pod_user_policy_1.moid
+  imc_access_vlan           = 999
+  server_imc_admin_password = "Cisco123"  #Recommend adding var to TFCB Workspace
 
 
 # =============================================================================
