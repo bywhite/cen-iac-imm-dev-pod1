@@ -11,7 +11,7 @@
 
 
 module "server_template_sorta1" {                      # <<-- Change to duplicate
-  source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods/imm-pod-servers-sorta-mod"
+  source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods/x-imm-pod-servers-sorta-mod"
             # remote module name above should not be changed when duplicating
 
 # =============================================================================

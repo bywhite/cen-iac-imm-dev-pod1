@@ -11,7 +11,7 @@
 
 
 module "server_profiles_only1" {                      # <<-- Change to duplicate
-  source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods/imm-pod-servers-only-mod"
+  source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods/x-imm-pod-servers-only-mod"
             # remote module name above should not be changed when duplicating
 
 # =============================================================================
