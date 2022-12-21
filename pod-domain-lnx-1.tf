@@ -47,40 +47,40 @@ module "intersight_policy_bundle_lnx_1" {             # <-- change when copying
   # FI physical port numbers to be attached to X-series chassis, including breakouts to B-series chassis 
   server_ports_6536 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28]
 
-  # eth_aggr_server_ports = {
-  #   "agg29-1"  = {  
-  #     aggregate_port_id  = "29"
-  #     port_id            = "1"
-  #   }
-  #   "agg29-2"  = {
-  #     aggregate_port_id  = "29"
-  #     port_id            = "2" 
-  #   }
-  #  "agg29-3"  = {   
-  #     aggregate_port_id  = "29"
-  #     port_id            = "3"
-  #   }
-  #   "agg29-4"  = {
-  #     aggregate_port_id  = "29"
-  #     port_id            = "4"
-  #   }
-  #   "agg30-1"  = {  
-  #     aggregate_port_id  = "30"
-  #     port_id            = "1"
-  #   }
-  #   "agg30-2"  = {
-  #     aggregate_port_id  = "30"
-  #     port_id            = "2"
-  #   }
-  #  "agg30-3"  = {
-  #     aggregate_port_id  = "30"
-  #     port_id            = "3"
-  #   }
-  #   "agg30-4"  = {
-  #     aggregate_port_id  = "30"
-  #     port_id            = "4"
-  #   }
-  # }
+  eth_aggr_server_ports = {
+    "agg29-1"  = {  
+      aggregate_port_id  = "29"
+      port_id            = "1"
+    }
+    "agg29-2"  = {
+      aggregate_port_id  = "29"
+      port_id            = "2" 
+    }
+   "agg29-3"  = {   
+      aggregate_port_id  = "29"
+      port_id            = "3"
+    }
+    "agg29-4"  = {
+      aggregate_port_id  = "29"
+      port_id            = "4"
+    }
+    "agg30-1"  = {  
+      aggregate_port_id  = "30"
+      port_id            = "1"
+    }
+    "agg30-2"  = {
+      aggregate_port_id  = "30"
+      port_id            = "2"
+    }
+   "agg30-3"  = {
+      aggregate_port_id  = "30"
+      port_id            = "3"
+    }
+    "agg30-4"  = {
+      aggregate_port_id  = "30"
+      port_id            = "4"
+    }
+  }
   
 
   # Uplink VLANs Allowed List    Example: "5,6,7,8,100-130,998-1011"
