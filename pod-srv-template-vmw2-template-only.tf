@@ -10,7 +10,7 @@
 
 
 module "server_template_vmw2" {                      # <<-- Change to duplicate
-  source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods/imm-pod-servers-vmw-mod"
+  source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods/imm-pod-servers"
             # remote module name above should not be changed when duplicating
 
 # =============================================================================
@@ -66,22 +66,7 @@ module "server_template_vmw2" {                      # <<-- Change to duplicate
       switch_id   = "B"
       pci_order   = 1
     }
-   "eth2"  = {           # Needs to match vnic_name
-      vnic_name  = "eth2"
-      native_vlan = 45
-      vlan_range  = "45,50,1000-1011"
-      switch_id   = "A"
-      pci_order   = 2
-    }
-    "eth3"  = {
-      vnic_name   = "eth3"
-      native_vlan = 45
-      vlan_range  = "45,50,1000-1011"
-      switch_id   = "B"
-      pci_order   = 3
-    }
   }
-
 
   vhba_vsan_sets = {
     "fc0" = {
@@ -89,10 +74,24 @@ module "server_template_vmw2" {                      # <<-- Change to duplicate
       vsan_id        = 100
       switch_id      = "A"
       wwpn_pool_moid = module.imm_pool_mod.wwpn_pool_a_moid
-      pci_order      = 4
+      pci_order      = 2
     }
     "fc1"  = {
       vhba_name      = "fc1"
+      vsan_id        = 200
+      switch_id      = "B"
+      wwpn_pool_moid = module.imm_pool_mod.wwpn_pool_b_moid
+      pci_order      = 3
+    }
+    "fc2" = {
+      vhba_name      = "fc2"
+      vsan_id        = 100
+      switch_id      = "A"
+      wwpn_pool_moid = module.imm_pool_mod.wwpn_pool_a_moid
+      pci_order      = 4
+    }
+    "fc3"  = {
+      vhba_name      = "fc3"
       vsan_id        = 200
       switch_id      = "B"
       wwpn_pool_moid = module.imm_pool_mod.wwpn_pool_b_moid
