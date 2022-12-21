@@ -24,7 +24,7 @@ module "server_template_sorta1" {                      # <<-- Change to duplicat
 # Servers to create from Template
 # -----------------------------------------------------------------------------
 
-  server_count = 1
+  server_count = 2
   old_server_profile_names =  module.server_template_sorta1.server_profile_names
 
 # =============================================================================
