@@ -95,11 +95,15 @@ output "ofl_pod1_uuid_pool_moid" {
 #     description = "List of server template interfaces"
 # }
 
-output "server_profile_names" {
+output "z-server_profile_names" {
   value       = module.server_template_sorta1.server_profile_names
   description = "List of sorta1 template server names"
 }
-output "new_server_profile_names" {
+output "z-new_server_profile_names" {
   value       = module.server_template_sorta1.new_server_profile_names
   description = "List of sorta1 template new server names"
+}
+output "z-old_server_profile_names" {
+  description = "List of existing server profiles"
+  value       = module.server_template_sorta1.old_server_profile_names
 }
