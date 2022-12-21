@@ -85,14 +85,14 @@ module "server_template_vmw1" {                      # <<-- Change to duplicate
       pci_order      = 3
     }
     "fc2" = {
-      vhba_name      = "fc0"
+      vhba_name      = "fc2"
       vsan_id        = 300
       switch_id      = "A"
       wwpn_pool_moid = module.imm_pool_mod.wwpn_pool_a_moid
       pci_order      = 4
     }
     "fc3"  = {
-      vhba_name      = "fc1"
+      vhba_name      = "fc3"
       vsan_id        = 400
       switch_id      = "B"
       wwpn_pool_moid = module.imm_pool_mod.wwpn_pool_b_moid
