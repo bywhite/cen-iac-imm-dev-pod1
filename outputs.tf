@@ -99,3 +99,7 @@ output "server_profile_names" {
   value       = module.server_template_sorta1.server_profile_names
   description = "List of sorta1 template server names"
 }
+output "new_server_profile_names" {
+  value       = module.server_template_sorta1.new_server_profile_names
+  description = "List of sorta1 template new server names"
+}
