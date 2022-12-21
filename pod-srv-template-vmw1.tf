@@ -52,7 +52,7 @@ module "server_template_vmw1" {                      # <<-- Change to duplicate
 # -----------------------------------------------------------------------------
 
   vnic_vlan_sets = {
-    "eth0"  = {           # Needs to match vnic_name
+    "eth0"  = {
       vnic_name  = "eth0"
       native_vlan = 45
       vlan_range  = "45"
@@ -66,20 +66,6 @@ module "server_template_vmw1" {                      # <<-- Change to duplicate
       switch_id   = "B"
       pci_order   = 1
     }
-   "eth2"  = {           # Needs to match vnic_name
-      vnic_name  = "eth2"
-      native_vlan = 45
-      vlan_range  = "45,50,1000-1011"
-      switch_id   = "A"
-      pci_order   = 2
-    }
-    "eth3"  = {
-      vnic_name   = "eth3"
-      native_vlan = 45
-      vlan_range  = "45,50,1000-1011"
-      switch_id   = "B"
-      pci_order   = 3
-    }
   }
 
 
@@ -89,14 +75,14 @@ module "server_template_vmw1" {                      # <<-- Change to duplicate
       vsan_id        = 100
       switch_id      = "A"
       wwpn_pool_moid = module.imm_pool_mod.wwpn_pool_a_moid
-      pci_order      = 4
+      pci_order      = 2
     }
     "fc1"  = {
       vhba_name      = "fc1"
       vsan_id        = 200
       switch_id      = "B"
       wwpn_pool_moid = module.imm_pool_mod.wwpn_pool_b_moid
-      pci_order      = 5
+      pci_order      = 3
     }
   }
 
