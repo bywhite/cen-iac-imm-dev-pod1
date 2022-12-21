@@ -24,8 +24,7 @@ module "server_template_sorta1" {                      # <<-- Change to duplicat
 # Servers to create from Template
 # -----------------------------------------------------------------------------
 
-  server_count = 0
-  old_server_profile_names = []
+  server_count = 2
 
 # =============================================================================
 # Naming and tagging
