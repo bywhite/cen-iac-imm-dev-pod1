@@ -38,11 +38,13 @@ data "intersight_organization_organization" "ofl" {
 }
 
 # IMM Code Examples Can Be Found at:
+# https://github.com/jerewill-cisco?tab=repositories
+# https://github.com/bywhite/tf-imm-pod-example-code
 # https://github.com/terraform-cisco-modules/terraform-intersight-imm/tree/master/modules
 
-# Enabling access to remote state file
-# access by data.tfe_outputs.tfcb_state.values.<output>
-data "tfe_outputs" "tfcb_state" {
-  organization = "bywhite"
-  workspace = "cen-iac-imm-dev-pod1"
-}
+# # Enabling access to remote state file
+# # access by data.tfe_outputs.tfcb_state.values.<output>
+# data "tfe_outputs" "tfcb_state" {
+#   organization = "bywhite"
+#   workspace = "cen-iac-imm-dev-pod1"
+# }

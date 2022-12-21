@@ -25,7 +25,7 @@ module "server_template_sorta1" {                      # <<-- Change to duplicat
 # -----------------------------------------------------------------------------
 
   server_count = 2
-  old_server_profile_names =  data.tfe_outputs.tfcb_state.values.z-server_profile_names
+  old_server_profile_names = []
 
 # =============================================================================
 # Naming and tagging

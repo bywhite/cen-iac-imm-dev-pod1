@@ -104,6 +104,6 @@ output "z-new_server_profile_names" {
   description = "List of sorta1 template new server names"
 }
 output "z-old_server_profile_names" {
-  description = "List of existing server profiles"
   value       = module.server_template_sorta1.old_server_profile_names
+  description = "List of existing server profiles"
 }
