@@ -3,7 +3,7 @@
 # # Builds: Server Profile Template and associated Server Resource Pool
 # # Creates: Server Profiles by "Count" ("Resource Pool" not enabled yet)
 # # To Duplicate Template:
-# #    * Change module: "server_template_lnx1"  >> "server_template_vlnx2"
+# #    * Change module: "server_template_lnx1"  >> "server_template_lnx2"
 # #    * Change server_policy_prefix: "ofl-dev-pod1-lnx1" > "ofl-dev-pod1-lnx2"
 # # -----------------------------------------------------------------------------
 
@@ -18,7 +18,7 @@ module "server_template_lnx1" {     # <-- Change
   organization    = data.intersight_organization_organization.ofl.id
 
 # Number of servers to create from template
-  server_count = 1
+  server_count = 3
 
 # =============================================================================
 # Naming and tagging
