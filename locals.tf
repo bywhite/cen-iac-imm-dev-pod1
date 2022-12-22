@@ -32,7 +32,15 @@ locals {
   ]
 
 # Fabric QoS System Class moid to be assigned to FI-A and FI-B switch profiles
-  system_qos_moid =  intersight_fabric_system_qos_policy.pod_qos1.moid
+  # system_qos_moid = intersight_fabric_system_qos_policy.pod_qos1.moid
+  system_qos_moid     = module.imm_pod_qos_mod.system_qos_moid
 
-
+  # VNIC QoS policy moids Pod-Wide
+  vnic_qos_besteffort = module.imm_pod_qos_mod.vnic_qos_besteffort_moid
+  vnic_qos_bronze     = module.imm_pod_qos_mod.vnic_qos_bronze_moid
+  vnic_qos_silver     = module.imm_pod_qos_mod.vnic_qos_silver_moid
+  vnic_qos_gold       = module.imm_pod_qos_mod.vnic_qos_gold_moid
+  # vnic_qos_platinum = module.imm_pod_qos_mod.vnic_qos_platinum_moid
+  vnic_qos_fc_moid    = module.imm_pod_qos_mod.vnic_qos_fc_moid
+  
 }
