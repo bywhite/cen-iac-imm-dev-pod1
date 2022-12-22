@@ -32,6 +32,12 @@ module "intersight_policy_bundle_lnx_1" {             # <-- change when copying
     { "key" : "pod", "value" : "ofl-dev-pod1" },
     { "key" : "domain", "value" : "ofl-dev-pod1-lnx1" } # <-- change when copying
   ]
+  
+# =============================================================================
+# Intersight Fabric QoS System Class moid
+# -----------------------------------------------------------------------------
+  # QoS moid assigned to FI-A and FI-B switch profiles
+  system_qos_moid = local.system_qos_moid
 
 # =============================================================================
 # Fabric Interconnect 6536 Ethernet ports
