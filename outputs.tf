@@ -1,5 +1,9 @@
 # Output as needed to reveal Objects created
 
+output "intersight_organization_name" {
+  value         = var.organization
+  description   = "Default is default, otherwise set in TFCB Variable"
+}
 
 output "org_ofl_dev_moid" {
     value       = local.org_moid
