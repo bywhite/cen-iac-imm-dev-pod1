@@ -154,7 +154,7 @@ module "intersight_policy_bundle_lnx_1" {             # <-- change when copying
   
 # The Pools for the Pod must be created before this domain fabric module executes
   depends_on = [
-    module.imm_pool_mod
+    module.imm_pool_mod, module.imm_pod_qos_mod
 ]
 
 }
