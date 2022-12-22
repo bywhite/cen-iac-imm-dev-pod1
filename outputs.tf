@@ -61,6 +61,15 @@ output "ofl_dev_pod1_ip_pool_chassis_moid" {
     description = "IP_Pool moid for chassis in-band IP's"
 }
 
+output "ofl_dev_pod1_ip_pool_server_moid" {
+    value       = module.imm_pool_mod.ip_pool_moid
+    description = "IP_Pool moid for servers in Pod"
+}
+output "ofl_dev_pod1_ip_pool_server_name" {
+    value       = module.imm_pool_mod.ip_pool_name
+    description = "IP_Pool name for servers in Pod"
+}
+
 output "ofl_dev_pod1_mac_pool_moid" {
     value       = module.imm_pool_mod.mac_pool_moid
     description = "MAC Pool moid for cluster"
@@ -98,7 +107,7 @@ output "ofl_dev_pod1_uuid_pool_moid" {
 #     description = "List of server template interfaces"
 # }
 
-output "z-server_profile_names" {
-  value       = module.server_template_sorta1.server_profile_names
-  description = "List of sorta1 template server names"
-}
+# output "z-server_profile_names" {
+#   value       = module.server_template_sorta1.server_profile_names
+#   description = "List of sorta1 template server names"
+# }
