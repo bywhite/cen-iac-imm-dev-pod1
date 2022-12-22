@@ -1,5 +1,5 @@
 # # =============================================================================
-# # This defines the desired configuration of the dev-ofl-pod1-vmw-1 IMM domain
+# # This defines the desired configuration of the ofl-dev-pod1-vmw-1 IMM domain
 # # 
 # # Builds: Domain Cluster, Switch, and Chassis Profiles & their Policies
 # #         configured for 6536 FI and 9508 chassis (May work with 5108 chassis)
@@ -15,7 +15,7 @@ module "intersight_policy_bundle_lnx_1" {             # <-- change when copying
 # -----------------------------------------------------------------------------
 
   # external sources
-  organization    = data.intersight_organization_organization.ofl.id
+  organization    = local.org_moid
 
 # =============================================================================
 # Naming and tagging
@@ -27,7 +27,7 @@ module "intersight_policy_bundle_lnx_1" {             # <-- change when copying
 
   #Every object created in the domain will have these tags
   tags = [
-    { "key" : "environment", "value" : "ofl-dev" },
+    { "key" : "environment", "value" : "dev" },
     { "key" : "orchestrator", "value" : "Terraform" },
     { "key" : "pod", "value" : "ofl-dev-pod1" },
     { "key" : "domain", "value" : "ofl-dev-pod1-lnx1" } # <-- change when copying

@@ -1,8 +1,7 @@
 # Output as needed to reveal Objects created
 
 
-output "org_ofl_moid" {
-    #value = data.intersight_organization_organization.ofl.moid
+output "org_ofl_dev_moid" {
     value       = local.org_moid
     description = "Organization in Intersight for Pod objects"
 }
@@ -53,32 +52,32 @@ output "domain_vmw_1_moid" {
 # }
 
 
-output "ofl_pod1_ip_pool_chassis_moid" {
+output "ofl_dev_pod1_ip_pool_chassis_moid" {
     value       = module.imm_pool_mod.ip_pool_chassis_moid
     description = "IP_Pool moid for chassis in-band IP's"
 }
 
-output "ofl_pod1_mac_pool_moid" {
+output "ofl_dev_pod1_mac_pool_moid" {
     value       = module.imm_pool_mod.mac_pool_moid
     description = "MAC Pool moid for cluster"
 }
 
-output "ofl_pod1_wwnn_pool_moid" {
+output "ofl_dev_pod1_wwnn_pool_moid" {
     value       = module.imm_pool_mod.wwnn_pool_moid
     description = "WWNN pool moid for cluster"
 }
 
-output "ofl_pod1_wwpn_pool_a_moid" {
+output "ofl_dev_pod1_wwpn_pool_a_moid" {
     value       = module.imm_pool_mod.wwpn_pool_a_moid
     description = "WWPN Pool moid for A Fabric"
 }
 
-output "ofl_pod1_wwpn_pool_b_moid" {
+output "ofl_dev_pod1_wwpn_pool_b_moid" {
     value       = module.imm_pool_mod.wwpn_pool_b_moid
     description = "WWPN Pool moid for B Fabric"
 }
 
-output "ofl_pod1_uuid_pool_moid" {
+output "ofl_dev_pod1_uuid_pool_moid" {
     value       = module.imm_pool_mod.uuid_pool_moid
     description = "UUID Pool moid for cluster"
 }

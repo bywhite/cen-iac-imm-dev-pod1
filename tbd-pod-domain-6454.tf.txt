@@ -1,4 +1,4 @@
-# This defines the desired configuration of the dev-ofl-pod1-vmw-1 IMM domain
+# This defines the desired configuration of the ofl-dev-pod1-vmw-1 IMM domain
 # Modules are used with supplied values to define the desired configuration of the domain infrastructure
 
 
@@ -6,10 +6,10 @@ module "intersight_policy_bundle" {
   #source = "github.com/pl247/tf-intersight-policy-bundle"
   source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods/tbd-imm-domain-fabric-6454-mod"
   # external sources
-  organization    = data.intersight_organization_organization.ofl.id
+  organization    = local.org_moid
 
   # every policy created will have this prefix in its name
-  policy_prefix = "dev-ofl-pod1-bml1"
+  policy_prefix = "ofl-dev-pod1-bml1"
   description   = "Built by Terraform cen-iac-imm-dev-pod1 code"
 
   # Fabric Interconnect 6454 config specifics
@@ -36,7 +36,7 @@ module "intersight_policy_bundle" {
   # snmp_trap_ip = "10.2.4.22"
 
   tags = [
-    { "key" : "Environment", "value" : "dev-ofl" },
+    { "key" : "Environment", "value" : "dev" },
     { "key" : "Orchestrator", "value" : "Terraform" },
     { "key" : "pod", "value" : "ofl-dev-pod1" },
     { "key" : "domain", "value" : "ofl-dev-pod1-dom6454" }

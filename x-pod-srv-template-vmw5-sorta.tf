@@ -18,7 +18,7 @@ module "server_template_sorta1" {                      # <<-- Change to duplicat
 # Org external references
 # -----------------------------------------------------------------------------
   # external sources
-  organization    = data.intersight_organization_organization.ofl.id
+  organization    = local.org_moid
 
 # =============================================================================
 # Servers to create from Template

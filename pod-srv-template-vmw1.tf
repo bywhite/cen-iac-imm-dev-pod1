@@ -17,7 +17,7 @@ module "server_template_vmw1" {                      # <<-- Change to duplicate
 # Org external references
 # -----------------------------------------------------------------------------
   # external sources
-  organization    = data.intersight_organization_organization.ofl.id
+  organization    = local.org_moid
 
 # =============================================================================
 # Naming and tagging

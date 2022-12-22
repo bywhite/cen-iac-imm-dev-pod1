@@ -19,7 +19,7 @@ variable "endpoint" {
 
 variable "organization" {
     type = string
-    default = "ofl"
+    default = "ofl-dev"
 }
 
 variable "imc_admin_password" {
