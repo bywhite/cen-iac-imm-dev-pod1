@@ -33,7 +33,7 @@ resource "intersight_fabric_system_qos_policy" "pod_qos1" {
     bandwidth_percent  = 20   # Optional
     weight             = 7     
     cos                = 1
-    mtu                = 1500
+    mtu                = 9216
     multicast_optimize = false
     name               = "Bronze"
     packet_drop        = true
