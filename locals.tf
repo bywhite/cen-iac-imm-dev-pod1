@@ -31,4 +31,8 @@ locals {
     { "key" : "pod", "value" : "ofl-dev-pod1" }
   ]
 
+# Fabric QoS System Class moid to be assigned to FI-A and FI-B switch profiles
+  system_qos_moid =  intersight_fabric_system_qos_policy.pod_qos1.moid
+
+
 }
