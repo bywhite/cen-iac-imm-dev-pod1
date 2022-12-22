@@ -5,7 +5,7 @@ output "intersight_organization_name" {
   description   = "Default is default, otherwise set in TFCB Variable"
 }
 
-output "org_ofl_dev_moid" {
+output "interisight_org_ofl_dev_moid" {
     value       = local.org_moid
     description = "Organization in Intersight for Pod objects"
 }
