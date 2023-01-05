@@ -78,6 +78,7 @@ module "server_template_vmw1" {                      # <<-- Change to duplicate
       switch_id      = "A"
       wwpn_pool_moid = module.imm_pool_mod.wwpn_pool_a_moid
       pci_order      = 2
+      qos_moid       = module.imm_pod_qos_mod.vnic_qos_fc_moid
     }
     "fc1"  = {
       vhba_name      = "fc1"
@@ -85,6 +86,7 @@ module "server_template_vmw1" {                      # <<-- Change to duplicate
       switch_id      = "B"
       wwpn_pool_moid = module.imm_pool_mod.wwpn_pool_b_moid
       pci_order      = 3
+      qos_moid       = module.imm_pod_qos_mod.vnic_qos_fc_moid
     }
     "fc2" = {
       vhba_name      = "fc2"
@@ -92,6 +94,7 @@ module "server_template_vmw1" {                      # <<-- Change to duplicate
       switch_id      = "A"
       wwpn_pool_moid = module.imm_pool_mod.wwpn_pool_a_moid
       pci_order      = 4
+      qos_moid       = module.imm_pod_qos_mod.vnic_qos_fc_moid
     }
     "fc3"  = {
       vhba_name      = "fc3"
@@ -99,6 +102,7 @@ module "server_template_vmw1" {                      # <<-- Change to duplicate
       switch_id      = "B"
       wwpn_pool_moid = module.imm_pool_mod.wwpn_pool_b_moid
       pci_order      = 5
+      qos_moid       = module.imm_pod_qos_mod.vnic_qos_fc_moid
     }
   }
 
