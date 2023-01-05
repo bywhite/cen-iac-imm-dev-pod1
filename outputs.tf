@@ -20,16 +20,6 @@ output "domain_vmw_1_name" {
     description = "IMM Domain Cluster VMW-1 TF object name"
 }
 
-output "pod_system_qos_moid" {
-    value       = module.imm_pod_qos_mod.system_qos_moid
-    description = "Pod-wid QoS sysem class definition moid"
-}
-output "pod_system_qos_name" {
-    value       = module.imm_pod_qos_mod.system_qos_name
-    description = "Pod-wid QoS sysem class definition moid"
-}
-
-
 # output "vmw_1_chassis_count" {
 #     value       = module.intersight_policy_bundle_vmw_1.chassis_count
 #     description = "How many chassis were made by module"
