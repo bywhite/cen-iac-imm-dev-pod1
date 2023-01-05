@@ -74,7 +74,7 @@ module "server_template_vmw1" {                      # <<-- Change to duplicate
   vhba_vsan_sets = {
     "fc0" = {
       vhba_name      = "fc0"
-      vsan_id        = 100
+      vsan_moid      = intersight_vnic_fc_network_policy.fc_vsan_100.moid
       switch_id      = "A"
       wwpn_pool_moid = module.imm_pool_mod.wwpn_pool_a_moid
       pci_order      = 2
@@ -82,7 +82,7 @@ module "server_template_vmw1" {                      # <<-- Change to duplicate
     }
     "fc1"  = {
       vhba_name      = "fc1"
-      vsan_id        = 200
+      vsan_moid      = intersight_vnic_fc_network_policy.fc_vsan_200.moid
       switch_id      = "B"
       wwpn_pool_moid = module.imm_pool_mod.wwpn_pool_b_moid
       pci_order      = 3
@@ -90,7 +90,7 @@ module "server_template_vmw1" {                      # <<-- Change to duplicate
     }
     "fc2" = {
       vhba_name      = "fc2"
-      vsan_id        = 300
+      vsan_moid      = intersight_vnic_fc_network_policy.fc_vsan_101.moid
       switch_id      = "A"
       wwpn_pool_moid = module.imm_pool_mod.wwpn_pool_a_moid
       pci_order      = 4
@@ -98,7 +98,7 @@ module "server_template_vmw1" {                      # <<-- Change to duplicate
     }
     "fc3"  = {
       vhba_name      = "fc3"
-      vsan_id        = 400
+      vsan_moid      = intersight_vnic_fc_network_policy.fc_vsan_201.moid
       switch_id      = "B"
       wwpn_pool_moid = module.imm_pool_mod.wwpn_pool_b_moid
       pci_order      = 5
