@@ -124,6 +124,34 @@ module "intersight_policy_bundle_vmw_1" {              # <-- change when copying
     { "vsan_b" : 201, "fcoe_b_vlan" : 2001 }
   ]
 
+  # Fabric A VSAN Set
+  fabric_a_vsan_sets = {
+    "vsan100" = {
+      vsan_number   = 100
+      fcoe_number   = 1001
+      switch_id      = "A"
+    }
+    "vsan101"  = {
+      vsan_number   = 100
+      fcoe_number   = 1001
+      switch_id      = "A"
+    }
+  }
+
+  # Fabric B VSAN Set
+    fabric_b_vsan_sets = {
+    "vsan200" = {
+      vsan_number   = 200
+      fcoe_number   = 2000
+      switch_id      = "B"
+    }
+    "vsan201"  = {
+      vsan_number   = 201
+      fcoe_number   = 2001
+      switch_id      = "B"
+    }
+  }
+
 # =============================================================================
 # Chassis
 # -----------------------------------------------------------------------------
