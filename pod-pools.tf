@@ -9,7 +9,7 @@ module "imm_pool_mod" {
 
   # every policy created will have this prefix in its name
   policy_prefix = local.pod_policy_prefix
-  description   = "Built by Terraform repo: cen-iac-imm-dev-pod1  module: imm-pod-pools-mod"
+  description   = local.description
 
   ip_size     = "500"
   ip_start = "10.10.10.10"
