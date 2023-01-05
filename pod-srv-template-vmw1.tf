@@ -58,6 +58,7 @@ module "server_template_vmw1" {                      # <<-- Change to duplicate
       vlan_range  = "45"
       switch_id   = "A"
       pci_order   = 0
+      qos_moid    = module.imm_pod_qos_mod.vnic_qos_besteffort_moid
     }
     "eth1"  = {
       vnic_name   = "eth1"
@@ -65,6 +66,7 @@ module "server_template_vmw1" {                      # <<-- Change to duplicate
       vlan_range  = "45"
       switch_id   = "B"
       pci_order   = 1
+      qos_moid    = module.imm_pod_qos_mod.vnic_qos_besteffort_moid
     }
   }
 
