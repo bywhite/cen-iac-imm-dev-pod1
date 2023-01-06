@@ -112,17 +112,6 @@ module "intersight_policy_bundle_vmw_1" {              # <-- change when copying
     vsan_name_prefix = "vsan-"
 
 # VSAN Trunking is enabled by default. One or more VSANs are required for each FI
-  # # Fabric A VSANs
-  #   fc_6536_vsans_a = [
-  #   { "vsan_a" : 100, "fcoe_a_vlan" : 1000 },
-  #   { "vsan_a" : 101, "fcoe_a_vlan" : 1001 }
-  # ]
- 
-  # # Fabric B VSANs
-  #   fc_6536_vsans_b = [
-  #   { "vsan_b" : 200, "fcoe_b_vlan" : 2000 },
-  #   { "vsan_b" : 201, "fcoe_b_vlan" : 2001 }
-  # ]
 
   # Fabric A VSAN Set
   fabric_a_vsan_sets = {
