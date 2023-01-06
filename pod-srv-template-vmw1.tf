@@ -67,7 +67,7 @@ module "server_template_vmw1" {                      # <<-- Change to duplicate
       vlan_range  = "45"
       switch_id   = "B"
       pci_order   = 1
-      qos_moid    = module.imm_pod_qos_mod.vnic_qos_besteffort_moid
+      qos_moid    = module.imm_pod_qos_mod.vnic_qos_bronze_moid
     }
   }
 
@@ -87,22 +87,6 @@ module "server_template_vmw1" {                      # <<-- Change to duplicate
       switch_id      = "B"
       wwpn_pool_moid = module.imm_pool_mod.wwpn_pool_b_moid
       pci_order      = 3
-      qos_moid       = module.imm_pod_qos_mod.vnic_qos_fc_moid
-    }
-    "fc2" = {
-      vhba_name      = "fc2"
-      vsan_moid      = intersight_vnic_fc_network_policy.fc_vsan_101.moid
-      switch_id      = "A"
-      wwpn_pool_moid = module.imm_pool_mod.wwpn_pool_a_moid
-      pci_order      = 4
-      qos_moid       = module.imm_pod_qos_mod.vnic_qos_fc_moid
-    }
-    "fc3"  = {
-      vhba_name      = "fc3"
-      vsan_moid      = intersight_vnic_fc_network_policy.fc_vsan_201.moid
-      switch_id      = "B"
-      wwpn_pool_moid = module.imm_pool_mod.wwpn_pool_b_moid
-      pci_order      = 5
       qos_moid       = module.imm_pod_qos_mod.vnic_qos_fc_moid
     }
   }
