@@ -14,7 +14,8 @@ locals {
 
 
   # Intersight Organization Variable
-  org_moid = data.intersight_organization_organization.ofl_dev.id
+  #org_moid = data.intersight_organization_organization.ofl_dev.id
+  org_moid = data.intersight_organization_organization.my_org.id
   
   pod_policy_prefix = "ofl-dev-pod1" 
   

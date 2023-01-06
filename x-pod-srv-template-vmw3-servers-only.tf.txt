@@ -19,7 +19,7 @@ module "server_profiles_only1" {                      # <<-- Change to duplicate
 # -----------------------------------------------------------------------------
   # external sources
   organization    = local.org_moid
-                    # data.intersight_organization_organization.ofl_dev.id
+                    # data.intersight_organization_organization.my_org.id
 
 # =============================================================================
 # Servers to create from Template

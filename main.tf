@@ -35,8 +35,8 @@ provider "intersight" {
 }
 
 #Organizations should be created manually in Intersight and changed below for each Data Center
-# Example:  org_moid = data.intersight_organization_organization.ofl_dev.id
-data "intersight_organization_organization" "ofl_dev" {
+# Example Use:  org_moid = data.intersight_organization_organization.my_org.id
+data "intersight_organization_organization" "my_org" {
     name = "ofl-dev"
 }
 
