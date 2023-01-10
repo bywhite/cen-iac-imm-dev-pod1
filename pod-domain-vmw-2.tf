@@ -7,7 +7,7 @@
 
 
 module "intersight_policy_bundle_vmw_2" {              # <-- change when copying
-  source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods/imm-domain-fabric-6536"
+  source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods//imm-domain-fabric-6536?ref=v1.1.1c"
 
 # =============================================================================
 # Org external references
