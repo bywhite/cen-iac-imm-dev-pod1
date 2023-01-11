@@ -33,6 +33,7 @@ module "intersight_policy_bundle_lnx_1" {             # <-- change when copying
     { "key" : "domain", "value" : "ofl-dev-pod1-lnx1" } # <-- change when copying
   ]
 
+
 # =============================================================================
 # Fabric Interconnect 6536 Ethernet ports
 # -----------------------------------------------------------------------------
@@ -154,7 +155,7 @@ module "intersight_policy_bundle_lnx_1" {             # <-- change when copying
 # NTP, DNS and SNMP Settings
 # -----------------------------------------------------------------------------
 
-  ntp_servers = ["ca.pool.ntp.org"]
+  ntp_servers   = ["ca.pool.ntp.org"]
   ntp_timezone  = "America/Chicago"
 
   dns_preferred = "8.8.8.8"
