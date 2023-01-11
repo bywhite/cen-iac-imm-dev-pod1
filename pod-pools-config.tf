@@ -1,0 +1,10 @@
+# Create a sequential MAC Pool.
+module "imm_pool_mod" {
+  source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods/x1-pool-mod"
+
+  pod_id = "11"
+  # used to create moids for Pools: MAC, WWNN, WWPN
+
+}
+
+
