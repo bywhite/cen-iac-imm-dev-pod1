@@ -1,6 +1,5 @@
-resource "intersight_macpool_pool" "cisco_af_1" {
-  name = "cisco_af_1"
-  organization    = local.org_moid
+resource "intersight_macpool_pool" "cisco_af_2" {
+  name = "cisco_af_2"
 
   mac_blocks {
     from = "00:25:B5:AF:10:00"
@@ -9,7 +8,6 @@ resource "intersight_macpool_pool" "cisco_af_1" {
 
   organization {
     object_type = "organization.Organization"
-    moid = var.organization 
+    moid = data.intersight_organization_organization.my_org.id
   }
-
 }

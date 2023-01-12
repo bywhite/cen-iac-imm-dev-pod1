@@ -145,7 +145,7 @@ module "intersight_policy_bundle_vmw_1" {              # <-- change when copying
 
   chassis_9508_count = 15
   chassis_imc_access_vlan    = 999
-  chassis_imc_ip_pool_moid = module.imm_pool_mod.ip_pool_moid
+  chassis_imc_ip_pool_moid = module.imm_pool_mod.ip_pool_chassis_moid 
   # Chassis requires In-Band IP's Only  (ie must be a VLAN trunked to FI's)
   # Need chassis_imc_access_password from TFCB Workspace Variable
 
