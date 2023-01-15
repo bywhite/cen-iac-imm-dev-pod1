@@ -74,7 +74,7 @@ module "intersight_policy_bundle_bml_1" {
 
   # VSAN ID for FC Port Channel
   fc_uplink_pc_vsan_id_a = 100
-  fc_uplink_pc_vsan_id_a = 200
+  fc_uplink_pc_vsan_id_b = 200
 
 
 # VSAN Trunking is enabled by default. One or more VSANs are required for each FI
