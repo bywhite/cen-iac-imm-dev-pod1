@@ -56,7 +56,7 @@ module "intersight_policy_bundle_bml_1" {
     #6454 FC ports start at Port 1 up to 16 (FC on left of slider)
 
   # A value of 8 results in 8x 32G FC Port from ports 1 to 8
-  fc_port_count_6454 = 0
+  fc_port_count_6454 = 8
 
   # VSAN ID for FC Port Channel
   fc_uplink_pc_vsan_id_a = 100
