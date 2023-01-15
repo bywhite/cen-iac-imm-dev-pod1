@@ -59,18 +59,22 @@ module "intersight_policy_bundle_bml_1" {
   fc_port_count_6454 = 8
 
   # VSAN Name Prefix is prepended to the VSAN number
-    vsan_name_prefix = "vsan-"
+  vsan_name_prefix = "vsan-"
   
     fc_port_channel_6454 = [
-    { "aggport" : 1, "port" : 1 },
-    { "aggport" : 1, "port" : 2 },
-    { "aggport" : 1, "port" : 3 },
-    { "aggport" : 1, "port" : 4 },
-    { "aggport" : 1, "port" : 5 },
-    { "aggport" : 1, "port" : 6 },
-    { "aggport" : 1, "port" : 7 },
-    { "aggport" : 1, "port" : 8 }
+    { "aggport" : 0, "port" : 1 },
+    { "aggport" : 0, "port" : 2 },
+    { "aggport" : 0, "port" : 3 },
+    { "aggport" : 0, "port" : 4 },
+    { "aggport" : 0, "port" : 5 },
+    { "aggport" : 0, "port" : 6 },
+    { "aggport" : 0, "port" : 7 },
+    { "aggport" : 0, "port" : 8 }
   ]
+
+  # VSAN ID for FC Port Channel
+  fc_uplink_pc_vsan_id_a = 100
+  fc_uplink_pc_vsan_id_a = 200
 
 
 # VSAN Trunking is enabled by default. One or more VSANs are required for each FI
