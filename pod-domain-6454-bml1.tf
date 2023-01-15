@@ -55,57 +55,57 @@ module "intersight_policy_bundle_bml_1" {
 # -----------------------------------------------------------------------------
     #6454 FC ports start at Port 1 up to 16 (FC on left of slider)
 
-  # A value of 8 results in 8x 32G FC Port from ports 1 to 8
-  fc_port_count_6454 = 8
+#   # A value of 8 results in 8x 32G FC Port from ports 1 to 8
+#   fc_port_count_6454 = 0
 
-  # VSAN ID for FC Port Channel
-  fc_uplink_pc_vsan_id_a = 100
-  fc_uplink_pc_vsan_id_b = 200
+#   # VSAN ID for FC Port Channel
+#   fc_uplink_pc_vsan_id_a = 100
+#   fc_uplink_pc_vsan_id_b = 200
 
-  # VSAN Name Prefix is prepended to the VSAN number
-  vsan_name_prefix = "vsan-"
+#   # VSAN Name Prefix is prepended to the VSAN number
+#   vsan_name_prefix = "vsan-"
   
-    fc_port_channel_6454 = [
-    { "aggport" : 0, "port" : 1 },
-    { "aggport" : 0, "port" : 2 },
-    { "aggport" : 0, "port" : 3 },
-    { "aggport" : 0, "port" : 4 },
-    { "aggport" : 0, "port" : 5 },
-    { "aggport" : 0, "port" : 6 },
-    { "aggport" : 0, "port" : 7 },
-    { "aggport" : 0, "port" : 8 }
-  ]
+#     fc_port_channel_6454 = [
+#     { "aggport" : 0, "port" : 1 },
+#     { "aggport" : 0, "port" : 2 },
+#     { "aggport" : 0, "port" : 3 },
+#     { "aggport" : 0, "port" : 4 },
+#     { "aggport" : 0, "port" : 5 },
+#     { "aggport" : 0, "port" : 6 },
+#     { "aggport" : 0, "port" : 7 },
+#     { "aggport" : 0, "port" : 8 }
+#   ]
 
 
-# VSAN Trunking is enabled by default. One or more VSANs are required for each FI
+# # VSAN Trunking is enabled by default. One or more VSANs are required for each FI
 
-  # Fabric A VSAN Set
-  fabric_a_vsan_sets = {
-    "vsan100" = {
-      vsan_number   = 100
-      fcoe_number   = 1000
-      switch_id      = "A"
-    }
-    "vsan101"  = {
-      vsan_number   = 101
-      fcoe_number   = 1001
-      switch_id      = "A"
-    }
-  }
+#   # Fabric A VSAN Set
+#   fabric_a_vsan_sets = {
+#     "vsan100" = {
+#       vsan_number   = 100
+#       fcoe_number   = 1000
+#       switch_id      = "A"
+#     }
+#     "vsan101"  = {
+#       vsan_number   = 101
+#       fcoe_number   = 1001
+#       switch_id      = "A"
+#     }
+#   }
 
-  # Fabric B VSAN Set
-    fabric_b_vsan_sets = {
-    "vsan200" = {
-      vsan_number   = 200
-      fcoe_number   = 2000
-      switch_id      = "B"
-    }
-    "vsan201"  = {
-      vsan_number   = 201
-      fcoe_number   = 2001
-      switch_id      = "B"
-    }
-  }
+#   # Fabric B VSAN Set
+#     fabric_b_vsan_sets = {
+#     "vsan200" = {
+#       vsan_number   = 200
+#       fcoe_number   = 2000
+#       switch_id      = "B"
+#     }
+#     "vsan201"  = {
+#       vsan_number   = 201
+#       fcoe_number   = 2001
+#       switch_id      = "B"
+#     }
+#   }
 
 # =============================================================================
 # Chassis
