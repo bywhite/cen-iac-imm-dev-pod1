@@ -113,7 +113,7 @@ module "intersight_policy_bundle_lnx_1" {             # <-- change when copying
   ]
 
   # VSAN Name Prefix is prepended to the VSAN number
-    vsan_name_prefix = "vsan-"
+    vsan_name_prefix = "vsan"
 
 # VSAN Trunking is enabled by default. One or more VSANs are required for each FI
 

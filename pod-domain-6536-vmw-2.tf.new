@@ -37,8 +37,8 @@ module "intersight_policy_bundle_vmw_2" {              # <-- change when copying
 # Fabric Interconnect 6536 Ethernet ports
 # -----------------------------------------------------------------------------
 
-  # VLAN Prefix ex: vlan-   >> vlan-230
-  # vlan_prefix = "vlan-"
+  # VLAN Prefix ex: vlan   >> vlan-230
+  # vlan_prefix = "vlan"
 
   #FI ports to be used for ethernet port channel uplink
   port_channel_6536 = [31, 32, 33, 34]

@@ -44,8 +44,8 @@ module "intersight_policy_bundle_bml_1" {
   # FI physical port numbers to be attached to chassis 
   server_ports_6454 = [13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44]
 
-  # VLAN Prefix ex: vlan-   >> name is: vlan-230
-  vlan_prefix = "vlan-"
+  # VLAN Prefix ex: vlan   >> name is: vlan-230
+  vlan_prefix = "vlan"
 
   # Uplink VLANs Allowed List    Example: "5,6,7,8,100-130,998-1011"
   switch_vlans_6454 = "100,101,102,313,314,997-999"

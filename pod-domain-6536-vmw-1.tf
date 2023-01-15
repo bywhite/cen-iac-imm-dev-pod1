@@ -82,8 +82,8 @@ module "intersight_policy_bundle_vmw_1" {              # <-- change when copying
   #   }
   # }
 
-  # VLAN Prefix ex: vlan-   >> vlan-230
-  # vlan_prefix = "vlan-"
+  # VLAN Prefix ex: vlan   >> vlan-230
+  # vlan_prefix = "vlan"
 
   # Uplink VLANs Allowed List    Example: "5,6,7,8,100-130,998-1011"
   switch_vlans_6536 = "100,101,102,313,314,997-999"
