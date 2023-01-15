@@ -97,6 +97,10 @@ module "intersight_policy_bundle_lnx_1" {             # <-- change when copying
   # A value of 2 results in 8x 32G FC Port breakouts from ports 35 & 36
   fc_port_count_6536 = 2
 
+  # VSAN ID for FC Port Channel
+  fc_uplink_pc_vsan_id_a = 100
+  fc_uplink_pc_vsan_id_b = 200
+
   fc_port_channel_6536 = [
     { "aggport" : 35, "port" : 1 },
     { "aggport" : 35, "port" : 2 },

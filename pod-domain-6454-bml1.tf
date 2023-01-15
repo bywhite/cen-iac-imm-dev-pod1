@@ -58,6 +58,10 @@ module "intersight_policy_bundle_bml_1" {
   # A value of 8 results in 8x 32G FC Port from ports 1 to 8
   fc_port_count_6454 = 8
 
+  # VSAN ID for FC Port Channel
+  fc_uplink_pc_vsan_id_a = 100
+  fc_uplink_pc_vsan_id_b = 200
+
   # VSAN Name Prefix is prepended to the VSAN number
   vsan_name_prefix = "vsan-"
   
@@ -71,10 +75,6 @@ module "intersight_policy_bundle_bml_1" {
     { "aggport" : 0, "port" : 7 },
     { "aggport" : 0, "port" : 8 }
   ]
-
-  # VSAN ID for FC Port Channel
-  fc_uplink_pc_vsan_id_a = 100
-  fc_uplink_pc_vsan_id_b = 200
 
 
 # VSAN Trunking is enabled by default. One or more VSANs are required for each FI
