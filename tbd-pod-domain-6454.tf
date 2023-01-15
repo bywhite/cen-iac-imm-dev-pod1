@@ -35,27 +35,23 @@ module "intersight_policy_bundle_bml_1" {
 
 
 # =============================================================================
-# Fabric Interconnect 6536 Ethernet ports
+# Fabric Interconnect 6545 Ethernet ports
 # -----------------------------------------------------------------------------
 
   #FI ports to be used for ethernet port channel uplink
-  port_channel_6536 = [49,50,51,52]
-
-
-
-
+  port_channel_6454 = [49,50,51,52]
 
   # FI physical port numbers to be attached to chassis 
-  server_ports_6536 = [13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44]
+  server_ports_6454 = [13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44]
 
-
+  # VLAN Prefix ex: vlan-   >> name is: vlan-230
+  vlan_prefix = "vlan-"
 
   # Uplink VLANs Allowed List    Example: "5,6,7,8,100-130,998-1011"
-  switch_vlans_6536 = "100,101,102,313,314,997-999"
-
+  switch_vlans_6454 = "100,101,102,313,314,997-999"
 
 # =============================================================================
-# Fabric Interconnect 6536 FC Ports and VSANs
+# Fabric Interconnect 6454 FC Ports and VSANs
 # -----------------------------------------------------------------------------
     #6454 FC ports start at Port 1 up to 16 (FC on left of slider)
 
@@ -65,7 +61,7 @@ module "intersight_policy_bundle_bml_1" {
   # VSAN Name Prefix is prepended to the VSAN number
     vsan_name_prefix = "vsan-"
   
-    fc_port_channel_6536 = [
+    fc_port_channel_6454 = [
     { "aggport" : 1, "port" : 1 },
     { "aggport" : 1, "port" : 2 },
     { "aggport" : 1, "port" : 3 },
