@@ -115,8 +115,8 @@ module "intersight_policy_bundle_vmw_2" {              # <-- change when copying
     { "aggport" : 36, "port" : 4 }
   ]
 
-  # VSAN Name Prefix is prepended to the VSAN number
-    vsan_name_prefix = "vsan-"
+  # # VSAN Name Prefix is prepended to the VSAN number
+  #   vsan_name_prefix = "vsan-"
 
 # VSAN Trunking is enabled by default. One or more VSANs are required for each FI
 
