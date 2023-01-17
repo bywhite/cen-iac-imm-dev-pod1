@@ -22,7 +22,7 @@ module "intersight_policy_bundle_lnx_1" {             # <-- change when copying
 # -----------------------------------------------------------------------------
 
   # every policy created will have this prefix in its name
-  policy_prefix = "ofl-dev-pod1-lnx-1"                # <-- change when copying
+  policy_prefix = "${local.pod_policy_prefix}-lnx-1"                # <-- change when copying
   description   = "built by Terraform cen-iac-imm-dev-pod1"
 
   #Every object created in the domain will have these tags
@@ -112,10 +112,8 @@ module "intersight_policy_bundle_lnx_1" {             # <-- change when copying
     { "aggport" : 36, "port" : 4 }
   ]
 
-  # # VSAN Name Prefix is prepended to the VSAN number
-  #   vsan_name_prefix = "vsan"
-
-# VSAN Trunking is enabled by default. One or more VSANs are required for each FI
+# VSAN Trunking is enabled by default. 
+# One or more VSANs are required for each FI
 
   # Fabric A VSAN Set
   fabric_a_vsan_sets = {
