@@ -55,18 +55,34 @@ module "server_template_vmw2" {                                   # <<-- Change 
   vnic_vlan_sets = {
     "eth0"  = {
       vnic_name  = "eth0"
-      native_vlan = 45
-      vlan_range  = "45"
+      native_vlan = 100
+      vlan_range  = "100"
       switch_id   = "A"
       pci_order   = 0
       qos_moid    = module.imm_pod_qos_mod.vnic_qos_besteffort_moid
     }
     "eth1"  = {
       vnic_name   = "eth1"
-      native_vlan = 45
-      vlan_range  = "45"
+      native_vlan = 100
+      vlan_range  = "100"
       switch_id   = "B"
       pci_order   = 1
+      qos_moid    = module.imm_pod_qos_mod.vnic_qos_bronze_moid
+    }
+    "eth2"  = {
+      vnic_name  = "eth2"
+      native_vlan = 101
+      vlan_range  = "101,102,313,314,997-999"
+      switch_id   = "A"
+      pci_order   = 2
+      qos_moid    = module.imm_pod_qos_mod.vnic_qos_besteffort_moid
+    }
+    "eth3"  = {
+      vnic_name   = "eth3"
+      native_vlan = 101
+      vlan_range  = "101,102,313,314,997-999"
+      switch_id   = "B"
+      pci_order   = 3
       qos_moid    = module.imm_pod_qos_mod.vnic_qos_bronze_moid
     }
   }
@@ -78,7 +94,7 @@ module "server_template_vmw2" {                                   # <<-- Change 
       vsan_moid      = intersight_vnic_fc_network_policy.fc_vsan_100.moid
       switch_id      = "A"
       wwpn_pool_moid = module.imm_pool_mod.wwpn_pool_a_moid
-      pci_order      = 2
+      pci_order      = 4
       qos_moid       = module.imm_pod_qos_mod.vnic_qos_fc_moid
     }
     "fc1"  = {
@@ -86,7 +102,7 @@ module "server_template_vmw2" {                                   # <<-- Change 
       vsan_moid      = intersight_vnic_fc_network_policy.fc_vsan_200.moid
       switch_id      = "B"
       wwpn_pool_moid = module.imm_pool_mod.wwpn_pool_b_moid
-      pci_order      = 3
+      pci_order      = 5
       qos_moid       = module.imm_pod_qos_mod.vnic_qos_fc_moid
     }
   }

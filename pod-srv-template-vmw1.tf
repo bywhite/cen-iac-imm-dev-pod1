@@ -55,16 +55,16 @@ module "server_template_vmw1" {                                   # <<-- Change 
   vnic_vlan_sets = {
     "eth0"  = {
       vnic_name  = "eth0"
-      native_vlan = 45
-      vlan_range  = "45"
+      native_vlan = 100
+      vlan_range  = "100,101,102,313,314,997-999"
       switch_id   = "A"
       pci_order   = 0
       qos_moid    = module.imm_pod_qos_mod.vnic_qos_besteffort_moid
     }
     "eth1"  = {
       vnic_name   = "eth1"
-      native_vlan = 45
-      vlan_range  = "45"
+      native_vlan = 100
+      vlan_range  = "100,101,102,313,314,997-999"
       switch_id   = "B"
       pci_order   = 1
       qos_moid    = module.imm_pod_qos_mod.vnic_qos_bronze_moid
