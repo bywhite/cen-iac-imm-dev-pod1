@@ -49,8 +49,10 @@ module "server_template_vmw2" {                                   # <<-- Change 
   server_uuid_pool_name    = module.imm_pool_mod.uuid_pool_name
 
 # =============================================================================
-# Server vNic Configurations & FC SAN HBA's
+# Server Eth vNic's & FC vHBA's
 # -----------------------------------------------------------------------------
+# Ensure "pci_order is unique and sequential across all vnic/vhba"
+# Ensure vlans & vsans are provisioned on target UCS Domain
 
   vnic_vlan_sets = {
     "eth0"  = {

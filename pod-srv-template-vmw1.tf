@@ -49,8 +49,10 @@ module "server_template_vmw1" {                                   # <<-- Change 
   server_uuid_pool_name    = module.imm_pool_mod.uuid_pool_name
 
 # =============================================================================
-# Server vNic Configurations & FC SAN HBA's
+# Server Eth vNic's & FC vHBA's
 # -----------------------------------------------------------------------------
+# Ensure "pci_order is unique and sequential across all vnic/vhba"
+# Ensure vlans & vsans are provisioned on target UCS Domain
 
   vnic_vlan_sets = {
     "eth0"  = {
@@ -95,6 +97,7 @@ module "server_template_vmw1" {                                   # <<-- Change 
 # =============================================================================
 # Server monitoring configurations
 # -----------------------------------------------------------------------------
+# All values could be set with Local's or Variables
 
  # SNMP
   snmp_ip       = "127.0.0.1"
