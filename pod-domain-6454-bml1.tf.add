@@ -35,7 +35,7 @@ module "intersight_policy_bundle_bml_1" {
 
 
 # =============================================================================
-# Fabric Interconnect 6545 Ethernet ports
+# Fabric Interconnect 6454 Ethernet ports
 # -----------------------------------------------------------------------------
 
   #FI ports to be used for ethernet port channel uplink
@@ -53,18 +53,18 @@ module "intersight_policy_bundle_bml_1" {
 # =============================================================================
 # Fabric Interconnect 6454 FC Ports and VSANs
 # -----------------------------------------------------------------------------
-    #6454 FC ports start at Port 1 up to 16 (FC on left of slider)
+  #6454 FC ports start at Port 1 up to 16 (FC on left of slider)
 
   # A value of 8 results in 8x 32G FC Port from ports 1 to 8
-  # For no FC, set to 0 and comment out all FC variables or set them to empty sets
+  # For no FC, set fc_port_count_6454 to 0 and comment out all FC variables or set them to empty sets
   fc_port_count_6454 = 0
 
   # VSAN ID for FC Port Channel
   fc_uplink_pc_vsan_id_a = 100
   fc_uplink_pc_vsan_id_b = 200
 
-  
-    fc_port_channel_6454 = [
+  #  All 6454 FC ports are standard ports so "aggport" must be 0
+  fc_port_channel_6454 = [
     # { "aggport" : 0, "port" : 1 },
     # { "aggport" : 0, "port" : 2 },
     # { "aggport" : 0, "port" : 3 },
