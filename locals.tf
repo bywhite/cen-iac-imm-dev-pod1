@@ -14,24 +14,23 @@ locals {
 
 
   # Intersight Organization Variable
-  #org_moid = data.intersight_organization_organization.ofl_dev.id
   org_moid = data.intersight_organization_organization.my_org.id
   
-  pod_policy_prefix = "ofl-dev-pod1" 
+  pod_policy_prefix = "ofl-dev-pod1"                           # <-- change when copying
   
-  pod_id = "01"
+  pod_id = "01"                                                # <-- change when copying
 #           0 is for OFL    RCO is 1     BUF is 3  other locations TBD
 #           1 is for first pod  2 is for second pod,  3 is for third pod    etc. 
 #  Example RCO Pod 2 ID would be:  "12"
 #  All Identity Pools for a Pod will contain the POD ID (MAc, WWNN, WWPN, UUID)
 
-  description = "Built by Terraform with repo cen-iac-imm-dev-pod1"
+  description = "Built by Terraform ${local.pod_policy_prefix}"
 
   #Every object created in the pod main module will have these tags
   pod_tags = [
     { "key" : "environment", "value" : "dev" },
     { "key" : "orchestrator", "value" : "Terraform" },
-    { "key" : "pod", "value" : "ofl-dev-pod1" }
+    { "key" : "pod", "value" : "${local.pod_policy_prefix}" }
   ]
 
 # VNIC QoS policy moids Pod-Wide

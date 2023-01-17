@@ -1,5 +1,6 @@
 # https://intersight.com/an/settings/api-keys/
 ## Generate API key to obtain the API key and secret key
+#  All variables listed should be set in TFCB "Workspace" Variables
 
 variable "api_key" {
     description = "API key for Intersight account"

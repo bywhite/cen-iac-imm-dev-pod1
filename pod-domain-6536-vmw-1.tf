@@ -21,15 +21,15 @@ module "intersight_policy_bundle_vmw_1" {              # <-- change when copying
 # -----------------------------------------------------------------------------
 
   # every policy created will have this prefix in its name
-  policy_prefix = "ofl-dev-pod1-vmw-1"                # <-- change when copying
-  description   = "built by Terraform cen-iac-imm-dev-pod1"
+  policy_prefix = "${local.pod_policy_prefix}-vmw-1"                # <-- change when copying
+  description   = "built by Terraform ${local.pod_policy_prefix}"
 
   #Every object created in the domain will have these tags
   tags = [
     { "key" : "environment", "value" : "dev" },
     { "key" : "orchestrator", "value" : "Terraform" },
-    { "key" : "pod", "value" : "ofl-dev-pod1" },
-    { "key" : "domain", "value" : "ofl-dev-pod1-vmw1" } # <-- change when copying
+    { "key" : "pod", "value" : "${local.pod_policy_prefix}" },
+    { "key" : "domain", "value" : "${local.pod_policy_prefix}-vmw1" } # <-- change when copying
   ]
 
 
