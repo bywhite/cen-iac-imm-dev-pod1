@@ -1,5 +1,5 @@
 # # =============================================================================
-# # This defines the desired configuration of the ofl-dev-pod1-vmw-1 IMM domain
+# # This defines the desired configuration of a UCS IMM domain
 # # 
 # # Builds: Domain Cluster, Switch, and Chassis Profiles & their Policies
 # #         configured for 6536 FI and 9508 chassis (May work with 5108 chassis)

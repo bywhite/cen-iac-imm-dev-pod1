@@ -4,7 +4,7 @@
 # #    * Note: Derivation of Server Profiles is outside of TF scope
 # # Duplicate this code/file to add another new Server Template and:
 # #    * Change module: "server_template_vmwX"  >> "server_template_vmwY"
-# #    * Change server_policy_prefix: "ofl-dev-pod1-vmwX" > "ofl-dev-pod1-vmwY"
+# #    * Change server_policy_prefix: "...-vmwX" > "...-vmwY"
 # #    * Change Tag value for "ServerGroup" to include new name
 # #    * Modify parameters as needed to tweak your template configuration
 # # -----------------------------------------------------------------------------
