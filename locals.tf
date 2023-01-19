@@ -5,13 +5,10 @@
 
 locals {
 
-#  The following are defined as variables (var.) in the TFCB workspace
-#  endpoint (http://intersight.com)
-#  api_key  (ID for Intersight)
-#  secretkey (Key for Intersight)
-#  imc_admin_password
-
-
+#  The following are defined as "local" variables (local.<variable>)
+# Local variables are typically used for data transformation or to set initial values
+# Sensitive information should be stored in variables (var.<variable>) to be passed in
+#    var.<variables can be passed in from TFCB, CLI apply parameters and environment variables
 
   # Intersight Organization Variable
   org_moid = data.intersight_organization_organization.my_org.id
