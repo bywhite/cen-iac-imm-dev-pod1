@@ -6,7 +6,7 @@
 # # -----------------------------------------------------------------------------
 
 
-module "intersight_policy_bundle_vmw_1" {              # <-- change when copying
+module "intersight_policy_bundle_vmw_2" {                            # <-- change when copying
   source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods//imm-domain-fabric-6536?ref=v1.2.2"
 
 # =============================================================================
@@ -21,7 +21,7 @@ module "intersight_policy_bundle_vmw_1" {              # <-- change when copying
 # -----------------------------------------------------------------------------
 
   # every policy created will have this prefix in its name
-  policy_prefix = "${local.pod_policy_prefix}-vmw-1"                # <-- change when copying
+  policy_prefix = "${local.pod_policy_prefix}-vmw-2"                  # <-- change when copying
   description   = "built by Terraform ${local.pod_policy_prefix}"
 
   #Every object created in the domain will have these tags
@@ -29,7 +29,7 @@ module "intersight_policy_bundle_vmw_1" {              # <-- change when copying
     { "key" : "environment", "value" : "dev" },
     { "key" : "orchestrator", "value" : "Terraform" },
     { "key" : "pod", "value" : "${local.pod_policy_prefix}" },
-    { "key" : "domain", "value" : "${local.pod_policy_prefix}-vmw1" } # <-- change when copying
+    { "key" : "domain", "value" : "${local.pod_policy_prefix}-vmw2" }  # <-- change when copying
   ]
 
 
@@ -38,14 +38,14 @@ module "intersight_policy_bundle_vmw_1" {              # <-- change when copying
 # -----------------------------------------------------------------------------
 
   #FI ports to be used for ethernet port channel uplink
-  port_channel_6536 = [31, 32, 33, 34]
+  port_channel_6536 = [31, 32]
 
   # Number of physical ethernet ports to be used for 25G 4x breakout ports to chassis
   eth_breakout_count = 0         # Must enumerate eth_aggr_server_ports when breakouts exist
   eth_breakout_start = 29
 
   # FI physical port numbers to be attached to chassis 
-  server_ports_6536 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
+  server_ports_6536 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
   
   # eth_aggr_server_ports = {
   #   "agg29-1"  = {  
@@ -150,7 +150,7 @@ module "intersight_policy_bundle_vmw_1" {              # <-- change when copying
 # Chassis
 # -----------------------------------------------------------------------------
 
-  chassis_9508_count = 10
+  chassis_9508_count = 5
   chassis_imc_access_vlan    = 999
   chassis_imc_ip_pool_moid = module.imm_pool_mod.ip_pool_chassis_moid 
   # Chassis requires In-Band IP's Only  (ie must be a VLAN trunked to FI's)
