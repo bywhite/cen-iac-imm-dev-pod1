@@ -36,7 +36,7 @@ module "intersight_policy_bundle_vmw_1" {              # <-- change when copying
 # Chassis
 # -----------------------------------------------------------------------------
 
-  chassis_9508_count = 5
+  chassis_9508_count = 10
   chassis_imc_access_vlan    = 999
   chassis_imc_ip_pool_moid = module.imm_pool_mod.ip_pool_chassis_moid 
   # Chassis requires In-Band IP's Only  (ie must be a VLAN trunked to FI's)
