@@ -41,5 +41,4 @@ variable "imc_admin_password" {
 }
 variable "snmp_password" {
     type = string
-    default = "Cisco123"
 }
