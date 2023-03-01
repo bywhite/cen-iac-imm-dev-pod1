@@ -7,7 +7,7 @@
 
 
 module "intersight_policy_bundle_vmw_1" {              # <-- change when copying
-  source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods//imm-domain-fabric-6536?ref=v1.2.2"
+  source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods//imm-domain-fabric-6536"  #?ref=v1.2.2"
 
 # =============================================================================
 # Org external references
@@ -160,9 +160,9 @@ module "intersight_policy_bundle_vmw_1" {              # <-- change when copying
 # =============================================================================
 # NTP, DNS and SNMP Settings
 # -----------------------------------------------------------------------------
-
-  ntp_servers   = ["ca.pool.ntp.org"]
-  ntp_timezone  = "America/Chicago"
+ 
+  #ntp_servers   = ["ca.pool.ntp.org"]
+  #ntp_timezone  = "America/Chicago"
 
   dns_preferred = "8.8.8.8"
   dns_alternate = "8.8.4.4"
