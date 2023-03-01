@@ -36,8 +36,9 @@ module "intersight_policy_bundle_vmw_1" {              # <-- change when copying
 # Chassis
 # -----------------------------------------------------------------------------
 
-  chassis_9508_count = 10
-  chassis_imc_access_vlan    = 999
+  # chassis_9508_count = 10
+    # Default chassis count is 5
+  # chassis_imc_access_vlan    = 999
   chassis_imc_ip_pool_moid = module.imm_pool_mod.ip_pool_chassis_moid 
   # Chassis requires In-Band IP's Only  (ie must be a VLAN trunked to FI's)
   # Need chassis_imc_access_password from TFCB Workspace Variable
@@ -46,16 +47,18 @@ module "intersight_policy_bundle_vmw_1" {              # <-- change when copying
 # =============================================================================
 # Fabric Interconnect 6536 Ethernet ports
 # -----------------------------------------------------------------------------
+ # Uplink VLANs Allowed List    Example: "5,6,7,8,100-130,998-1011"
+  # switch_vlans_6536 = "100,101,102,313,314,997-999"
 
   #FI ports to be used for ethernet port channel uplink
-  port_channel_6536 = [31, 32, 33, 34]
+  # port_channel_6536 = [31, 32, 33, 34]
 
   # Number of physical ethernet ports to be used for 25G 4x breakout ports to chassis
-  eth_breakout_count = 0         # Must enumerate eth_aggr_server_ports when breakouts exist
-  eth_breakout_start = 29
+  # eth_breakout_count = 0         # Must enumerate eth_aggr_server_ports when breakouts exist
+  # eth_breakout_start = 29
 
   # FI physical port numbers to be attached to chassis 
-  server_ports_6536 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
+  # server_ports_6536 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
   
   # eth_aggr_server_ports = {
   #   "agg29-1"  = {  
@@ -95,10 +98,6 @@ module "intersight_policy_bundle_vmw_1" {              # <-- change when copying
   # VLAN Prefix ex: vlan   >> vlan-230
   # vlan_prefix = "vlan"
 
-  # Uplink VLANs Allowed List    Example: "5,6,7,8,100-130,998-1011"
-  switch_vlans_6536 = "100,101,102,313,314,997-999"
-
-
 # =============================================================================
 # Fabric Interconnect 6536 FC Ports and VSANs
 # -----------------------------------------------------------------------------
@@ -106,24 +105,24 @@ module "intersight_policy_bundle_vmw_1" {              # <-- change when copying
 
   # For each FC port, it is broken-out into 4x 32G FC Ports
   # A value of 2 results in 8x 32G FC Port breakouts from ports 35 & 36
-  fc_port_count_6536 = 2
+  # fc_port_count_6536 = 2
 
   # VSAN ID for FC Port Channel
-  fc_uplink_pc_vsan_id_a = 100
-  fc_uplink_pc_vsan_id_b = 200
+  # fc_uplink_pc_vsan_id_a = 100
+  # fc_uplink_pc_vsan_id_b = 200
 
 
 
-  fc_port_channel_6536 = [
-    { "aggport" : 35, "port" : 1 },
-    { "aggport" : 35, "port" : 2 },
-    { "aggport" : 35, "port" : 3 },
-    { "aggport" : 35, "port" : 4 },
-    { "aggport" : 36, "port" : 1 },
-    { "aggport" : 36, "port" : 2 },
-    { "aggport" : 36, "port" : 3 },
-    { "aggport" : 36, "port" : 4 }
-  ]
+  # fc_port_channel_6536 = [
+  #   { "aggport" : 35, "port" : 1 },
+  #   { "aggport" : 35, "port" : 2 },
+  #   { "aggport" : 35, "port" : 3 },
+  #   { "aggport" : 35, "port" : 4 },
+  #   { "aggport" : 36, "port" : 1 },
+  #   { "aggport" : 36, "port" : 2 },
+  #   { "aggport" : 36, "port" : 3 },
+  #   { "aggport" : 36, "port" : 4 }
+  # ]
 
 # VSAN Trunking is enabled by default. 
 # One or more VSANs are required for each FI
