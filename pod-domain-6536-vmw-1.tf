@@ -129,18 +129,18 @@ module "intersight_policy_bundle_vmw_1" {              # <-- change when copying
 # One or more VSANs are required for each FI
 
   # Fabric A VSAN Set
-  fabric_a_vsan_sets = {
-    "vsan100" = {
-      vsan_number   = 100
-      fcoe_number   = 1000
-      switch_id      = "A"
-    }
-    "vsan101"  = {
-      vsan_number   = 101
-      fcoe_number   = 1001
-      switch_id      = "A"
-    }
-  }
+  # fabric_a_vsan_sets = {
+  #   "vsan100" = {
+  #     vsan_number   = 100
+  #     fcoe_number   = 1000
+  #     switch_id      = "A"
+  #   }
+  #   "vsan101"  = {
+  #     vsan_number   = 101
+  #     fcoe_number   = 1001
+  #     switch_id      = "A"
+  #   }
+  # }
 
   # Fabric B VSAN Set
   #   fabric_b_vsan_sets = {
