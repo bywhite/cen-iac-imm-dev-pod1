@@ -143,18 +143,18 @@ module "intersight_policy_bundle_vmw_1" {              # <-- change when copying
   }
 
   # Fabric B VSAN Set
-    fabric_b_vsan_sets = {
-    "vsan200" = {
-      vsan_number   = 200
-      fcoe_number   = 2000
-      switch_id      = "B"
-    }
-    "vsan201"  = {
-      vsan_number   = 201
-      fcoe_number   = 2001
-      switch_id      = "B"
-    }
-  }
+  #   fabric_b_vsan_sets = {
+  #   "vsan200" = {
+  #     vsan_number   = 200
+  #     fcoe_number   = 2000
+  #     switch_id      = "B"
+  #   }
+  #   "vsan201"  = {
+  #     vsan_number   = 201
+  #     fcoe_number   = 2001
+  #     switch_id      = "B"
+  #   }
+  # }
 
 
 # =============================================================================
@@ -164,10 +164,10 @@ module "intersight_policy_bundle_vmw_1" {              # <-- change when copying
   #ntp_servers   = ["ca.pool.ntp.org"]
   #ntp_timezone  = "America/Chicago"
 
-  dns_preferred = "8.8.8.8"
-  dns_alternate = "8.8.4.4"
+  # dns_preferred = "8.8.8.8"
+  # dns_alternate = "8.8.4.4"
 
-  snmp_ip       = "127.0.0.1"
+  #snmp_ip       = "10.10.10.10"
   snmp_password = var.snmp_password
   
 # The Pools for the Pod must be created before this domain fabric module executes
