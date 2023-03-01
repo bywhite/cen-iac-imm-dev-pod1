@@ -10,11 +10,11 @@ module "intersight_policy_bundle_vmw_1" {              # <-- change when copying
   source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods//imm-domain-fabric-6536"  #?ref=v1.2.2"
 
 # =============================================================================
-# Org external references
+# External References
 # -----------------------------------------------------------------------------
-
-  # external sources
   organization    = local.org_moid
+  snmp_password = var.snmp_password
+  chassis_imc_ip_pool_moid = module.imm_pool_mod.ip_pool_chassis_moid 
 
 # =============================================================================
 # Naming and tagging
@@ -39,10 +39,8 @@ module "intersight_policy_bundle_vmw_1" {              # <-- change when copying
   # chassis_9508_count = 10
     # Default chassis count is 5
   # chassis_imc_access_vlan    = 999
-  chassis_imc_ip_pool_moid = module.imm_pool_mod.ip_pool_chassis_moid 
-  # Chassis requires In-Band IP's Only  (ie must be a VLAN trunked to FI's)
-  # Need chassis_imc_access_password from TFCB Workspace Variable
 
+  # Chassis requires In-Band IP's Only  (ie must be a VLAN trunked to FI's)
 
 # =============================================================================
 # Fabric Interconnect 6536 Ethernet ports
@@ -167,7 +165,6 @@ module "intersight_policy_bundle_vmw_1" {              # <-- change when copying
   # dns_alternate = "8.8.4.4"
 
   #snmp_ip       = "10.10.10.10"
-  snmp_password = var.snmp_password
   
 # The Pools for the Pod must be created before this domain fabric module executes
   depends_on = [

@@ -16,9 +16,9 @@ locals {
   pod_policy_prefix = "ofl-dev-pod1"                           # <-- change when copying
   
   pod_id = "01"                                                # <-- change when copying
-#           0 is for OFL    RCO is 1     BUF is 3  other locations TBD
+#           1 is for DC-1    2 is DC-2     DC-3 is 3  other locations TBD (0 is Test)
 #           1 is for first pod  2 is for second pod,  3 is for third pod    etc. 
-#  Example RCO Pod 2 ID would be:  "12"
+#  Example DC-1 Pod 2 ID would be:  "12"
 #  All Identity Pools for a Pod will contain the POD ID (MAc, WWNN, WWPN, UUID)
 
   description = "Built by Terraform ${local.pod_policy_prefix}"
