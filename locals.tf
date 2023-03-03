@@ -13,7 +13,7 @@ locals {
   # Intersight Organization Variable
   org_moid = data.intersight_organization_organization.my_org.id
   
-  pod_policy_prefix = "ofl-dev-pod1"                           # <-- change when copying
+  pod_policy_prefix = "imm-iac-pod1"                           # <-- change when copying
   
   pod_id = "01"                                                # <-- change when copying
 #           1 is for DC-1    2 is DC-2     DC-3 is 3  other locations TBD (0 is Test)
