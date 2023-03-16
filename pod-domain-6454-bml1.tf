@@ -22,8 +22,8 @@ module "intersight_policy_bundle_bml_1" {
 # -----------------------------------------------------------------------------
 
   # every policy created will have this prefix in its name
-  policy_prefix = "ofl-dev-pod1-bml-1"                # <-- change when copying
-  description   = "built by Terraform cen-iac-imm-dev-pod1"
+  policy_prefix = "imm-iac-pod1-bml-1"                # <-- change when copying
+  description   = "built by Terraform imm-iac-pod1-bml-1"
 
   #Every object created in the domain will have these tags
   tags = [
