@@ -57,16 +57,16 @@ module "server_template_vmw1" {                                   # <<-- Change 
   vnic_vlan_sets = {
     "eth0"  = {
       vnic_name  = "eth0"
-      native_vlan = 9
-      vlan_range  = "9,10,17,18,25-26"
+      native_vlan = 21
+      vlan_range  = "21,60,254,255"
       switch_id   = "A"
       pci_order   = 0
       qos_moid    = module.imm_pod_qos_mod.vnic_qos_besteffort_moid
     }
     "eth1"  = {
       vnic_name   = "eth1"
-      native_vlan = 9
-      vlan_range  = "9,10,17,18,25-26"
+      native_vlan = 21
+      vlan_range  = "21,60,254,255"
       switch_id   = "B"
       pci_order   = 1
       qos_moid    = module.imm_pod_qos_mod.vnic_qos_besteffort_moid
@@ -77,7 +77,7 @@ module "server_template_vmw1" {                                   # <<-- Change 
   vhba_vsan_sets = {
     "fc0" = {
       vhba_name      = "fc0"
-      vsan_moid      = intersight_vnic_fc_network_policy.fc_vsan_100.moid
+      vsan_moid      = intersight_vnic_fc_network_policy.fc_vsan_101.moid
       switch_id      = "A"
       wwpn_pool_moid = module.imm_pool_mod.wwpn_pool_a_moid
       pci_order      = 2
@@ -85,7 +85,7 @@ module "server_template_vmw1" {                                   # <<-- Change 
     }
     "fc1"  = {
       vhba_name      = "fc1"
-      vsan_moid      = intersight_vnic_fc_network_policy.fc_vsan_200.moid
+      vsan_moid      = intersight_vnic_fc_network_policy.fc_vsan_102.moid
       switch_id      = "B"
       wwpn_pool_moid = module.imm_pool_mod.wwpn_pool_b_moid
       pci_order      = 3
