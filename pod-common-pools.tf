@@ -17,7 +17,7 @@ module "imm_pool_mod" {
   ip_netmask  = "255.255.255.0"
   ip_primary_dns = "192.168.60.7"
 
-  chassis_ip_size     = "2"
+  chassis_ip_size     = "4"
   chassis_ip_start = "192.168.21.118"
   chassis_ip_gateway  = "192.168.21.1"
   chassis_ip_netmask  = "255.255.255.0"
