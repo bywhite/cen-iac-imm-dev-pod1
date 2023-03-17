@@ -57,16 +57,16 @@ module "server_template_vmw1" {                                   # <<-- Change 
   vnic_vlan_sets = {
     "eth0"  = {
       vnic_name  = "eth0"
-      native_vlan = 100
-      vlan_range  = "100,101,102,313,314,997-999"
+      native_vlan = 9
+      vlan_range  = "9,10,17,18,25-26"
       switch_id   = "A"
       pci_order   = 0
       qos_moid    = module.imm_pod_qos_mod.vnic_qos_besteffort_moid
     }
     "eth1"  = {
       vnic_name   = "eth1"
-      native_vlan = 100
-      vlan_range  = "100,101,102,313,314,997-999"
+      native_vlan = 9
+      vlan_range  = "9,10,17,18,25-26"
       switch_id   = "B"
       pci_order   = 1
       qos_moid    = module.imm_pod_qos_mod.vnic_qos_bronze_moid
@@ -111,8 +111,8 @@ module "server_template_vmw1" {                                   # <<-- Change 
 # -----------------------------------------------------------------------------
   # Sets local users and their permissions and passwords
   user_policy_moid          = intersight_iam_end_point_user_policy.pod_user_policy_1.moid
-  imc_access_vlan           = 999
-  server_imc_admin_password = "Cisco123"  #Recommend adding var to TFCB Workspace
+  imc_access_vlan           = 21
+  server_imc_admin_password = "C1sc0123!"  #Recommend adding var to TFCB Workspace
 
 
 # =============================================================================
