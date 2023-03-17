@@ -40,7 +40,7 @@ module "server_template_vmw1" {                                   # <<-- Change 
 # X vs B Chassis Profile Customizations
 # -----------------------------------------------------------------------------
 # Customize policies for X-Series (true) or B-Series (false)
-  is_x_series_profile = false 
+  is_x_series_profile = true 
 
 # =============================================================================
 # Pod-wide pools
