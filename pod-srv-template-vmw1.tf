@@ -69,7 +69,7 @@ module "server_template_vmw1" {                                   # <<-- Change 
       vlan_range  = "9,10,17,18,25-26"
       switch_id   = "B"
       pci_order   = 1
-      qos_moid    = module.imm_pod_qos_mod.vnic_qos_bronze_moid
+      qos_moid    = module.imm_pod_qos_mod.vnic_qos_besteffort_moid
     }
   }
 
