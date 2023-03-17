@@ -125,7 +125,7 @@ module "intersight_policy_bundle_bml_1" {
   dns_preferred = "8.8.8.8"
   dns_alternate = "8.8.4.4"
 
-  snmp_ip       = "127.0.0.1"
+  snmp_ip       = "10.10.10.10"
   snmp_password = var.snmp_password
 
 # The Pools for the Pod must be created before this domain fabric module executes

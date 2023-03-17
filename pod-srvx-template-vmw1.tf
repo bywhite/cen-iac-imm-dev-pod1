@@ -106,11 +106,11 @@ module "server_template_vmw1" {                                   # <<-- Change 
 # All values could be set with Local's or Variables
 
  # SNMP
-  snmp_ip       = "127.0.0.1"
+  snmp_ip       = "10.10.10.10"
   snmp_password = "Cisco123"              #Recommend adding var to TFCB Workspace
   
   # SysLog 
-  syslog_remote_ip = "127.0.0.1"
+  syslog_remote_ip = "10.10.10.10"
 
 # =============================================================================
 # Local IMC Users - defined pod wide
