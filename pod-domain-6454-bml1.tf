@@ -57,9 +57,13 @@ module "intersight_policy_bundle_bml_1" {
 
   # A value of 8 results in 8x 32G FC Port from ports 1 to 8
   # This sets the universal ports to FC instead of Eth
-  fc_port_count_6454 = 8
+  # 6454 requires multiples of 4
+  fc_port_count_6454 = 4
 
-  # VSAN ID for FC Port Channel
+  #Enable or disable FC port channel creation
+  create_fc_portchannel = false
+
+  # VSAN ID for FC Uplinks
   fc_uplink_pc_vsan_id_a = 101
   fc_uplink_pc_vsan_id_b = 102
 
@@ -110,7 +114,7 @@ module "intersight_policy_bundle_bml_1" {
   dns_preferred = "8.8.8.8"
   dns_alternate = "8.8.4.4"
 
-  snmp_ip       = "127.0.0.1"
+  snmp_ip       = "192.168.60.1"
   snmp_password = var.snmp_password
 
 # The Pools for the Pod must be created before this domain fabric module executes
