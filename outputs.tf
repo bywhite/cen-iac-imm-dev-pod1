@@ -16,42 +16,42 @@ output "pod_id" {
 }
 
 # output "domain_vmw_1_name" {
-#     value       = module.intersight_policy_bundle_vmw_1.fi6536_cluster_domain_name
+#     value       = module.intersight_pod2_domain_1.fi6536_cluster_domain_name
 #     description = "IMM Domain Cluster VMW-1 TF object name"
 # }
 
 # output "vmw_1_chassis_count" {
-#     value       = module.intersight_policy_bundle_vmw_1.chassis_count
+#     value       = module.intersight_pod2_domain_1.chassis_count
 #     description = "How many chassis were made by module"
 # }
 
 # output "vmw_1_chassis_index" {
-#     value       = module.intersight_policy_bundle_vmw_1.chassis_index
+#     value       = module.intersight_pod2_domain_1.chassis_index
 #     description = "How many chassis were made by module"
 # }
 
 
 # output "domain_vmw_1_profile_name" {
-#     value       = module.intersight_policy_bundle_vmw_1.fi6536_cluster_profile_name
+#     value       = module.intersight_pod2_domain_1.fi6536_cluster_profile_name
 #     description = "IMM Domain Cluster VMW-1 TF object name"
 # }
 
 # output "domain_vmw_1_moid" {
-#     value       = module.intersight_policy_bundle_vmw_1.fi6536_cluster_profile_moid
+#     value       = module.intersight_pod2_domain_1.fi6536_cluster_profile_moid
 #     description = "IMM Domain Cluster VMW-1 moid"
 # }
 
 # output "vmw_1_chassis_9508_profile_moids" {
-#     value       = module.intersight_policy_bundle_vmw_1.chassis_9508_profile_moids
+#     value       = module.intersight_pod2_domain_1.chassis_9508_profile_moids
 #     description = "Chassis moids for cluster"
 # }
 
 # output "vmw_1_chassis_9508_profile_names" {
-#     value       = module.intersight_policy_bundle_vmw_1.chassis_9508_profile_names
+#     value       = module.intersight_pod2_domain_1.chassis_9508_profile_names
 #     description = "Chassis moids for cluster"
 # }
 # output "fabric_vlan_pairslist_moid" {
-#     value       = module.intersight_policy_bundle_vmw_1.fabric_vlan_list_moid
+#     value       = module.intersight_pod2_domain_1.fabric_vlan_list_moid
 #     description = "Moid for fabric_vlan pairs-list of VLAN-Name: VLAN-ID"
 # }
 

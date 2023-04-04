@@ -13,7 +13,7 @@ The pod-srv-templates create a specified number server profiles based on a commo
 
 All that is required to create a new domain is to copy pod-domain-vmw-1.tf to a new file name and change 3 identifiers at the top of the pod-domain-<new_name> module.  
     Example: replace instances of "vmw_1" with <new_name> "vmw_2"
-        intersight_policy_bundle_vmw_1     with    intersight_policy_bundle_vmw_2        (module name)
+        intersight_pod2_domain_1     with    intersight_policy_bundle_vmw_2        (module name)
         ofl-dev-pod1-vmw1                  with    ofl-dev-pod1-vmw2                     (policy prefix)
         ofl-dev-pod1-vmw1                  with    ofl-dev-pod1-vmw2                     (tag value)
 
