@@ -159,14 +159,164 @@ resource "intersight_iam_end_point_user_role" "ro_user1" {
 # =============================================================================
 # =============================================================================
 #   - Pod Server VSAN Policies
+# =============================================================================
+# Pod Server VSAN Policies
+#  - Creates vNic vSAN Policies for use Pod-wide
+#  - This must match up with domain fabric's (FI's) vSAN Policies
+# -----------------------------------------------------------------------------
 
+
+resource "intersight_vnic_fc_network_policy" "fc_vsan_100" {
+  name                = "${local.pod_policy_prefix}-fc-vsan-100"
+  description         = local.description
+  vsan_settings {
+    id          = 100
+    object_type = "vnic.VsanSettings"
+  }
+  organization {
+    object_type = "organization.Organization"
+    moid        = local.org_moid
+  }
+}
+
+resource "intersight_vnic_fc_network_policy" "fc_vsan_101" {
+  name                = "${local.pod_policy_prefix}-fc-vsan-101"
+  description         = local.description
+  vsan_settings {
+    id          = 101
+    object_type = "vnic.VsanSettings"
+  }
+  organization {
+    object_type = "organization.Organization"
+    moid        = local.org_moid
+  }
+}
+
+resource "intersight_vnic_fc_network_policy" "fc_vsan_102" {
+  name                = "${local.pod_policy_prefix}-fc-vsan-102"
+  description         = local.description
+  vsan_settings {
+    id          = 102
+    object_type = "vnic.VsanSettings"
+  }
+  organization {
+    object_type = "organization.Organization"
+    moid        = local.org_moid
+  }
+}
+
+resource "intersight_vnic_fc_network_policy" "fc_vsan_200" {
+  name                = "${local.pod_policy_prefix}-fc-vsan-200"
+  description         = local.description
+  vsan_settings {
+    id          = 200
+    object_type = "vnic.VsanSettings"
+  }
+  organization {
+    object_type = "organization.Organization"
+    moid        = local.org_moid
+  }
+}
+
+resource "intersight_vnic_fc_network_policy" "fc_vsan_201" {
+  name                = "${local.pod_policy_prefix}-fc-vsan-201"
+  description         = local.description
+  vsan_settings {
+    id          = 201
+    object_type = "vnic.VsanSettings"
+  }
+  organization {
+    object_type = "organization.Organization"
+    moid        = local.org_moid
+  }
+}
+
+resource "intersight_vnic_fc_network_policy" "fc_vsan_202" {
+  name                = "${local.pod_policy_prefix}-fc-vsan-202"
+  description         = local.description
+  vsan_settings {
+    id          = 202
+    object_type = "vnic.VsanSettings"
+  }
+  organization {
+    object_type = "organization.Organization"
+    moid        = local.org_moid
+  }
+}
 # =============================================================================
 # =============================================================================
 #   - QoS Policies for UCS Domain and Server Templates
+# =============================================================================
+# Pod FI and Server Related QoS Policies
+#  - Creates vNic QoS Policies for each class of service
+#  - This must match up with domain fabric's System QoS Policy
+# -----------------------------------------------------------------------------
+
+# # Due to policy bucket limitations, the default System QoS policy must be created with Switch Profile's moids attached.
+# # Accordingly, the resource "intersight_fabric_system_qos_policy" is created with the domain fabric module instead of this module.
+
+module "imm_pod_qos_mod" {       
+  source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods//imm-pod-server-qos-mod"
+
+# =============================================================================
+# Org external references
+# -----------------------------------------------------------------------------
+
+  org_id = local.org_moid
+
+# =============================================================================
+# Naming and tagging
+# -----------------------------------------------------------------------------
+
+  # Every QoS policy created will have this prefix in its name
+  policy_prefix = local.pod_policy_prefix
+
+  # This is the default description for IMM objects created
+  description   = "built by Terraform for ${local.pod_policy_prefix}"
+
+  #Every object created in the domain will have these tags
+  tags = local.pod_tags
+
+}
 
 # =============================================================================
 # =============================================================================
 #   - Pod Pools: IP, MAC, UUID, WWNN, WWPN
+# Create a sequential IP pool for IMC access. Change the from and size to what you would like
+# Mac tip: Use CMD+K +C to comment out blocks.   CMD+K +U will un-comment blocks of code
+
+module "imm_pool_mod" {
+  source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods//imm-pod-pools-mod"
+  
+  # external sources
+  organization    = local.org_moid
+
+  # every policy created will have this prefix in its name
+  policy_prefix = local.pod_policy_prefix
+  description   = local.description
+
+  ip_size     = "18"
+  ip_start = "192.168.21.100"
+  ip_gateway  = "192.168.21.1"
+  ip_netmask  = "255.255.255.0"
+  ip_primary_dns = "192.168.60.7"
+
+  chassis_ip_size     = "4"
+  chassis_ip_start = "192.168.21.118"
+  chassis_ip_gateway  = "192.168.21.1"
+  chassis_ip_netmask  = "255.255.255.0"
+  chassis_ip_primary_dns = "192.168.60.7"
+
+  pod_id = local.pod_id
+  # used to create moids for Pools: MAC, WWNN, WWPN
+
+  tags = [
+    { "key" : "Environment", "value" : "dev" },
+    { "key" : "Orchestrator", "value" : "Terraform" },
+    { "key" : "pod", "value" : "ofl-dev-pod1" }
+  ]
+}
+
 
 # =============================================================================
 # =============================================================================
