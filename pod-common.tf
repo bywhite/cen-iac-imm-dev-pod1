@@ -1,4 +1,15 @@
 # =============================================================================
+# COMMON objects shared throughout Pool for simplified Pod management:
+#   - IMC Local User Policies
+#   - Pod Server VSAN Policies
+#   - QoS Policies for UCS Domain and Server Templates
+#   - Pod Pools: IP, MAC, UUID, WWNN, WWPN
+# =============================================================================
+# =============================================================================
+
+
+
+# =============================================================================
 # IMC Local User Policies
 # -----------------------------------------------------------------------------
 
