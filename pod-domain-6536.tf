@@ -29,7 +29,7 @@ module "intersight_pod2_domain_1" {              # <-- change when copying
     { "key" : "environment", "value" : "dev" },
     { "key" : "orchestrator", "value" : "Terraform" },
     { "key" : "pod", "value" : "${local.pod_policy_prefix}" },
-    { "key" : "domain", "value" : "${local.pod_policy_prefix}-vmw1" } # <-- change when copying
+    { "key" : "domain", "value" : "${local.pod_policy_prefix}-domain-1" } # <-- change when copying
   ]
 
 # =============================================================================
