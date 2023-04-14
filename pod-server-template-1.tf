@@ -128,7 +128,7 @@ module "server_template_1" {                                   # <<-- Change to 
   depends_on = [
     module.imm_pool_mod, module.pod_user_policy_1,
     module.imm_pod_qos_mod, module.intersight_pod2_domain_1,
-    intersight_vnic_fc_network_policy.fc_vsan_100, intersight_vnic_fc_network_policy.fc_vsan_200
+    module.pod_vsan_policy_1
   ]
 
 }
