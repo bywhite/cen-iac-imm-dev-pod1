@@ -12,17 +12,7 @@
 # # =============================================================================
 # # IMC Local User Policies
 # # -----------------------------------------------------------------------------
-
 # # Consumed by Server Profiles or Sever Templates with:
-#   # IMC User Policy  
-# #   policy_bucket {
-# #     moid = intersight_iam_end_point_user_policy.pod_user_policy_1.moid
-# #     object_type = "iam.EndPointUserPolicy"
-# #   }
-
-# # Set "user_policy_moid" Variable for module and pass:  intersight_iam_end_point_user_policy.pod_user_policy_1.moid
-
-
 # USAGE:  module.pod_user_policy.user_policy_moid 
 
 module "pod_user_policy_1" {
