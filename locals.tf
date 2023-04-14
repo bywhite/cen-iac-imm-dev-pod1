@@ -30,7 +30,7 @@ locals {
     { "key" : "pod", "value" : "${local.pod_policy_prefix}" }
   ]
 
-user_policy_moid = module.pod_user_policy_1.iam_user_policy_moid
+iam_user_policy_moid = module.pod_user_policy_1.iam_user_policy_moid
 
 
 # VNIC QoS policy moids Pod-Wide
