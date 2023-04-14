@@ -116,7 +116,7 @@ module "server_template_1" {                                   # <<-- Change to 
 # Local IMC Users - defined pod wide
 # -----------------------------------------------------------------------------
   # Sets local users and their permissions and passwords
-  user_policy_moid          = intersight_iam_end_point_user_policy.pod_user_policy_1.moid
+  user_policy_moid          = local.iam_user_policy_moid
   imc_access_vlan           = 21
   server_imc_admin_password = "C1sc0123!"  #Recommend adding var to TFCB Workspace
 
@@ -128,7 +128,8 @@ module "server_template_1" {                                   # <<-- Change to 
   depends_on = [
     module.imm_pool_mod, intersight_iam_end_point_user_policy.pod_user_policy_1,
     module.imm_pod_qos_mod, module.intersight_pod2_domain_1,
-    intersight_vnic_fc_network_policy.fc_vsan_100, intersight_vnic_fc_network_policy.fc_vsan_200
+    intersight_vnic_fc_network_policy.fc_vsan_100, intersight_vnic_fc_network_policy.fc_vsan_200,
+    module.pod_user_policy_1
   ]
 
 }

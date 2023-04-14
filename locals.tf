@@ -30,6 +30,9 @@ locals {
     { "key" : "pod", "value" : "${local.pod_policy_prefix}" }
   ]
 
+user_policy_moid = module.pod_user_policy_1.iam_user_policy_moid
+
+
 # VNIC QoS policy moids Pod-Wide
   vnic_qos_besteffort = module.imm_pod_qos_mod.vnic_qos_besteffort_moid
   vnic_qos_bronze     = module.imm_pod_qos_mod.vnic_qos_bronze_moid
