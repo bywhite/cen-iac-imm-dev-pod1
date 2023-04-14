@@ -83,7 +83,7 @@ module "server_template_1" {                                   # <<-- Change to 
   vhba_vsan_sets = {
     "fc0" = {
       vhba_name      = "fc0"
-      vsan_moid      = intersight_vnic_fc_network_policy.fc_vsan_101.moid
+      vsan_moid      = module.pod_vsan_policy_1.fc_vsan_101_moid
       switch_id      = "A"
       wwpn_pool_moid = module.imm_pool_mod.wwpn_pool_a_moid
       pci_order      = 2
@@ -91,7 +91,7 @@ module "server_template_1" {                                   # <<-- Change to 
     }
     "fc1"  = {
       vhba_name      = "fc1"
-      vsan_moid      = intersight_vnic_fc_network_policy.fc_vsan_102.moid
+      vsan_moid      = module.pod_vsan_policy_1.fc_vsan_102_moid
       switch_id      = "B"
       wwpn_pool_moid = module.imm_pool_mod.wwpn_pool_b_moid
       pci_order      = 3
