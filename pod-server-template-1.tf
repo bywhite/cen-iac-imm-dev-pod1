@@ -46,13 +46,13 @@ module "server_template_1" {                                   # <<-- Change to 
 # Pod-wide pools
 # -----------------------------------------------------------------------------
 
-  mac_pool_moid     = module.imm_pool_mod.mac_pool_moid
-  imc_ip_pool_moid  = module.imm_pool_mod.ip_pool_moid
-  wwnn_pool_moid    = module.imm_pool_mod.wwnn_pool_moid
-  wwpn_pool_a_moid  = module.imm_pool_mod.wwpn_pool_a_moid
-  wwpn_pool_b_moid  = module.imm_pool_mod.wwpn_pool_b_moid
-  server_uuid_pool_moid    = module.imm_pool_mod.uuid_pool_moid
-  server_uuid_pool_name    = module.imm_pool_mod.uuid_pool_name
+  mac_pool_moid         = module.imm_pool_mod.mac_pool_moid
+  imc_ip_pool_moid      = module.imm_pool_mod.ip_pool_moid
+  wwnn_pool_moid        = module.imm_pool_mod.wwnn_pool_moid
+  wwpn_pool_a_moid      = module.imm_pool_mod.wwpn_pool_a_moid
+  wwpn_pool_b_moid      = module.imm_pool_mod.wwpn_pool_b_moid
+  server_uuid_pool_moid = module.imm_pool_mod.uuid_pool_moid
+  server_uuid_pool_name = module.imm_pool_mod.uuid_pool_name
 
 # =============================================================================
 # Server Eth vNic's & FC vHBA's
