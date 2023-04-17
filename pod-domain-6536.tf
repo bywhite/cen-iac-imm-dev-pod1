@@ -14,7 +14,7 @@ module "intersight_pod2_domain_1" {              # <-- change when copying
 # -----------------------------------------------------------------------------
   organization    = local.org_moid
   snmp_password = var.snmp_password
-  chassis_imc_ip_pool_moid = module.imm_pool_mod.ip_pool_chassis_moid 
+  chassis_imc_ip_pool_moid = module.imm_pod_pools_mod.ip_pool_chassis_moid 
 
 # =============================================================================
 # Naming and tagging
@@ -168,7 +168,7 @@ module "intersight_pod2_domain_1" {              # <-- change when copying
   
 # The Pools for the Pod must be created before this domain fabric module executes
   depends_on = [
-    module.imm_pool_mod, module.imm_pod_qos_mod
+    module.imm_pod_pools_mod, module.imm_pod_qos_mod
 ]
 
 }

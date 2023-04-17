@@ -1,9 +1,9 @@
 # =============================================================================
 # COMMON objects shared throughout Pod for consistent configurations:
-#   - IMC Local User Policies
-#   - Pod Server VSAN Policies
-#   - QoS Policies for Server Template vNic's
-#   - Pod Pools: IP, MAC, UUID, WWNN, WWPN
+#   - IMC Local User Policies                   (module imm_pod_user_policy_1)
+#   - Pod Server VSAN Policies                  (module imm_pod_vsan_policy_1)
+#   - QoS Policies for Server Template vNic's   (module imm_pod_qos_mod)
+#   - Pod Pools: IP, MAC, UUID, WWNN, WWPN      (module imm_pod_pools_mod)
 # =============================================================================
 
 
@@ -13,7 +13,7 @@
 # Consumed by Server Profiles or Sever Templates with:
 # USAGE:  module.pod_user_policy.user_policy_moid 
 
-module "pod_user_policy_1" {
+module "imm_pod_user_policy_1" {
   source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods//imm-pod-user-mod"
   
   # external sources
@@ -31,15 +31,15 @@ module "pod_user_policy_1" {
 # Consumed by Server Profiles or Sever Templates with:
 # This must match up with domain fabric's (FI's) vSAN Configuration
 # USAGE:
-#   vsan_moid      = module.pod_vsan_policy_1.fc_vsan_100_moid
-#   vsan_moid      = module.pod_vsan_policy_1.fc_vsan_101_moid
-#   vsan_moid      = module.pod_vsan_policy_1.fc_vsan_102_moid
-#   vsan_moid      = module.pod_vsan_policy_1.fc_vsan_200_moid
-#   vsan_moid      = module.pod_vsan_policy_1.fc_vsan_201_moid
-#   vsan_moid      = module.pod_vsan_policy_1.fc_vsan_202_moid
+#   vsan_moid      = module.imm_pod_vsan_policy_1.fc_vsan_100_moid
+#   vsan_moid      = module.imm_pod_vsan_policy_1.fc_vsan_101_moid
+#   vsan_moid      = module.imm_pod_vsan_policy_1.fc_vsan_102_moid
+#   vsan_moid      = module.imm_pod_vsan_policy_1.fc_vsan_200_moid
+#   vsan_moid      = module.imm_pod_vsan_policy_1.fc_vsan_201_moid
+#   vsan_moid      = module.imm_pod_vsan_policy_1.fc_vsan_202_moid
 
 
-module "pod_vsan_policy_1" {
+module "imm_pod_vsan_policy_1" {
   source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods//imm-pod-vsan-mod"
   
   # external sources
@@ -82,17 +82,17 @@ module "imm_pod_qos_mod" {
 # Creates sequential identity pools for server templates and chassis
 # Consumed by Server Profiles or Sever Templates with:
 # SERVER USAGE:  
-  # mac_pool_moid         = module.imm_pool_mod.mac_pool_moid
-  # imc_ip_pool_moid      = module.imm_pool_mod.ip_pool_moid
-  # wwnn_pool_moid        = module.imm_pool_mod.wwnn_pool_moid
-  # wwpn_pool_a_moid      = module.imm_pool_mod.wwpn_pool_a_moid
-  # wwpn_pool_b_moid      = module.imm_pool_mod.wwpn_pool_b_moid
-  # server_uuid_pool_moid = module.imm_pool_mod.uuid_pool_moid
-  # server_uuid_pool_name = module.imm_pool_mod.uuid_pool_name
+  # mac_pool_moid         = module.imm_pod_pools_mod.mac_pool_moid
+  # imc_ip_pool_moid      = module.imm_pod_pools_mod.ip_pool_moid
+  # wwnn_pool_moid        = module.imm_pod_pools_mod.wwnn_pool_moid
+  # wwpn_pool_a_moid      = module.imm_pod_pools_mod.wwpn_pool_a_moid
+  # wwpn_pool_b_moid      = module.imm_pod_pools_mod.wwpn_pool_b_moid
+  # server_uuid_pool_moid = module.imm_pod_pools_mod.uuid_pool_moid
+  # server_uuid_pool_name = module.imm_pod_pools_mod.uuid_pool_name
 # CHASSIS USAGE:
-  # chassis_imc_ip_pool_moid = module.imm_pool_mod.ip_pool_chassis_moid
+  # chassis_imc_ip_pool_moid = module.imm_pod_pools_mod.ip_pool_chassis_moid
 
-module "imm_pool_mod" {
+module "imm_pod_pools_mod" {
   source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods//imm-pod-pools-mod"
   
   # external sources

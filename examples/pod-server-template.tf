@@ -46,13 +46,13 @@ module "server_template_vmw1" {                                   # <<-- Change 
 # Pod-wide pools
 # -----------------------------------------------------------------------------
 
-  mac_pool_moid     = module.imm_pool_mod.mac_pool_moid
-  imc_ip_pool_moid  = module.imm_pool_mod.ip_pool_moid
-  wwnn_pool_moid    = module.imm_pool_mod.wwnn_pool_moid
-  wwpn_pool_a_moid  = module.imm_pool_mod.wwpn_pool_a_moid
-  wwpn_pool_b_moid  = module.imm_pool_mod.wwpn_pool_b_moid
-  server_uuid_pool_moid    = module.imm_pool_mod.uuid_pool_moid
-  server_uuid_pool_name    = module.imm_pool_mod.uuid_pool_name
+  mac_pool_moid     = module.imm_pod_pools_mod.mac_pool_moid
+  imc_ip_pool_moid  = module.imm_pod_pools_mod.ip_pool_moid
+  wwnn_pool_moid    = module.imm_pod_pools_mod.wwnn_pool_moid
+  wwpn_pool_a_moid  = module.imm_pod_pools_mod.wwpn_pool_a_moid
+  wwpn_pool_b_moid  = module.imm_pod_pools_mod.wwpn_pool_b_moid
+  server_uuid_pool_moid    = module.imm_pod_pools_mod.uuid_pool_moid
+  server_uuid_pool_name    = module.imm_pod_pools_mod.uuid_pool_name
 
 # =============================================================================
 # Server Eth vNic's & FC vHBA's
@@ -83,17 +83,17 @@ module "server_template_vmw1" {                                   # <<-- Change 
   vhba_vsan_sets = {
     "fc0" = {
       vhba_name      = "fc0"
-      vsan_moid      = module.pod_vsan_policy_1.fc_vsan_101_moid
+      vsan_moid      = module.imm_pod_vsan_policy_1.fc_vsan_101_moid
       switch_id      = "A"
-      wwpn_pool_moid = module.imm_pool_mod.wwpn_pool_a_moid
+      wwpn_pool_moid = module.imm_pod_pools_mod.wwpn_pool_a_moid
       pci_order      = 2
       qos_moid       = module.imm_pod_qos_mod.vnic_qos_fc_moid
     }
     "fc1"  = {
       vhba_name      = "fc1"
-      vsan_moid      = module.pod_vsan_policy_1.fc_vsan_102_moid
+      vsan_moid      = module.imm_pod_vsan_policy_1.fc_vsan_102_moid
       switch_id      = "B"
-      wwpn_pool_moid = module.imm_pool_mod.wwpn_pool_b_moid
+      wwpn_pool_moid = module.imm_pod_pools_mod.wwpn_pool_b_moid
       pci_order      = 3
       qos_moid       = module.imm_pod_qos_mod.vnic_qos_fc_moid
     }
@@ -126,9 +126,9 @@ module "server_template_vmw1" {                                   # <<-- Change 
 # -----------------------------------------------------------------------------
 # The Pools for the Pod must be created before this domain fabric module executes
   depends_on = [
-    module.imm_pool_mod, module.pod_user_policy_1,
+    module.imm_pod_pools_mod, module.imm_pod_user_policy_1,
     module.imm_pod_qos_mod, module.intersight_pod2_domain_1,
-    module.pod_vsan_policy_1
+    module.imm_pod_vsan_policy_1
   ]
 
 }

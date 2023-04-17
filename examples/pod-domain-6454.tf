@@ -100,7 +100,7 @@ module "intersight_policy_bundle_bml_1" {
 
   chassis_9508_count       = 5
   chassis_imc_access_vlan  = 21
-  chassis_imc_ip_pool_moid = module.imm_pool_mod.ip_pool_chassis_moid 
+  chassis_imc_ip_pool_moid = module.imm_pod_pools_mod.ip_pool_chassis_moid 
   # Chassis requires In-Band IP's Only  (ie must be a VLAN trunked to FI's)
   # Need chassis_imc_access_password from TFCB Workspace Variable
 
@@ -119,7 +119,7 @@ module "intersight_policy_bundle_bml_1" {
 
 # The Pools for the Pod must be created before this domain fabric module executes
 depends_on = [
-    module.imm_pool_mod, module.imm_pod_qos_mod
+    module.imm_pod_pools_mod, module.imm_pod_qos_mod
 ]
 
 }

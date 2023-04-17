@@ -57,41 +57,41 @@ output "pod_id" {
 
 
 output "ofl_dev_pod1_ip_pool_chassis_moid" {
-    value       = module.imm_pool_mod.ip_pool_chassis_moid
+    value       = module.imm_pod_pools_mod.ip_pool_chassis_moid
     description = "IP_Pool moid for chassis in-band IP's"
 }
 
 output "ofl_dev_pod1_ip_pool_server_moid" {
-    value       = module.imm_pool_mod.ip_pool_moid
+    value       = module.imm_pod_pools_mod.ip_pool_moid
     description = "IP_Pool moid for servers in Pod"
 }
 output "ofl_dev_pod1_ip_pool_server_name" {
-    value       = module.imm_pool_mod.ip_pool_name
+    value       = module.imm_pod_pools_mod.ip_pool_name
     description = "IP_Pool name for servers in Pod"
 }
 
 output "ofl_dev_pod1_mac_pool_moid" {
-    value       = module.imm_pool_mod.mac_pool_moid
+    value       = module.imm_pod_pools_mod.mac_pool_moid
     description = "MAC Pool moid for cluster"
 }
 
 output "ofl_dev_pod1_wwnn_pool_moid" {
-    value       = module.imm_pool_mod.wwnn_pool_moid
+    value       = module.imm_pod_pools_mod.wwnn_pool_moid
     description = "WWNN pool moid for cluster"
 }
 
 output "ofl_dev_pod1_wwpn_pool_a_moid" {
-    value       = module.imm_pool_mod.wwpn_pool_a_moid
+    value       = module.imm_pod_pools_mod.wwpn_pool_a_moid
     description = "WWPN Pool moid for A Fabric"
 }
 
 output "ofl_dev_pod1_wwpn_pool_b_moid" {
-    value       = module.imm_pool_mod.wwpn_pool_b_moid
+    value       = module.imm_pod_pools_mod.wwpn_pool_b_moid
     description = "WWPN Pool moid for B Fabric"
 }
 
 output "ofl_dev_pod1_uuid_pool_moid" {
-    value       = module.imm_pool_mod.uuid_pool_moid
+    value       = module.imm_pod_pools_mod.uuid_pool_moid
     description = "UUID Pool moid for cluster"
 }
 
