@@ -11,7 +11,7 @@
 
 
 module "server_template_vmw1" {                                   # <<-- Change to duplicate
-  source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods//imm-pod-servers"
+  source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods//imm-pod-servers"  #?ref=v1.2.5"
             # remote module name above should not be changed when duplicating
 
 # =============================================================================
