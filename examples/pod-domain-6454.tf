@@ -8,7 +8,7 @@
 
 module "intersight_policy_bundle_bml_1" {
   #source = "github.com/pl247/tf-intersight-policy-bundle"
-  source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods/imm-domain-fabric-6454-mod" #?ref=v1.2.0"
+  source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods/imm-domain-fabric-6454-mod" #?ref=v1.2.5"
 
 # =============================================================================
 # Org external references
