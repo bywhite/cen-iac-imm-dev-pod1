@@ -48,8 +48,8 @@ module "imm_domain_4" {                                                        #
   vlan_prefix = "vlan"
 
   # Uplink VLANs Allowed List    Example: "5,6,7,8,100-130,998-1011" requires "-"
-  switch_vlans_6454 = "21,60,254-255"
-
+  switch_vlans_6454 = local.pod_vlans
+  
 # =============================================================================
 # Fabric Interconnect 6454 FC Ports and VSANs
 # -----------------------------------------------------------------------------
