@@ -31,7 +31,7 @@ locals {
   ]
 
 # Pod VLANS assigned to all FI Switches in the Pod
-  pod_vlans = "100,101,997-999"
+  pod_vlans = "100,101,200-599,997-999,1200-1250"
 
 # Pod CIMC User Policy for Server KVM Access
   iam_user_policy_moid = module.imm_pod_user_policy_1.iam_user_policy_moid
