@@ -7,7 +7,7 @@
 
 
 module "imm_domain_3" {                                                        # <-- change when copying
-  source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods//imm-domain-fabric-6536"  #?ref=v1.2.5"
+  source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods//imm-domain-fabric-6536"  #?ref=v1.2.6"
 
 # =============================================================================
 # External References

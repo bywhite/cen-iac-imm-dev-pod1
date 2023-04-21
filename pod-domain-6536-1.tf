@@ -7,7 +7,7 @@
 
 
 module "imm_domain_1" {                                                        # <-- change when copying
-  source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods//imm-domain-fabric-6536"  #?ref=v1.2.5"
+  source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods//imm-domain-fabric-6536"  #?ref=v1.2.6"
 
 # =============================================================================
 # External References
@@ -22,7 +22,7 @@ module "imm_domain_1" {                                                        #
 
   # every policy created will have this prefix in its name
   policy_prefix = "${local.pod_policy_prefix}-domain-1"                        # <-- change when copying
-  description   = "built by Terraform ${local.pod_policy_prefix}"
+  description   = "built by Terraform for ${local.pod_policy_prefix}"
 
   #Every object created in the domain will have these tags
   tags = [
@@ -44,7 +44,7 @@ module "imm_domain_1" {                                                        #
 # =============================================================================
 # Fabric Interconnect 6536 Ethernet ports
 # -----------------------------------------------------------------------------
- # Uplink VLANs Allowed List    Example: "5,6,7,8,100-130,998-1011"
+ # Uplink VLANs Allowed List    Example alternative: "5,6,7,8,100-130,998-1011"
   switch_vlans_6536 = local.pod_vlans
 
   #FI ports to be used for ethernet port channel uplink
