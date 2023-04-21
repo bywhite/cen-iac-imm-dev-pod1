@@ -30,7 +30,11 @@ locals {
     { "key" : "pod", "value" : "${local.pod_policy_prefix}" }
   ]
 
-iam_user_policy_moid = module.imm_pod_user_policy_1.iam_user_policy_moid
+# Pod VLANS assigned to all FI Switches in the Pod
+  pod_vlans = "100,101,997-999"
+
+# Pod CIMC User Policy for Server KVM Access
+  iam_user_policy_moid = module.imm_pod_user_policy_1.iam_user_policy_moid
 
 
 # VNIC QoS policy moids Pod-Wide
