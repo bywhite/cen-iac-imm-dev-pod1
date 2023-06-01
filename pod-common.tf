@@ -48,6 +48,8 @@ module "imm_pod_vsan_policy_1" {
   description        = "Pod VSAN Policy 1"
   tags = local.pod_tags
   
+  
+  # Pod wide SAN Boot Policies, each boot policy with four FC Adapter Boot options
   san_boot_policies   = {
     "boot-11" = {
       int_name_1 = "fc0"

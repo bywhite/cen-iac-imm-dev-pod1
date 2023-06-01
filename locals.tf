@@ -45,4 +45,5 @@ locals {
   # vnic_qos_platinum = module.imm_pod_qos_mod.vnic_qos_platinum_moid
   vnic_qos_fc_moid    = module.imm_pod_qos_mod.vnic_qos_fc_moid
   
+
 }

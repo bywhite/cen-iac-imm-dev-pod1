@@ -131,4 +131,20 @@ module "server_profiles_lnx_1" {                                   # <<-- Change
     module.imm_pod_vsan_policy_1
   ]
 
+
+# =============================================================================
+# Servers to Create
+# -----------------------------------------------------------------------------
+# The Pools for the Pod must be created before this domain fabric module executes
+  server_sets = {
+    "ofldevlnx01"  = {
+      server_name  = "ofldevlnx01"
+      boot_moid = module.imm_pod_vsan_policy_1.boot_policy_list[boot-11]
+    }
+    "ofldevlnx02"  = {
+      server_name  = "ofldevlnx02"
+      boot_moid = module.imm_pod_vsan_policy_1.boot_policy_list[boot-12]
+    }
+  }
+
 }
