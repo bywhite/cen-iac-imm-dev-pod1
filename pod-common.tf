@@ -47,18 +47,35 @@ module "imm_pod_vsan_policy_1" {
   pod_policy_prefix  = local.pod_policy_prefix
   description        = "Pod User Policy 1"
   san_boot_targets   = {
-    "fc0" = {
-      interface_name = "fc0"
-      boot_lun       = 0
-      target_wwpn    = "00:00:00:00:00:00:00:00"
+    "boot-11" = {
+      int_name_1 = "fc0"
+      boot_lun_1       = 0
+      target_wwpn_1    = "00:00:00:00:00:00:00:11"
+      int_name_2 = "fc1"
+      boot_lun_2       = 0
+      target_wwpn_2    = "00:00:00:00:00:00:00:11"
+      int_name_3 = "fc2"
+      boot_lun_3       = 0
+      target_wwpn_3    = "00:00:00:00:00:00:00:11"
+      int_name_4 = "fc3"
+      boot_lun_4       = 0
+      target_wwpn_4    = "00:00:00:00:00:00:00:11"
     }
-    "fc1" = {
-      interface_name = "fc1"
-      boot_lun       = 0
-      target_wwpn    = "00:00:00:00:00:00:00:00"
+    "boot-12" = {
+      int_name_1 = "fc0"
+      boot_lun_1       = 0
+      target_wwpn_1    = "00:00:00:00:00:00:00:12"
+      int_name_2 = "fc1"
+      boot_lun_2       = 0
+      target_wwpn_2    = "00:00:00:00:00:00:00:12"
+      int_name_3 = "fc2"
+      boot_lun_3       = 0
+      target_wwpn_3    = "00:00:00:00:00:00:00:12"
+      int_name_4 = "fc3"
+      boot_lun_4       = 0
+      target_wwpn_4    = "00:00:00:00:00:00:00:12"
     }
   }
-# Usage: for_each var.vsan_boot_targets  each.value["interface_name"]  each.value["boot_lun"]  each.value["target_wwpn"]
 
 }
 
