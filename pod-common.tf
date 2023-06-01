@@ -52,32 +52,40 @@ module "imm_pod_vsan_policy_1" {
   # Pod wide SAN Boot Policies, each boot policy with four FC Adapter Boot options
   san_boot_policies   = {
     "boot-11" = {
-      int_name_1 = "fc0"
+      device_name_1    = "vHBA0-Primary"
+      int_name_1       = "fc0"
       boot_lun_1       = 0
-      target_wwpn_1    = "00:00:00:00:00:00:00:11"
-      int_name_2 = "fc1"
+      target_wwpn_1    = "20:11:00:00:00:00:00:4B"
+      device_name_2    = "vHBA0-Secondary"
+      int_name_2       = "fc0"
       boot_lun_2       = 0
-      target_wwpn_2    = "00:00:00:00:00:00:00:11"
-      int_name_3 = "fc2"
+      target_wwpn_2    = "20:12:00:00:00:00:00:4B"
+      device_name_3    = "vHBA1-Primary"
+      int_name_3       = "fc1"
       boot_lun_3       = 0
-      target_wwpn_3    = "00:00:00:00:00:00:00:11"
-      int_name_4 = "fc3"
+      target_wwpn_3    = "20:13:00:00:00:00:00:4B"
+      device_name_4    = "vHBA1-Secondary"
+      int_name_4       = "fc1"
       boot_lun_4       = 0
-      target_wwpn_4    = "00:00:00:00:00:00:00:11"
+      target_wwpn_4    = "20:14:00:00:00:00:00:4B"
     }
     "boot-12" = {
-      int_name_1 = "fc0"
+      device_name_1    = "vHBA0-Primary"
+      int_name_1       = "fc0"
       boot_lun_1       = 0
-      target_wwpn_1    = "00:00:00:00:00:00:00:12"
-      int_name_2 = "fc1"
+      target_wwpn_1    = "20:12:00:00:00:00:00:4B"
+      device_name_2    = "vHBA0-Secondary"
+      int_name_2       = "fc0"
       boot_lun_2       = 0
-      target_wwpn_2    = "00:00:00:00:00:00:00:12"
-      int_name_3 = "fc2"
+      target_wwpn_2    = "20:15:00:00:00:00:00:4B"
+      device_name_3    = "vHBA1-Primary"
+      int_name_3       = "fc1"
       boot_lun_3       = 0
-      target_wwpn_3    = "00:00:00:00:00:00:00:12"
-      int_name_4 = "fc3"
+      target_wwpn_3    = "20:23:00:00:00:00:00:4B"
+      device_name_4    = "vHBA1-Secondary"
+      int_name_4       = "fc1"
       boot_lun_4       = 0
-      target_wwpn_4    = "00:00:00:00:00:00:00:12"
+      target_wwpn_4    = "20:11:00:00:00:00:00:4B"
     }
   }
 
