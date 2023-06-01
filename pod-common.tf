@@ -45,8 +45,10 @@ module "imm_pod_vsan_policy_1" {
   # external sources
   organization       = local.org_moid
   pod_policy_prefix  = local.pod_policy_prefix
-  description        = "Pod User Policy 1"
-  san_boot_targets   = {
+  description        = "Pod VSAN Policy 1"
+  tags = local.pod_tags
+  
+  san_boot_policies   = {
     "boot-11" = {
       int_name_1 = "fc0"
       boot_lun_1       = 0
