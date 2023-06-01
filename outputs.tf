@@ -15,6 +15,11 @@ output "pod_id" {
     description = "Pod ID is used in all identifiers: MAC, WWNN, WWPN, UUID"
 }
 
+output "pod_boot_policies" {
+    value       = module.imm_pod_vsan_policy_1.boot_policy_list
+    description = "List of custom SAN Boot Policies for Pod"
+}
+
 # output "domain_vmw_1_name" {
 #     value       = module.intersight_pod2_domain_1.fi6536_cluster_domain_name
 #     description = "IMM Domain Cluster VMW-1 TF object name"
