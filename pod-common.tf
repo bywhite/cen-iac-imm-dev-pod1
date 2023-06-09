@@ -50,6 +50,7 @@ module "imm_pod_vsan_policy_1" {
   
   
   # Pod wide SAN Boot Policies, each boot policy with four FC Adapter Boot options
+  # Usage: boot_moid = module.imm_pod_vsan_policy_1.boot_policy_list["boot-11"]
   san_boot_policies   = {
     "boot-11" = {
       device_name_1    = "vHBA0-Primary"
