@@ -20,7 +20,7 @@ output "pod_boot_policies" {
     description = "List of custom SAN Boot Policies for Pod"
 }
 
-output "6536_fi_server_port_chassis_mapping" {
+output "fi_6536_server_port_chassis_mapping" {
     value       = module.imm_domain_1.server_ports_6536
     description = "Server port to Chassis ID Mapping"
 }
