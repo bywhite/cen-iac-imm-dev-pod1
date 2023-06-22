@@ -114,8 +114,8 @@ module "imm_domain_11" {                                                        
   dns_preferred = "8.8.8.8"
   dns_alternate = "8.8.4.4"
 
-  snmp_ip       = "192.168.60.1"
-  snmp_password = var.snmp_password
+  trap_destination = "192.168.60.1"
+  snmp_password    = var.snmp_password
 
 # The Pools for the Pod must be created before this domain fabric module executes
 depends_on = [

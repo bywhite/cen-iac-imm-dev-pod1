@@ -163,7 +163,7 @@ module "imm_domain_3" {                                                        #
   # dns_preferred = "8.8.8.8"
   # dns_alternate = "8.8.4.4"
 
-  #snmp_ip       = "10.10.10.10"
+  #trap_destination       = "10.10.10.10"
   
 # The Pools for the Pod must be created before this domain fabric module executes
   depends_on = [
