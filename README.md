@@ -1,5 +1,6 @@
 
 # Creating servers in Intersight using Terraform Cloud for Business
+# Latest version v1.9.0 June 22, 2023
 
 This terraform plan for Intersight can create multiple IMM domains.
 
