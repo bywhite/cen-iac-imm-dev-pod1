@@ -25,7 +25,7 @@ module "server_policies" {
 # -----------------------------------------------------------------------------
 
   # prefix for all created policies
-  server_policy_prefix = "${local.pod_policy_prefix}"        
+  policy_prefix = "${local.pod_policy_prefix}"        
   description   = "built by Terraform ${local.pod_policy_prefix}"
 
   #Every object created in the domain will have these tags
