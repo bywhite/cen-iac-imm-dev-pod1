@@ -25,6 +25,16 @@ output "fi_6536_server_port_chassis_mapping" {
     description = "Server port to Chassis ID Mapping"
 }
 
+output "pod_access_policy_map" {
+    value       = module.server_policies.access_policy_map
+    description = "Pod's Server access policy moid list"
+}
+
+output "pod_boot_precision_policy_map" {
+    value       = module.server_policies.boot_precision_policy_map
+    description = "Pod's Server boot policy moid list"
+}
+
 # output "domain_vmw_1_name" {
 #     value       = module.intersight_pod2_domain_1.fi6536_cluster_domain_name
 #     description = "IMM Domain Cluster VMW-1 TF object name"
