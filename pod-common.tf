@@ -162,6 +162,24 @@ module "imm_pod_pools_mod" {
 
 }
 
+module "imm_chassis_ip_pool_mod" {
+  source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods//imm-chassis-ip-pool-mod"
+  
+  # external sources
+  organization    = local.org_moid
+  policy_prefix = local.pod_policy_prefix
+  description   = local.description       # Using generic pod description
+
+# Chassis Inband IP Pool values for Chassis IMC
+  chassis_ip_size     = "100"
+  chassis_ip_start = "192.168.31.118"
+  chassis_ip_gateway  = "192.168.31.1"
+  chassis_ip_netmask  = "255.255.255.0"
+  chassis_ip_primary_dns = "192.168.60.7"
+
+  tags = local.pod_tags
+
+}
 
 # =============================================================================
 # =============================================================================
