@@ -10,9 +10,7 @@ locals {
 # Sensitive information should be stored in variables (var.<variable>) to be passed in
 #    var.<variables can be passed in from TFCB, CLI apply parameters and environment variables
 
-  # Intersight Organization Variable
-  org_moid = data.intersight_organization_organization.my_org.id
-  
+
   pod_policy_prefix = "dc1-pod2"                           # <-- change when copying
   
   pod_id = "12"                                                # <-- change when copying
@@ -23,7 +21,11 @@ locals {
 
   description = "Built by Terraform ${local.pod_policy_prefix}"
 
-  #Every object created in the pod main module will have these tags
+# Intersight Organization Variable
+  org_moid = data.intersight_organization_organization.my_org.id
+  
+
+#Every object created in the pod main module will have these tags
   pod_tags = [
     { "key" : "environment", "value" : "dev" },
     { "key" : "orchestrator", "value" : "Terraform" },
