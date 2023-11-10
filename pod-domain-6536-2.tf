@@ -6,7 +6,7 @@
 # # -----------------------------------------------------------------------------
 
 
-module "imm_domain_1" {                                                        # <-- change when copying
+module "imm_domain_2" {                                                        # <-- change when copying
   source = "github.com/bywhite/cen-iac-imm-dev-pod1-mods//imm-domain-fabric-6536"  #?ref=v1.9.0"
 
 # =============================================================================
@@ -21,7 +21,7 @@ module "imm_domain_1" {                                                        #
 # -----------------------------------------------------------------------------
 
   # every policy created will have this prefix in its name
-  policy_prefix = "${local.pod_policy_prefix}-domain-1"                        # <-- change when copying
+  policy_prefix = "${local.pod_policy_prefix}-domain-2"                        # <-- change when copying
   description   = "built by Terraform for ${local.pod_policy_prefix}"
 
   #Every object created in the domain will have these tags
@@ -36,7 +36,7 @@ module "imm_domain_1" {                                                        #
 # Chassis
 # -----------------------------------------------------------------------------
 
-  chassis_9508_count = 10         # Default chassis count is 5
+  #chassis_9508_count = 5         # Default chassis count is 5
   # chassis_imc_access_vlan    = 999
 
   # Chassis requires In-Band IP's Only  (ie must be a VLAN trunked to FI's)
